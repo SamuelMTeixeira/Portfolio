@@ -1,0 +1,146 @@
+nav.navbar {
+    padding: 18px 0;
+    transition: 0.32 ease-in-out;
+    background-color: transparent !important;
+    z-index: 100;
+}
+
+nav.navbar.scrolled {
+    padding: 10px 0;
+    transition: 0.32 ease-in-out;
+
+    background-color: #121212 !important;
+}
+
+nav.navbar .navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em !important;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    padding: 0 20px;
+    font-size: 16px;
+    opacity: 0.25;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+    opacity: 1;
+}
+
+nav.navbar .navbar-info .social-icons a {
+    text-decoration: none;
+    padding: 0 5px;
+    opacity: 0.75;
+    line-height: 1;
+}
+
+nav.navbar .navbar-info .social-icons a:hover {
+    opacity: 1;
+}
+
+nav.navbar .navbar-info .social-icons a svg {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    fill: #FFFFFF;
+}
+
+nav.navbar .navbar-info button {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 30px;
+
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+}
+
+nav.navbar .navbar-info button:hover {
+    color: #121212;
+    background-color: #FFFFFF;
+    transition: 0.4s ease-in-out;
+}
+
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+    outline: 0;
+    box-shadow: none;
+    opacity: 1;
+}
+
+nav.navbar .navbar-toggler {
+    border: none;
+    opacity: 0.8;
+}
+
+nav.navbar .toggler-icon svg {
+    width: 24px;
+    height: 24px;
+
+    fill: #FFFFFF;
+}
+
+nav.navbar .toggler-icon svg:hover {
+    width: 24px;
+    height: 24px;
+
+    fill: #FFFFFF;
+}
+
+/* Quando a tela estiver pequena [menu options] */
+.offcanvas-title {
+    font-weight: 800;
+    color: #121212;
+}
+.offcanvas.show .navbar-nav {
+    display: flex;
+    align-items: flex-start !important;
+}
+.offcanvas.show .navbar-nav .nav-link.navbar-link {
+    font-weight: 400;
+    color: #121212;
+    letter-spacing: 0.8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 1;
+}
+
+.offcanvas.show .navbar-info .social-icons a {
+    text-decoration: none;
+    padding: 0 5px;
+    opacity: 1;
+    line-height: 1;
+}
+
+.offcanvas.show .navbar-info .social-icons a svg {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    fill: #121212;
+}
+
+.offcanvas.show .navbar-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.offcanvas.show .navbar-info button {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 30px;
+
+    color: #121212;
+    border: 1px solid #121212;
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.offcanvas.show .navbar-info button:hover {
+    color: #121212;
+    background-color: #FFFFFF;
+    transition: 0.4s ease-in-out;
+}

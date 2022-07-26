@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Sintony&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top:  75px;
+}
+main {
+    margin-top: 300px;
+}
+body {
+    font-weight: 400 !important;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Open Sans', sans-serif !important;
+
+    background-color: #121212 !important;
+    color: #FFFFFF !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif !important;
+    margin: 0;
+    padding: 0;
+}
