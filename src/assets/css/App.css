@@ -4,9 +4,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top:  75px;
 }
-main {
-    margin-top: 300px;
-}
 body {
     font-weight: 400 !important;
     overflow-x: hidden;
