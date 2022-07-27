@@ -1,6 +1,8 @@
 import AppBar from './components/AppBar'
 import Home from './components/Home'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
+
 import './assets/css/App.css'
 
 function App() {
@@ -10,6 +12,7 @@ function App() {
       <main>
         <Home />
         <Skills />
+        <Projects />
       </main>
     </>
   );

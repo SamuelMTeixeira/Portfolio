@@ -63,12 +63,12 @@ const Skills = () => {
                     <Col>
                         <div className='skills-box'>
                             <h2>Minhas habilidades</h2>
-                            <p>Aqui vai uma lista de skills que adquirir ao decorrer dessa caminhada</p>
+                            <p>Aqui vai uma lista de skills que adquiri ao decorrer dessa caminhada</p>
 
                             <Carousel responsive={responsive} infinite={true} className={'skill-slider'}>
                                 {listSkills.map(skill => (
                                     <div className='item' key={skill.id}>
-                                        <img src={skill.imageName} alt="image skill" />
+                                        <img src={skill.imageName} alt="skill" />
                                         <h5>{skill.name}</h5>
                                     </div>
                                 ))}

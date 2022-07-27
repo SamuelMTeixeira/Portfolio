@@ -31,7 +31,7 @@ const pages = [
   {
     id: 2,
     name: "Projetos",
-    url: "#projetos",
+    url: "#projects",
     active: "projetos"
   }
 ]

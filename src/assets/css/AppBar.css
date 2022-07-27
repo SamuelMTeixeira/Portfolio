@@ -1,15 +1,14 @@
 nav.navbar {
     padding: 18px 0;
     transition: 0.32 ease-in-out;
-    background-color: transparent !important;
-    z-index: 100;
+    background-color: rgba(18, 18, 18, 0) !important;
+    z-index: 999;
 }
 
 nav.navbar.scrolled {
     padding: 10px 0;
     transition: 0.32 ease-in-out;
-
-    background-color: #121212 !important;
+    background-color: rgb(18, 18, 18, 1) !important;
 }
 
 nav.navbar .navbar-brand {
