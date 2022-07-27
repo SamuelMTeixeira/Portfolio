@@ -4,55 +4,9 @@ import '../assets/css/Projects.css'
 import { Container, Row, Col, Nav, Tab } from 'react-bootstrap'
 import ProjectCard from './ProjectCard';
 
-import imgProj1 from '../assets/img/project-img1.png';
-import imgProj2 from '../assets/img/project-img2.png';
-import imgProj3 from '../assets/img/project-img3.png';
 import colorSharp2 from '../assets/img/color-sharp2.png'
 
-const FrontProjects = [
-    {
-        id: 0,
-        title: "PingCast - Plataforma de podcasts de tecnologia",
-        description: "Desenvolvido em React.JS",
-        imgUrl: imgProj1
-    },
-    {
-        id: 1,
-        title: "PetShop",
-        description: "Desenvolvido em React.JS",
-        imgUrl: imgProj2
-    },
-    {
-        id: 2,
-        title: "Newsletter",
-        description: "Desenvolvido em React.JS",
-        imgUrl: imgProj3
-    }
-]
-
-const BackProjects = [
-    {
-        id: 0,
-        title: "Sistema hospitalar",
-        description: "Desenvolvido em Java",
-        imgUrl: imgProj1
-    },
-    {
-        id: 2,
-        title: "PSC Lava-Jato",
-        description: "Desenvolvedor Java",
-        imgUrl: imgProj3
-    }
-]
-
-const MobileProjects = [
-    {
-        id: 0,
-        title: "Em desenvolvimento",
-        description: "Desenvolvendo em Java",
-        imgUrl: imgProj1
-    },
-]
+import { FrontProjects, BackProjects, MobileProjects } from '../data/MyProjects'
 
 const Projects = () => {
     return (

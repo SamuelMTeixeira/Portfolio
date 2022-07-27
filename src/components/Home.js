@@ -6,7 +6,6 @@ import homeImg from '../assets/img/header-img.svg'
 
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { isVisible } from '@testing-library/user-event/dist/utils';
 
 import {
     ArrowRightOutlined,
@@ -17,11 +16,12 @@ const Home = () => {
     const [loopNum, setLoopNum] = useState(0)
     const [isDeleting, setIsDeleting] = useState(false)
     const [text, setText] = useState('')
-    const tempo = 3000
+    const [index, setIndex] = useState(1);
+    const tempo = 1000
     const [delta, setDelta] = useState(300 - Math.random() * 100)
 
     // minhas ocupações
-    const funcoesToRotate = ['meu nome é Samuel!', 'Sou desenvolvedor web', 'Sou desenvolvedor Desktop', 'Sou desenvolvedor mobile']
+    const funcoesToRotate = ['Meu nome é Samuel!', 'Sou desenvolvedor web', 'Sou desenvolvedor Desktop', 'Sou desenvolvedor mobile']
 
     // PASSA O TITULO DINAMICAMENTE COMO SE ESTIVESSE ESCREVENDO UM TEXTO NO H1
     useEffect(() => {
@@ -33,25 +33,30 @@ const Home = () => {
     }, [text])
 
     const tick = () => {
-        let i = loopNum % funcoesToRotate.length
-        let fullText = funcoesToRotate[i]
+        let i = loopNum % funcoesToRotate.length;
+        let fullText = funcoesToRotate[i];
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
 
-        let updateText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)
-        setText(updateText)
+        setText(updatedText);
 
         if (isDeleting) {
             setDelta(prevDelta => prevDelta / 2);
         }
 
-        if (!isDeleting && updateText === fullText) {
+        if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
+            setIndex(prevIndex => prevIndex - 1);
             setDelta(tempo);
-        }
-        else if (isDeleting && updateText === '') {
+        } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
-            setLoopNum(loopNum + 1)
-            setDelta(500)
+            setLoopNum(loopNum + 1);
+            setIndex(1);
+            setDelta(500);
+        } else {
+            setIndex(prevIndex => prevIndex + 1);
         }
+
+
     }
 
     return (
@@ -63,14 +68,12 @@ const Home = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeInDown" : ""}>
                                     <span className='tagline'>Bem vindo ao meu porfólio</span>
-                                    <h1>{`Hello world, `} <span className='wrap'>{text}</span>  </h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia,
-                                        leo nec consectetur dignissim, orci tellus egestas ante, sit amet
-                                        placerat magna ex ut ipsum. Vestibulum ut nunc interdum, semper mi id,
-                                        sagittis ligula. Nulla mattis feugiat sem id suscipit.
-                                        Fusce at vehicula odio, vel commodo diam.
+                                    <h1>{`Olá! `} <span className='wrap'>{text}</span>  </h1>
+                                    <p>
+                                        Meu nome é Samuel e no presente momento estou no último ano do curso de Análise e Desenvolvimento de Sistemas pelo Instituto Federal do Norte de Minas Gerais. <br />
+                                        Atualmente tenho foco em desenvolvimento front-end web e busco oportunidades de atuar na área, seja esta de forma presencial ou remota.
                                     </p>
-                                    <button className='btn d-flex align-items-center' onClick={() => { console.log('quero estabelecer contato!') }}> Estabelecer contato  <ArrowRightOutlined />  </button>
+                                    <a href='#connect' className='btn d-flex align-items-center' onClick={() => { console.log('quero estabelecer contato!') }}> Estabelecer contato  <ArrowRightOutlined />  </a>
                                 </div>}
                         </TrackVisibility>
                     </Col>

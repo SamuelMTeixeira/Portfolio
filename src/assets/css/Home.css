@@ -35,8 +35,8 @@ section#home p {
     width: 96%;
 }
 
-section#home button {
-    color: #fff;
+section#home a {
+    color: #ffffff;
     font-weight: 700;
     font-size: 15px;
     margin-top: 60px;
@@ -45,11 +45,11 @@ section#home button {
     border: none;
 }
 
-section#home button:hover svg {
+section#home a:hover svg {
     margin-left: 25px;
 }
 
-section#home button svg {
+section#home a svg {
     border-radius: 50%;
     border: 1px solid #FFFFFF !important;
     fill: #FFFFFF;

@@ -6,7 +6,7 @@ html {
 }
 body {
     font-weight: 400 !important;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     position: relative;
     font-family: 'Open Sans', sans-serif !important;
 

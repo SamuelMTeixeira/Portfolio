@@ -4,15 +4,9 @@ import '../assets/css/Skills.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Container, Row, Col } from 'react-bootstrap'
-
-import meter1 from '../assets/img/meter1.svg'
-import meter2 from '../assets/img/meter2.svg'
-import meter3 from '../assets/img/meter3.svg'
+import SkillBar from './SkillBar'
+import { listSkills } from '../data/MySkills'
 import colorSharp from '../assets/img/color-sharp.png'
-
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
-import { isVisible } from '@testing-library/user-event/dist/utils';
 
 // JSON DO CAROUSEL
 const responsive = {
@@ -35,30 +29,6 @@ const responsive = {
     }
 };
 
-// JSON DAS HABILIDADES
-const listSkills = [
-    {
-        id: 0,
-        name: 'React.JS',
-        imageName: meter1,
-    },
-    {
-        id: 1,
-        name: 'Java',
-        imageName: meter2,
-    },
-    {
-        id: 3,
-        name: 'PHP',
-        imageName: meter3,
-    },
-    {
-        id: 4,
-        name: 'Git',
-        imageName: meter3,
-    },
-]
-
 const Skills = () => {
     return (
         <section id="skills">
@@ -68,19 +38,14 @@ const Skills = () => {
                         <div className='skills-box'>
                             <h2>Minhas habilidades</h2>
                             <p>Aqui vai uma lista de skills que adquiri ao decorrer dessa caminhada</p>
-
-                            <TrackVisibility>
-                                {({ isVisible }) =>
-                                    <Carousel responsive={responsive} infinite={true} className={isVisible ? "skill-slider animate__animated animate__zoomIn" : "skill-slider"}>
-                                        {listSkills.map(skill => (
-                                            <div className='item' key={skill.id}>
-                                                <img src={skill.imageName} alt="skill" />
-                                                <h5>{skill.name}</h5>
-                                            </div>
-                                        ))}
-                                    </Carousel>
-                                }
-                            </TrackVisibility>
+                            <Carousel responsive={responsive} infinite={true} className={"skill-slider"}>
+                                {listSkills.map(skill => (
+                                    <div className='item' key={skill.id}>
+                                        <span><SkillBar className='skillbar-item' percent={skill.percent} /></span>
+                                        <h5 className='mt-3'>{skill.name}</h5>
+                                    </div>
+                                ))}
+                            </Carousel>
                         </div>
                     </Col>
                 </Row>

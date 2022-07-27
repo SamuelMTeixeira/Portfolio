@@ -30,9 +30,8 @@ section#skills .skill-slider {
     position: relative;
 }
 
-section#skills .skill-slider .item img {
-    width: 50%;
-    margin: 0 auto 15px auto;
+section#skills .skill-slider .item span {
+    padding: 0 20px;
 }
 
 section#skills .background-image-left {

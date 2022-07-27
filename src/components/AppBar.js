@@ -43,7 +43,7 @@ const AppBar = () => {
   // ESTADO DO SCROLL DO MOUSE
   const [scrolled, setScrolled] = useState(false)
 
-  const pageName = '< Samuel M. Teixeira />'
+  const pageName = ' < Samuel M. Teixeira />'
 
   // EFEITO PARA VERIFICAR SE ROLOU O SCROLL VERTICAL
   useEffect(() => {
@@ -69,7 +69,9 @@ const AppBar = () => {
     <header>
       <Navbar bg="dark" variant="dark" fixed="top" expand="lg" className={scrolled ? 'scrolled' : ''}>
         <Container>
-          <Navbar.Brand href="#">{pageName}</Navbar.Brand>
+          <Navbar.Brand href="#">
+            <img width={'32px'} src="logo.png" alt='logo' />
+            {pageName}</Navbar.Brand>
 
           <Navbar.Toggle aria-controls={'offcanvasNavbar-expand-lg'}>
             <MenuOutlined className="toggler-icon" />
