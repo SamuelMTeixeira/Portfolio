@@ -98,7 +98,7 @@ const AppBar = () => {
                   <a href='https://github.com/SamuelMTeixeira' > <GithubFilled />  </a>
                   <a href='https://www.instagram.com/this.samuelteixeira/' > <InstagramFilled /> </a>
                 </div>
-                <button className='btn' onClick={() => console.log('clicado')}> <span>Contate-me</span>  </button>
+                <a className='btn contato' href='#connect'> <span>Contate-me</span>  </a>
               </span>
 
             </Offcanvas.Body>

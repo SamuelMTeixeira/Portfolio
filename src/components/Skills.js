@@ -10,6 +10,10 @@ import meter2 from '../assets/img/meter2.svg'
 import meter3 from '../assets/img/meter3.svg'
 import colorSharp from '../assets/img/color-sharp.png'
 
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
+import { isVisible } from '@testing-library/user-event/dist/utils';
+
 // JSON DO CAROUSEL
 const responsive = {
     superLargeDesktop: {
@@ -65,20 +69,23 @@ const Skills = () => {
                             <h2>Minhas habilidades</h2>
                             <p>Aqui vai uma lista de skills que adquiri ao decorrer dessa caminhada</p>
 
-                            <Carousel responsive={responsive} infinite={true} className={'skill-slider'}>
-                                {listSkills.map(skill => (
-                                    <div className='item' key={skill.id}>
-                                        <img src={skill.imageName} alt="skill" />
-                                        <h5>{skill.name}</h5>
-                                    </div>
-                                ))}
-
-                            </Carousel>
+                            <TrackVisibility>
+                                {({ isVisible }) =>
+                                    <Carousel responsive={responsive} infinite={true} className={isVisible ? "skill-slider animate__animated animate__zoomIn" : "skill-slider"}>
+                                        {listSkills.map(skill => (
+                                            <div className='item' key={skill.id}>
+                                                <img src={skill.imageName} alt="skill" />
+                                                <h5>{skill.name}</h5>
+                                            </div>
+                                        ))}
+                                    </Carousel>
+                                }
+                            </TrackVisibility>
                         </div>
                     </Col>
                 </Row>
             </Container>
-            <img src={colorSharp} className="background-image-left" alt='background com luz suave'/>
+            <img src={colorSharp} className="background-image-left" alt='background com luz suave' />
         </section>
     )
 }

@@ -4,6 +4,10 @@ import '../assets/css/Home.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import homeImg from '../assets/img/header-img.svg'
 
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
+import { isVisible } from '@testing-library/user-event/dist/utils';
+
 import {
     ArrowRightOutlined,
 } from '@ant-design/icons';
@@ -17,7 +21,7 @@ const Home = () => {
     const [delta, setDelta] = useState(300 - Math.random() * 100)
 
     // minhas ocupações
-    const funcoesToRotate = ['meu nome é Samuel!','Sou desenvolvedor web', 'Sou desenvolvedor Desktop', 'Sou desenvolvedor mobile']
+    const funcoesToRotate = ['meu nome é Samuel!', 'Sou desenvolvedor web', 'Sou desenvolvedor Desktop', 'Sou desenvolvedor mobile']
 
     // PASSA O TITULO DINAMICAMENTE COMO SE ESTIVESSE ESCREVENDO UM TEXTO NO H1
     useEffect(() => {
@@ -55,18 +59,20 @@ const Home = () => {
             <Container>
                 <Row className='d-flex align-items-center'>
                     <Col xs={12} md={6} xl={7}>
-                        <span className='tagline'>Bem vindo ao meu porfólio</span>
-                        <h1>{`Hello world, `} <span className='wrap'>{text}</span>  </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia,
-                            leo nec consectetur dignissim, orci tellus egestas ante, sit amet
-                            placerat magna ex ut ipsum. Vestibulum ut nunc interdum, semper mi id,
-                            sagittis ligula. Nulla mattis feugiat sem id suscipit.
-                            Fusce at vehicula odio, vel commodo diam.
-                        </p>
-                        <button className='btn d-flex align-items-center' onClick={() => { console.log('quero estabelecer contato!') }}>
-                            Estabelecer contato
-                            <ArrowRightOutlined />
-                        </button>
+                        <TrackVisibility>
+                            {({ isVisible }) =>
+                                <div className={isVisible ? "animate__animated animate__fadeInDown" : ""}>
+                                    <span className='tagline'>Bem vindo ao meu porfólio</span>
+                                    <h1>{`Hello world, `} <span className='wrap'>{text}</span>  </h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia,
+                                        leo nec consectetur dignissim, orci tellus egestas ante, sit amet
+                                        placerat magna ex ut ipsum. Vestibulum ut nunc interdum, semper mi id,
+                                        sagittis ligula. Nulla mattis feugiat sem id suscipit.
+                                        Fusce at vehicula odio, vel commodo diam.
+                                    </p>
+                                    <button className='btn d-flex align-items-center' onClick={() => { console.log('quero estabelecer contato!') }}> Estabelecer contato  <ArrowRightOutlined />  </button>
+                                </div>}
+                        </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img src={homeImg} alt="home page" />

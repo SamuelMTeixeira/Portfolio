@@ -48,7 +48,7 @@ nav.navbar .navbar-info .social-icons a svg {
     fill: #FFFFFF;
 }
 
-nav.navbar .navbar-info button {
+nav.navbar .navbar-info a.contato {
     font-weight: 700;
     font-size: 16px;
     padding: 10px 30px;
@@ -58,7 +58,7 @@ nav.navbar .navbar-info button {
     background-color: transparent;
 }
 
-nav.navbar .navbar-info button:hover {
+nav.navbar .navbar-info a.contato:hover {
     color: #121212;
     background-color: #FFFFFF;
     transition: 0.4s ease-in-out;
@@ -142,7 +142,7 @@ nav.navbar .toggler-icon svg:hover {
     flex-direction: column;
     margin-top: 30px;
 }
-.offcanvas.show .navbar-info button {
+.offcanvas.show .navbar-info a.contato {
     font-weight: 700;
     font-size: 16px;
     padding: 10px 30px;
@@ -153,7 +153,7 @@ nav.navbar .toggler-icon svg:hover {
     margin-top: 20px;
 }
 
-.offcanvas.show .navbar-info button:hover {
+.offcanvas.show .navbar-info a.contato:hover {
     color: #FFFFFF;
     background-color: #121212;
     transition: 0.4s ease-in-out;
