@@ -67,18 +67,18 @@ const Home = () => {
                         <TrackVisibility>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeInDown" : ""}>
-                                    <span className='tagline'>Bem vindo ao meu porfólio</span>
-                                    <h1>{`Olá! `} <span className='wrap'>{text}</span>  </h1>
-                                    <p>
+                                    <span className='tagline d-flex align-items-center justify-content-center justify-content-md-start'>Bem vindo ao meu porfólio</span>
+                                    <h1 className='text-center text-md-start'>{`Olá! `} <span className='wrap'>{text}</span>  </h1>
+                                    <p className='text-center text-md-start'>
                                         Meu nome é Samuel e no presente momento estou no último ano do curso de Análise e Desenvolvimento de Sistemas pelo Instituto Federal do Norte de Minas Gerais. <br />
                                         Atualmente tenho foco em desenvolvimento front-end web e busco oportunidades de atuar na área, seja esta de forma presencial ou remota.
                                     </p>
-                                    <a href='#connect' className='btn d-flex align-items-center' onClick={() => { console.log('quero estabelecer contato!') }}> Estabelecer contato  <ArrowRightOutlined />  </a>
+                                    <a href='#connect' className='btn d-flex align-items-center justify-content-center justify-content-md-start' onClick={() => { console.log('quero estabelecer contato!') }}> Estabelecer contato  <ArrowRightOutlined />  </a>
                                 </div>}
                         </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={homeImg} alt="home page" />
+                        <img src={homeImg} className="d-none d-md-flex" alt="home page" />
                     </Col>
                 </Row>
             </Container>

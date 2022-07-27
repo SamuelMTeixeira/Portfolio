@@ -38,11 +38,11 @@ const Contact = () => {
             <Container>
                 <Row className='d-flex align-items-center'>
                     <Col md={6} >
-                        <img src={contatoImg} alt='contate-me' />
+                        <img src={contatoImg} className="d-none d-md-flex" alt='contate-me' />
                     </Col>
 
                     <Col md={6} >
-                        <h2>Entrar em contato</h2>
+                        <h2 className="text-center text-md-start">Entrar em contato</h2>
                         <Form onSubmit={handleSubmit}>
                             <Row className="px-1">
                                 <Form.Group as={Col} controlId="formGridName">
@@ -69,7 +69,7 @@ const Contact = () => {
                             </Form.Group>
 
 
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" className="w-100">
                                 <span>{buttonText}</span>
                             </Button>
 

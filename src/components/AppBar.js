@@ -69,9 +69,10 @@ const AppBar = () => {
     <header>
       <Navbar bg="dark" variant="dark" fixed="top" expand="lg" className={scrolled ? 'scrolled' : ''}>
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="#" class="d-flex align-items-center">
             <img width={'32px'} src="logo.png" alt='logo' />
-            {pageName}</Navbar.Brand>
+            {pageName}
+          </Navbar.Brand>
 
           <Navbar.Toggle aria-controls={'offcanvasNavbar-expand-lg'}>
             <MenuOutlined className="toggler-icon" />

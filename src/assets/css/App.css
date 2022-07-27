@@ -3,10 +3,10 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 65px;
+    overflow-x: hidden !important;
 }
 body {
     font-weight: 400 !important;
-    overflow-x: hidden !important;
     position: relative;
     font-family: 'Open Sans', sans-serif !important;
 
