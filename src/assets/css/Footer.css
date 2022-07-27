@@ -1,0 +1,33 @@
+footer {
+    padding: 25px 0;
+}
+
+footer img {
+    width: 26%;
+}
+
+footer p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #B8B8B8;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+footer .social-icons a {
+    text-decoration: none;
+    padding: 0 5px;
+    opacity: 0.75;
+    line-height: 1;
+}
+
+footer .social-icons a:hover {
+    opacity: 1;
+}
+
+footer .social-icons a svg {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    fill: #FFFFFF;
+}
