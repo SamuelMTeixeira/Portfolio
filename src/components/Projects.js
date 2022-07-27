@@ -63,7 +63,7 @@ const Projects = () => {
                         <h2>Meus projetos</h2>
                         <p>Dê uma olhadinha em alguns abaixo!</p>
                         <Tab.Container id='projects-tabs' defaultActiveKey={'first'}>
-                            <Nav variant='pills' defaultActiveKey={'first'}>
+                            <Nav variant='pills' className="nav-pills mb-5 justify-content-center align-items-center" defaultActiveKey={'first'}>
                                 <Nav.Item>
                                     <Nav.Link eventKey='first' >Front-End</Nav.Link>
                                 </Nav.Item>
