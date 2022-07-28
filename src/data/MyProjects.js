@@ -1,5 +1,5 @@
 import imgProjTest from '../assets/img/project-img3.png';
-
+import MundoDasMontanhas from '../assets/img/projects/mundodasmontanhas.png'
 
 export const FrontProjects = [
     {
@@ -12,7 +12,7 @@ export const FrontProjects = [
         id: 1,
         title: "Mundo das Montanhas",
         description: "Desenvolvido em HTML/CSS e JS",
-        imgUrl: imgProjTest
+        imgUrl: MundoDasMontanhas
     },
     {
         id: 2,

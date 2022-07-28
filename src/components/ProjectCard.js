@@ -16,4 +16,4 @@ const ProjectCard = ({title, description, imgUrl}) => {
     )
 }
 
-export default ProjectCard
+export default ProjectCard  

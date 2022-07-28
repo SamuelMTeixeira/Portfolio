@@ -69,8 +69,8 @@ const AppBar = () => {
     <header>
       <Navbar bg="dark" variant="dark" fixed="top" expand="lg" className={scrolled ? 'scrolled' : ''}>
         <Container>
-          <Navbar.Brand href="#" class="d-flex align-items-center">
-            <img width={'32px'} src="logo.png" alt='logo' />
+          <Navbar.Brand href="#" className="d-flex align-items-center">
+            <img width={'32px'} src="logo.png" alt='logo' className='me-3' />
             {pageName}
           </Navbar.Brand>
 

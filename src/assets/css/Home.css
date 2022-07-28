@@ -1,6 +1,6 @@
 section#home {
     margin-top: 0;
-    padding: 100px 0 100px 0;
+    padding: 150px 0 100px 0;
 
     background: url(../img/banner-bg.png);
     background-position: top center;
@@ -24,7 +24,7 @@ section#home h1 {
     letter-spacing: 0.8px;
     line-height: 1;
     margin-bottom: 14px;
-    display: block; 
+    display: block;
 }
 
 section#home p {
@@ -68,6 +68,7 @@ section#home a svg {
 
 section#home img {
     animation: updown 3s linear infinite;
+    width: 500px;
 }
 
 @keyframes updown {
@@ -84,6 +85,6 @@ section#home img {
     }
 }
 
-.cursorH1 > .wrap {
+.cursorH1>.wrap {
     border-right: 0.08em solid #666;
-  }
+}
