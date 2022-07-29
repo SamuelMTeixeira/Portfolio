@@ -34,38 +34,46 @@ const Projects = () => {
                             <Tab.Content>
                                 <Tab.Pane eventKey={'first'}>
                                     <Row>
-                                        {FrontProjects.map(projeto => {
-                                            return (
-                                                <ProjectCard key={projeto.id}
-                                                    {...projeto} />
-                                            )
-                                        })}
+                                        {
+
+                                            FrontProjects
+                                                .filter((projeto, index) => index < 2)
+                                                .map((projeto, index) => {
+                                                    return (
+                                                        <ProjectCard key={index}
+                                                            {...projeto} />
+                                                    )
+                                                })}
                                     </Row>
                                 </Tab.Pane>
 
                                 <Tab.Pane eventKey={'second'}>
                                     <Row>
-                                        {BackProjects.map(projeto => {
-                                            return (
-                                                <ProjectCard key={projeto.id}
-                                                    {...projeto} />
-                                            )
-                                        })}
+                                        {BackProjects
+                                            .filter((projeto, index) => index < 2)
+                                            .map((projeto, index) => {
+                                                return (
+                                                    <ProjectCard key={index}
+                                                        {...projeto} />
+                                                )
+                                            })}
                                     </Row>
                                 </Tab.Pane>
 
                                 <Tab.Pane eventKey={'third'}>
                                     <Row>
-                                        {MobileProjects.map(projeto => {
-                                            return (
-                                                <ProjectCard key={projeto.id}
-                                                    {...projeto} />
-                                            )
-                                        })}
+                                        {MobileProjects
+                                            .filter((projeto, index) => index < 2)
+                                            .map((projeto, index) => {
+                                                return (
+                                                    <ProjectCard key={index}
+                                                        {...projeto} previewDisable />
+                                                )
+                                            })}
                                     </Row>
                                 </Tab.Pane>
-
                             </Tab.Content>
+                            <span className='d-flex align-items-center justify-content-center see-more mt-4'><a href='/projects' className='btn'>Ver todos os projetos</a></span>
                         </Tab.Container>
                     </Col>
                 </Row>

@@ -1,7 +1,7 @@
 section#projects {
     padding: 80px 0;
     position: relative;
-    background-color: black;
+    background-color: #121212;
 }
 
 section#projects h2 {
@@ -30,7 +30,7 @@ section#projects .nav.nav-pills {
 }
 
 section#projects .nav.nav-pills .nav-item {
-    width: 33.33333%;
+    width: 33.33%;
 }
 
 section#projects .nav.nav-pills .nav-link {
@@ -39,7 +39,7 @@ section#projects .nav.nav-pills .nav-link {
     padding: 17px 0;
     color: #fff;
     width: 100%;
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 0.8px;
     font-weight: 500;
     position: relative;
@@ -64,57 +64,115 @@ section#projects .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
 }
 
-.cardProject {
-    position: relative;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-bottom: 24px;
-    max-height: 300px;
-    object-fit: cover;
+.card.projectCard {
+    color: white;
+    fill: white;
+    background-color: #181818;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: none;
+
+    margin: 20px;
+    width: 400px;
 }
 
-.cardProject::before {
-    content: "";
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    opacity: 0.85;
-    position: absolute;
-    width: 100%;
-    height: 0;
-    transition: 0.4s ease-in-out;
+.card.projectCard img.card-img-top {
+    height: 230px;
 }
 
-.cardProject:hover::before {
-    height: 100%;
+@media (min-width: 576px) {
+    .card.projectCard {
+        width: 400px;
+        margin: 20px;
+    }
+
+    .card.projectCard img.card-img-top {
+        height: 230px;
+    }
 }
 
-.cardProject .texto {
-    position: absolute;
-    text-align: center;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.5s ease-in-out;
-    opacity: 0;
-    width: 100%;
+
+@media (min-width: 768px) {
+    .card.projectCard {
+        width: 400px;
+        margin: 20px;
+    }
+
+    .card.projectCard img.card-img-top {
+        height: 230px;
+    }
 }
 
-.cardProject:hover .texto {
-    top: 50%;
+
+@media (min-width: 992px) {
+    .card.projectCard {
+        width: 450px;
+        margin: 30px;
+    }
+
+    .card.projectCard img.card-img-top {
+        height: 280px;
+    }
+}
+
+.card.projectCard .card-body {
+    margin: 0;
+    padding: 20px 12px;
+}
+
+.card.projectCard .card-body .card-title {
+    padding: 0;
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+
+@media (min-width: 576px) {
+    .card.projectCard .card-body .card-title {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .card.projectCard .card-body .card-title {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card.projectCard .card-body .card-title {
+        font-size: 18px;
+    }
+}
+
+.card.projectCard .card-body a svg {
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    fill: white;
     opacity: 1;
 }
 
-.texto h4 {
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1.1em;
+.card.projectCard .card-body a svg:hover {
+    opacity: 0.8;
 }
 
-.texto span {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 0.8px;
+.card.projectCard .card-footer .card-link {
+    color: white;
+    border: none;
+    margin: 0 15px;
+}
+
+.card.projectCard .card-footer .card-link:hover {
+    opacity: 0.8;
+}
+
+.card.projectCard .card-footer svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 .background-image-right {
@@ -124,4 +182,24 @@ section#projects .nav.nav-pills .nav-link.active::before {
     width: 35%;
     right: 0;
     z-index: -4;
+}
+
+.see-more a {
+    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    padding: 10px;
+    border: none;
+    color: white;
+    min-width: 250px;
+}
+
+.see-more a:hover {
+    background: linear-gradient(80deg, #AA367C -20.91%, #4A2FBD 100.58%);
+    transform: scale(1.01)
+}
+
+.disable {
+    pointer-events: none;
+    cursor: default;
+
+    color: #3d3d3d !important;
 }

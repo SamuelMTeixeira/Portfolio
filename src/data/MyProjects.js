@@ -3,36 +3,23 @@ import MundoDasMontanhas from '../assets/img/projects/mundodasmontanhas.png'
 
 export const FrontProjects = [
     {
-        id: 0,
-        title: "PingCast - Plataforma de podcasts de tecnologia",
-        description: "Desenvolvido em React.JS",
-        imgUrl: imgProjTest
-    },
-    {
-        id: 1,
-        title: "Mundo das Montanhas",
+        title: "Mundo das montanhas",
         description: "Desenvolvido em HTML/CSS e JS",
-        imgUrl: MundoDasMontanhas
-    },
-    {
-        id: 2,
-        title: "Newsletter",
-        description: "Desenvolvido em React.JS",
-        imgUrl: imgProjTest
-    },
-    {
-        id: 3,
-        title: "Spotify Clone",
-        description: "Desenvolvido em HTML/CSS",
-        imgUrl: imgProjTest
-    },
-    {
-        id: 4,
-        title: "Mata-Mosquito",
-        description: "Desenvolvido em HTML/CSS e JavaScript",
-        imgUrl: imgProjTest
-    }
+        repoUrl: 'https://github.com/SamuelMTeixeira/Mundo-das-montanhas',
 
+        imgUrl: MundoDasMontanhas,
+        previewUrl: 'https://samuelmteixeira.github.io/Mundo-das-montanhas/',
+        detalhesUrl: '/oi',
+    },
+    {
+        title: "PingCast",
+        description: "Desenvolvido em React.JS",
+        repoUrl: 'https://github.com/SamuelMTeixeira/Mundo-das-montanhas',
+
+        imgUrl: MundoDasMontanhas,
+        previewUrl: '/oi',
+        detalhesUrl: '/oi',
+    },
 ]
 
 export const BackProjects = [
