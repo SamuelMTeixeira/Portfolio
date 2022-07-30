@@ -1,36 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../assets/css/Contact.css'
+import emailjs from '@emailjs/browser';
 
 import contatoImg from "../assets/img/contact-img.svg";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
 const Contact = () => {
-    // JSON COM VALORES DEFAULT DO FORMULARIO
-    const formInitialDetails = {
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: '',
-    }
-
     // ESTADOS DO FORMULARIO
-    const [formDetails, setFormDetails] = useState(formInitialDetails)
     const [buttonText, setButtonText] = useState('Enviar')
     const [status, setStatus] = useState([])
-
-    // PREENCHE A JSON ACIMA COM OS DADOS DIGITADOS
-    const onFormUpdate = (cmp, value) => {
-        setFormDetails({
-            ...formDetails,
-            [cmp]: value
-        })
-    }
+    const form = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log(formDetails)
+        emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_HIREME, process.env.REACT_APP_EMAIL_TEMPLATE_HIREME, form.current, process.env.REACT_APP_EMAIL_KEYPUBLIC)
+            .then((result) => {
+            }, (error) => {
+                console.log(error.text);
+            });
+
+        event.target.reset()
     }
 
     return (
@@ -43,29 +33,29 @@ const Contact = () => {
 
                     <Col md={6} >
                         <h2 className="text-center text-md-start">Entrar em contato</h2>
-                        <Form onSubmit={handleSubmit}>
+                        <Form onSubmit={handleSubmit} ref={form}>
                             <Row className="px-1">
                                 <Form.Group as={Col} controlId="formGridName">
-                                    <Form.Control value={formDetails.firstName} onChange={event => onFormUpdate('firstName', event.target.value)} type="text" placeholder="Nome" required />
+                                    <Form.Control type="text" placeholder="Nome" required name="firstName" />
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridLastName">
-                                    <Form.Control value={formDetails.lastName} onChange={event => onFormUpdate('lastName', event.target.value)} type="text" placeholder="Sobrenome" required />
+                                    <Form.Control type="text" placeholder="Sobrenome" required name="lastName"/>
                                 </Form.Group>
                             </Row>
 
                             <Row className="px-1">
                                 <Form.Group as={Col} controlId="formGridEmail">
-                                    <Form.Control value={formDetails.email} onChange={event => onFormUpdate('email', event.target.value)} type="email" placeholder="Email" required />
+                                    <Form.Control type="email" placeholder="Email" required name="email"/>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridPhone">
-                                    <Form.Control value={formDetails.phone} onChange={event => onFormUpdate('phone', event.target.value)} type='tel' placeholder="Telefone" />
+                                    <Form.Control type='tel' placeholder="Telefone" name="phone"/>
                                 </Form.Group>
                             </Row>
 
                             <Form.Group className="px-1" controlId="formGridAMessage">
-                                <Form.Control value={formDetails.message} onChange={event => onFormUpdate('message', event.target.value)} as="textarea" rows={6} placeholder="Mensagem" required />
+                                <Form.Control as="textarea" rows={6} placeholder="Mensagem" required name="message"/>
                             </Form.Group>
 
 
@@ -74,7 +64,7 @@ const Contact = () => {
                             </Button>
 
                             {
-                                status.message && 
+                                status.message &&
                                 <Col>
                                     <p className={status.sucess === false ? 'danger' : 'sucess'}>
                                         {status.message}
@@ -91,3 +81,5 @@ const Contact = () => {
 }
 
 export default Contact
+
+

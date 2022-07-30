@@ -10,7 +10,7 @@ section#home .tagline {
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 8px 10px;
-    background: linear-gradient(110deg, var(--gradient-2) 55.95%, var(--gradient-1));
+    background: linear-gradient(110deg, var(--btn-destaque) 10.95%, var(--btn-destaque-hover));
     border: 1px solid rgba(255, 255, 255, 0.5);
     font-size: 20px;
     margin-bottom: 16px;
@@ -21,6 +21,7 @@ section#home .typeWriterText {
     font-size: 27px;
     color: var(--color-destaque);
     margin-bottom: 12px;
+    font-weight: 700;
 }
 
 section#home h1 {

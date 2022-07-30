@@ -35,7 +35,7 @@ body {
     font-family: 'Open Sans', sans-serif !important;
 
     background-color: var(--bg) !important;
-    color: var(--color-main) !important;
+    color: var(--color-main) !important;    
 }
 body, html {
     overflow-x: hidden !important;

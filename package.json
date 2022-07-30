@@ -1,10 +1,11 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@emailjs/browser": "^3.6.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
