@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../assets/css/AppBar.css'
 
-import Container from 'react-bootstrap/Container'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap'
 
 // ICONES
 import {

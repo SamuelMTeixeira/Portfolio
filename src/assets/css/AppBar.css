@@ -15,6 +15,7 @@ nav.navbar.scrolled {
 nav.navbar .navbar-brand {
     font-family: 'Pacifico', cursive;
     font-size: 20px !important;
+    color: var(--color-main);
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
@@ -23,7 +24,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
     letter-spacing: 0.8px;
     padding: 0 20px;
     font-size: 16px;
-    opacity: 0.25;
+    opacity: 0.5;
 }
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,

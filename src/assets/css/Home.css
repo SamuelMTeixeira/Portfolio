@@ -1,9 +1,7 @@
 section#home {
     margin-top: 0;
     padding: 150px 0 100px 0;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: var(--bg);
 }
 
 section#home .tagline {
@@ -49,7 +47,6 @@ section#home a.btn-outlined {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 30px;
 
     background: var(--btn-outlined);
     color: var(--color-main);
@@ -71,7 +68,8 @@ section#home a:hover {
     background: var(--btn-destaque-hover);
 }
 
-section#home a:hover, section#home a.btn-outlined:hover {
+section#home a:hover,
+section#home a.btn-outlined:hover {
     transform: scale(1.02);
 }
 
@@ -95,6 +93,15 @@ section#home a {
     fill: var(--color-main);
 }
 
+@media (max-width: 500px) {
+    section#home span {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    section#home span a{
+        width: 100%;
+    }
+}
 
 section#home a svg {
     fill: var(--color-main);
