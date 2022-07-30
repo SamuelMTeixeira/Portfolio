@@ -4,18 +4,17 @@ import '../assets/css/Projects.css'
 import { Container, Row, Col, Nav, Tab } from 'react-bootstrap'
 import ProjectCard from './ProjectCard';
 
-import colorSharp2 from '../assets/img/color-sharp2.png'
-
 import { FrontProjects, BackProjects, MobileProjects } from '../data/MyProjects'
 
 const Projects = () => {
     return (
         <section id="projects">
+            
             <Container>
                 <Row>
                     <Col>
                         <h2>Meus projetos</h2>
-                        <p>Dê uma olhadinha em alguns abaixo!</p>
+                        <p>Dê uma olhadinha em alguns que deixei separados abaixo!</p>
                         <Tab.Container id='projects-tabs' defaultActiveKey={'first'}>
                             <Nav variant='pills' className="nav-pills mb-5 justify-content-center align-items-center" defaultActiveKey={'first'}>
                                 <Nav.Item>
@@ -34,16 +33,14 @@ const Projects = () => {
                             <Tab.Content>
                                 <Tab.Pane eventKey={'first'}>
                                     <Row>
-                                        {
-
-                                            FrontProjects
-                                                .filter((projeto, index) => index < 2)
-                                                .map((projeto, index) => {
-                                                    return (
-                                                        <ProjectCard key={index}
-                                                            {...projeto} />
-                                                    )
-                                                })}
+                                        {FrontProjects
+                                            .filter((projeto, index) => index < 2)
+                                            .map((projeto, index) => {
+                                                return (
+                                                    <ProjectCard key={index}
+                                                        {...projeto} />
+                                                )
+                                            })}
                                     </Row>
                                 </Tab.Pane>
 
@@ -78,7 +75,6 @@ const Projects = () => {
                     </Col>
                 </Row>
             </Container>
-            <img src={colorSharp2} className='background-image-right' alt='Background right' />
         </section>
     )
 }

@@ -43,7 +43,7 @@ const AppBar = () => {
   // ESTADO DO SCROLL DO MOUSE
   const [scrolled, setScrolled] = useState(false)
 
-  const pageName = ' < Samuel M. Teixeira />'
+  const pageName = '  Samuel M. Teixeira '
 
   // EFEITO PARA VERIFICAR SE ROLOU O SCROLL VERTICAL
   useEffect(() => {

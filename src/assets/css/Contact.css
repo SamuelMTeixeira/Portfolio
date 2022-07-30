@@ -1,5 +1,5 @@
 section#connect {
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: var(--bg);
     padding: 60px 0 200px 0;
 }
 
@@ -19,7 +19,7 @@ section#connect form textarea {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    color: #fff;
+    color: var(--color-main);
     margin: 0 0 8px 0;
     padding: 12px 24px;
     font-weight: 500;
@@ -30,34 +30,36 @@ section#connect form textarea {
 
 section#connect form input:focus,
 section#connect form textarea:focus {
-    background: rgba(255, 255, 255, 1);
-    color: #121212;
+    background: var(--color-main);
+    color: var(--color-alternative);
 }
 
 section#connect form input::placeholder,
 section#connect form textarea::placeholder {
     font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: var(--color-main);
 }
 
 section#connect form input:focus::placeholder,
 section#connect form textarea:focus::placeholder {
-    color: #121212;
+    color: var(--color-alternative);
     opacity: 0.8;
 }
 
 section#connect form button {
     font-weight: 700;
-    color: #000;
-    background-color: #fff;
     padding: 14px 48px;
     font-size: 18px;
     margin-top: 25px;
     border-radius: 0;
     position: relative;
     transition: 0.3s ease-in-out;
-    
+
+    background: var(--btn-destaque);
+    color: var(--color-main);
+    border-radius: 5px;
+    border: none;
 }
 
 section#connect form button span {
@@ -65,13 +67,10 @@ section#connect form button span {
     position: relative;
 }
 
-.contact form button:hover {
-    color: #fff;
-}
-
 section#connect form button::before {
     content: "";
-    background: #121212;
+    background: var(--btn-destaque-hover);
+    border-radius: 5px;
     width: 0;
     height: 100%;
     position: absolute;

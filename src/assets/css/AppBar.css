@@ -1,14 +1,15 @@
 nav.navbar {
     padding: 18px 0;
     transition: 0.32 ease-in-out;
-    background-color: rgba(18, 18, 18, 0) !important;
+    background-color: var(--bg-rgba-opacity) !important;
     z-index: 999;
 }
 
 nav.navbar.scrolled {
     padding: 10px 0;
     transition: 0.32 ease-in-out;
-    background-color: rgb(18, 18, 18, 1) !important;
+    background-color: var(--bg-rgba) !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 nav.navbar .navbar-brand {
@@ -18,7 +19,7 @@ nav.navbar .navbar-brand {
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
     font-weight: 400;
-    color: #ffffff;
+    color: var(--color-main);
     letter-spacing: 0.8px;
     padding: 0 20px;
     font-size: 16px;
@@ -45,7 +46,7 @@ nav.navbar .navbar-info .social-icons a svg {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    fill: #FFFFFF;
+    fill: var(--color-main);
 }
 
 nav.navbar .navbar-info a.contato {
@@ -53,14 +54,14 @@ nav.navbar .navbar-info a.contato {
     font-size: 16px;
     padding: 10px 30px;
 
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
+    color: var(--color-main);
+    border: 1px solid var(--color-main);
     background-color: transparent;
 }
 
 nav.navbar .navbar-info a.contato:hover {
-    color: #121212;
-    background-color: #FFFFFF;
+    color: var(--color-alternative);
+    background-color: var(--color-main);
     transition: 0.4s ease-in-out;
 }
 
@@ -86,14 +87,14 @@ nav.navbar .toggler-icon svg {
     width: 24px;
     height: 24px;
 
-    fill: #FFFFFF;
+    fill: var(--color-main);
 }
 
 nav.navbar .toggler-icon svg:hover {
     width: 24px;
     height: 24px;
 
-    fill: #FFFFFF;
+    fill: var(--color-main);
 }
 
 /* Quando a tela estiver pequena [menu options] */
@@ -102,7 +103,7 @@ nav.navbar .toggler-icon svg:hover {
 }
 .offcanvas-title {
     font-weight: 800;
-    color: #121212;
+    color: var(--color-alternative);
 }
 .offcanvas.show .navbar-nav {
     display: flex;
@@ -110,7 +111,7 @@ nav.navbar .toggler-icon svg:hover {
 }
 .offcanvas.show .navbar-nav .nav-link.navbar-link {
     font-weight: 400;
-    color: #121212;
+    color: var(--color-alternative);
     letter-spacing: 0.8px;
     padding: 10px 20px;
     font-size: 16px;
@@ -134,7 +135,7 @@ nav.navbar .toggler-icon svg:hover {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    fill: #121212;
+    fill: var(--color-alternative);
 }
 
 .offcanvas.show .navbar-info {
@@ -147,14 +148,14 @@ nav.navbar .toggler-icon svg:hover {
     font-size: 16px;
     padding: 10px 30px;
 
-    color: #121212;
-    border: 1px solid #121212;
+    color: var(--color-alternative);
+    border: 1px solid var(--color-alternative);
     background-color: transparent;
     margin-top: 20px;
 }
 
 .offcanvas.show .navbar-info a.contato:hover {
-    color: #FFFFFF;
-    background-color: #121212;
+    color: var(--color-main);
+    background-color: var(--color-alternative);
     transition: 0.4s ease-in-out;
 }

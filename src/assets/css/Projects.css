@@ -1,7 +1,7 @@
 section#projects {
     padding: 80px 0;
     position: relative;
-    background-color: #121212;
+    background-color: var(--bg);
 }
 
 section#projects h2 {
@@ -11,7 +11,7 @@ section#projects h2 {
 }
 
 section#projects p {
-    color: #B8B8B8;
+    color: var(--color-secundary);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -37,7 +37,7 @@ section#projects .nav.nav-pills .nav-link {
     background-color: transparent;
     border-radius: 0;
     padding: 17px 0;
-    color: #fff;
+    color: var(--color-main);
     width: 100%;
     font-size: 16px;
     letter-spacing: 0.8px;
@@ -53,7 +53,7 @@ section#projects .nav.nav-pills .nav-link::before {
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: linear-gradient(to right, var(--gradient-2), var(--gradient-3));
     top: 0;
     left: 0;
     z-index: -1;
@@ -65,9 +65,9 @@ section#projects .nav.nav-pills .nav-link.active::before {
 }
 
 .card.projectCard {
-    color: white;
-    fill: white;
-    background-color: #181818;
+    color: var(--color-main);
+    fill: var(--color-main);
+    background-color: var(--bg-card);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border: none;
 
@@ -151,7 +151,7 @@ section#projects .nav.nav-pills .nav-link.active::before {
     width: 22px;
     height: 22px;
     margin-left: 5px;
-    fill: white;
+    fill: var(--color-main);
     opacity: 1;
 }
 
@@ -160,7 +160,7 @@ section#projects .nav.nav-pills .nav-link.active::before {
 }
 
 .card.projectCard .card-footer .card-link {
-    color: white;
+    color: var(--color-main);
     border: none;
     margin: 0 15px;
 }
@@ -175,25 +175,16 @@ section#projects .nav.nav-pills .nav-link.active::before {
     margin-right: 5px;
 }
 
-.background-image-right {
-    top: 20%;
-    position: absolute;
-    bottom: 0;
-    width: 35%;
-    right: 0;
-    z-index: -4;
-}
-
 .see-more a {
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: var(--btn-destaque);
     padding: 10px;
     border: none;
-    color: white;
+    color: var(--color-main);
     min-width: 250px;
 }
 
 .see-more a:hover {
-    background: linear-gradient(80deg, #AA367C -20.91%, #4A2FBD 100.58%);
+    background: var(--btn-destaque-hover);
     transform: scale(1.01)
 }
 
@@ -201,5 +192,6 @@ section#projects .nav.nav-pills .nav-link.active::before {
     pointer-events: none;
     cursor: default;
 
-    color: #3d3d3d !important;
+    color: var(--color-main) !important;
+    opacity: 0.5;
 }

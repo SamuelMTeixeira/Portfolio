@@ -65,8 +65,8 @@ const Bar = (props) => {
                 <svg style={styleSvg} xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                     <defs>
                         <linearGradient id="GradientColor">
-                            <stop offset="0%" stopColor="#e91e63" />
-                            <stop offset="100%" stopColor="#673ab7" />
+                            <stop offset="0%" stopColor="var(--gradient-1)" />
+                            <stop offset="100%" stopColor="var(--gradient-3)" />
                         </linearGradient>
                     </defs>
                     <circle className="animation__skillbar" style={styleCircle} cx="80" cy="80" r="70" strokeLinecap="round" />

@@ -1,23 +1,24 @@
 import AppBar from './components/AppBar'
-import Home from './components/Home'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+import HomePage from './pages/HomePage'
+
 import './assets/css/App.css'
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <AppBar />
-      <main>
-        <Home />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <AppBar />
+
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }

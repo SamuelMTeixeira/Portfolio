@@ -4,7 +4,7 @@ section#skills {
 }
 
 section#skills .skills-box {
-    background: #151515;
+    background: var(--bg-card);
     border-radius: 64px;
     text-align: center;
     padding: 60px 50px;
@@ -17,7 +17,7 @@ section#skills h2 {
 }
 
 section#skills p {
-    color: #B8B8B8;
+    color: var(--color-secundary);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -32,12 +32,4 @@ section#skills .skill-slider {
 
 section#skills .skill-slider .item span {
     padding: 0 20px;
-}
-
-section#skills .background-image-left {
-    top: 28%;
-    position: absolute;
-    bottom: 0;
-    width: 40%;
-    z-index: -4;
 }

@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Sintony&display=swap');
 
+:root {
+    --bg: #242640;
+
+    --bg-rgba: rgba(36, 38, 64, 1);
+    --bg-rgba-opacity: rgba(36, 38, 64, 0);
+
+    --bg-card: #2F314F;
+    
+    --bg-sub-card: #41436B;
+    --bg-sub-card-border: #64678F;
+
+    --color-main: #FFFFFF;
+    --color-secundary: #B8B8B8;
+    --color-destaque: #9b5ce4;
+    --color-alternative: #121212;
+
+    --btn-destaque: #717FFF;
+    --btn-destaque-hover: #6774eb;
+    --btn-outlined: #292B48;
+
+    --gradient-1: #0052d4;
+    --gradient-2: #4364f7;
+    --gradient-3: #629bdb;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 65px;
@@ -9,8 +34,8 @@ body {
     position: relative;
     font-family: 'Open Sans', sans-serif !important;
 
-    background-color: #121212 !important;
-    color: #FFFFFF !important;
+    background-color: var(--bg) !important;
+    color: var(--color-main) !important;
 }
 body, html {
     overflow-x: hidden !important;

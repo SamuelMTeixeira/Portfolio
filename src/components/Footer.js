@@ -16,7 +16,7 @@ const Footer = () => {
             <Container>
                 <Row className='d-flex align-items-center'>
                     <Col sm={6} className='text-center text-sm-start'>
-                    <p>Copyright 2022. All Rights Reserved</p>
+                    <p>© 2022 SamuelMTeixeira. All Rights Reserved</p>
                     </Col>
 
                     <Col sm={6} className='text-center text-sm-end'>

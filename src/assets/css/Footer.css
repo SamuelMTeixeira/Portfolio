@@ -1,5 +1,6 @@
 footer {
     padding: 25px 0;
+    background: var(--bg-card);
 }
 
 footer img {
@@ -9,7 +10,7 @@ footer img {
 footer p {
     font-weight: 400;
     font-size: 14px;
-    color: #B8B8B8;
+    color: var(--color-secundary);
     letter-spacing: 0.5px;
     margin-top: 20px;
 }
@@ -29,5 +30,5 @@ footer .social-icons a svg {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    fill: #FFFFFF;
+    fill: var(--color-main);
 }

@@ -6,7 +6,6 @@ import 'react-multi-carousel/lib/styles.css';
 import { Container, Row, Col } from 'react-bootstrap'
 import SkillBar from './SkillBar'
 import { listSkills } from '../data/MySkills'
-import colorSharp from '../assets/img/color-sharp.png'
 
 // JSON DO CAROUSEL
 const responsive = {
@@ -50,7 +49,6 @@ const Skills = () => {
                     </Col>
                 </Row>
             </Container>
-            <img src={colorSharp} className="background-image-left" alt='background com luz suave' />
         </section>
     )
 }
