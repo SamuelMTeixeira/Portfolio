@@ -10,7 +10,16 @@ const Projects = () => {
     const [showQtdProjects, setQtdProjects] = useState(2)
     const [ElementProjects, setElementProjects] = useState('front')
 
-    const handleClick = () => { {showQtdProjects === 2 ? setQtdProjects(FrontProjects.length) : setQtdProjects(2)} }
+    const handleClick = () => {
+        if (ElementProjects === 'front')
+            showQtdProjects === 2 ? setQtdProjects(FrontProjects.length) : setQtdProjects(2)
+
+        else if (ElementProjects === 'back')
+            showQtdProjects === 2 ? setQtdProjects(BackProjects.length) : setQtdProjects(2)
+
+        if (ElementProjects === 'mobile')
+            showQtdProjects === 2 ? setQtdProjects(MobileProjects.length) : setQtdProjects(2)
+    }
 
     const handleChange = (e) => {
         if (!(e === ElementProjects)) {
@@ -42,52 +51,79 @@ const Projects = () => {
                                 </Nav.Item>
                             </Nav>
 
-                            <Tab.Content onClick={() => handleChange()}>
+                            <Tab.Content>
                                 <Tab.Pane eventKey={'first'}>
                                     <Row>
-                                        {FrontProjects
-                                            .filter((projeto, index) => index < showQtdProjects)
-                                            .map((projeto, index) => {
-                                                return (
-                                                    <ProjectCard key={index}
-                                                        {...projeto} />
-                                                )
-                                            })}
+                                        {FrontProjects.length === 0 ? <p>Projetos ainda não adicionados, volte outra hora!</p> :
+                                            <>
+                                                {FrontProjects
+                                                    .filter((projeto, index) => index < showQtdProjects)
+                                                    .map((projeto, index) => {
+                                                        return (
+                                                            <ProjectCard key={index}
+                                                                {...projeto} />
+                                                        )
+                                                    })}
+                                                <span className='d-flex align-items-center justify-content-center see-more mt-4'>
+                                                    <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                        {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
+                                                    </button>
+                                                </span>
+                                            </>
+
+                                        }
+
                                     </Row>
                                 </Tab.Pane>
 
                                 <Tab.Pane eventKey={'second'}>
                                     <Row>
-                                        {BackProjects
-                                            .filter((projeto, index) => index < showQtdProjects)
-                                            .map((projeto, index) => {
-                                                return (
-                                                    <ProjectCard key={index}
-                                                        {...projeto} />
-                                                )
-                                            })}
+                                        {BackProjects.length === 0 ? <p>Projetos ainda não adicionados, volte outra hora!</p> :
+                                            <>
+                                                {BackProjects
+                                                    .filter((projeto, index) => index < showQtdProjects)
+                                                    .map((projeto, index) => {
+                                                        return (
+                                                            <ProjectCard key={index}
+                                                                {...projeto} />
+                                                        )
+                                                    })}
+
+                                                <span className='d-flex align-items-center justify-content-center see-more mt-4'>
+                                                    <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                        {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
+                                                    </button>
+                                                </span>
+
+                                            </>
+                                        }
                                     </Row>
                                 </Tab.Pane>
 
                                 <Tab.Pane eventKey={'third'}>
                                     <Row>
-                                        {MobileProjects
-                                            .filter((projeto, index) => index < showQtdProjects)
-                                            .map((projeto, index) => {
-                                                return (
-                                                    <ProjectCard key={index}
-                                                        {...projeto} previewDisable />
-                                                )
-                                            })}
+                                        {MobileProjects.length === 0 ? <p>Projetos ainda não adicionados, volte outra hora!</p> :
+                                            <>
+                                                {MobileProjects
+                                                    .filter((projeto, index) => index < showQtdProjects)
+                                                    .map((projeto, index) => {
+                                                        return (
+                                                            <ProjectCard key={index}
+                                                                {...projeto} />
+                                                        )
+                                                    })}
+
+                                                <span className='d-flex align-items-center justify-content-center see-more mt-4'>
+                                                    <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                        {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
+                                                    </button>
+                                                </span>
+                                            </>
+                                        }
                                     </Row>
                                 </Tab.Pane>
 
                             </Tab.Content>
-                            <span className='d-flex align-items-center justify-content-center see-more mt-4'>
-                                <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
-                                    {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
-                                </button>
-                            </span>
                         </Tab.Container>
                     </Col>
                 </Row>

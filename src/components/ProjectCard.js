@@ -33,7 +33,7 @@ const ProjectCard = (props) => {
                         <InfoCircleFilled />
                         Detalhes
                     </Card.Link>
-                    <Card.Link className={prop.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={prop.previewUrl}>
+                    <Card.Link className={prop.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={prop.previewUrl} target="_blank">
                         <EyeFilled />
                         Preview
                     </Card.Link>
