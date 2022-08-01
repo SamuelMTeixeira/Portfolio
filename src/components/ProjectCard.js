@@ -25,7 +25,7 @@ const ProjectCard = (props) => {
                 <Card.Body className='d-flex align-items-center justify-content-between '>
                     <Card.Title>{prop.title}</Card.Title>
                     <div className='d-flex align-items-center tech-icons'>
-                        <a className='d-flex align-items-center' href={prop.repoUrl}><GithubFilled /></a>
+                        <a className='d-flex align-items-center' target="_blank" rel="noreferrer noopener" href={prop.repoUrl}><GithubFilled /></a>
                     </div>
                 </Card.Body>
                 <div className='card-footer d-flex align-items-center justify-content-between'>

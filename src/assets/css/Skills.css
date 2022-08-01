@@ -1,6 +1,7 @@
 section#skills {
     padding: 0 0 50px 0;
     position: relative;
+    z-index: 10;
 }
 
 section#skills .skills-box {
