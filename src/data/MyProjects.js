@@ -49,7 +49,7 @@ export const BackProjects = [
 
         imgUrl: MundoDasMontanhas,
         previewUrl: 'https://samuelmteixeira.github.io/Mundo-das-montanhas/',
-    }, 
+    },
     {
         title: "Mundo das montanhas",
         description: "Fiz uma versão mais moderna para o blog do meu pai, na qual fala das belezas naturais da região. O projeto levou cerca de 1 semana para ser desenvolvido, e usei algumas tecnologias já conhecidas e também foi meu primeiro projeto usando figma.",

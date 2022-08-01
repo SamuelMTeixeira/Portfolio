@@ -175,7 +175,7 @@ section#projects .nav.nav-pills .nav-link.active::before {
     margin-right: 5px;
 }
 
-.see-more a {
+.see-more button, .see-more button:focus {
     background: var(--btn-destaque);
     padding: 10px;
     border: none;
@@ -183,7 +183,7 @@ section#projects .nav.nav-pills .nav-link.active::before {
     min-width: 250px;
 }
 
-.see-more a:hover {
+.see-more button:hover{
     background: var(--btn-destaque-hover);
     transform: scale(1.01)
 }
