@@ -36,8 +36,11 @@ const Home = () => {
                                     </div>
 
                                     <p className='text-center text-md-start'>
-                                        Hello world! Sou desenvolvedor de softwares há 3 anos e até o momento já tive contato com várias tecnologias e ferramentas de desenvolvimento.
-                                        Atualmente tenho foco em front-end e me encontro aberto para oportunidades. <br />
+                                        Atuo na área de desenvolvimento de softwares há 3 anos, e no presente instante 
+                                        me encontro no último semestre da graduação.
+                                        <br />
+                                        No momento busco oportunidades de atuar profissionalmente como desenvolvedor Front‑End, 
+                                        aberto para trabalhar de forma presencial ou remota.
                                     </p>
                                     <span className='d-flex align-items-center justify-content-center justify-content-md-start mt-5'>
                                         <a href='#connect' className='btn d-flex align-items-center'>

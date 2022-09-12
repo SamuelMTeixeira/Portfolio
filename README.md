@@ -1,3 +1,11 @@
 # Website Portfolio developed with react
 
-Link: https://samuelmteixeira.vercel.app
+## 💻 Preview
+Hospedagem: Vercel
+[🧷](https://samuelmteixeira.vercel.app)
+
+## 🚀 Technologies
+
+1. React.JS
+2. Bootstrap & React Bootstrap
+3. EmailJS (Email Server)
