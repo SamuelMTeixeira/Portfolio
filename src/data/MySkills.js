@@ -21,12 +21,12 @@ export const listSkills = [
     },
     {
         id: 4,
-        name: 'PHP',
-        percent: 78,
+        name: 'PHP & Laravel',
+        percent: 80,
     },
     {
         id: 5,
-        name: 'Sql',
+        name: 'SQL',
         percent: 95,
     },
     {
@@ -48,5 +48,15 @@ export const listSkills = [
         id: 9,
         name: 'Bootstrap/Tailwind',
         percent: 90,
+    },
+    {
+        id: 10,
+        name: 'C',
+        percent: 100,
+    },
+    {
+        id: 11,
+        name: 'C++',
+        percent: 98,
     },
 ]
