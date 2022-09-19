@@ -25,7 +25,7 @@ const Home = () => {
                                     <div className='d-flex align-items-center justify-content-center justify-content-md-start'><span className='tagline'>Bem vindo ao meu porfólio</span></div>
                                     <h1 className='text-center text-md-start'>{`Olá! Meu nome é Samuel`}
                                     </h1>
-                                    <div className="typeWriterText">
+                                    <div className="typeWriterText text-center text-md-start">
                                         <Typewriter
                                             options={{
                                                 autoStart: true,
