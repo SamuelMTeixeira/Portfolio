@@ -5,6 +5,7 @@ import { Container, Row, Col, Nav, Tab } from 'react-bootstrap'
 import ProjectCard from './ProjectCard';
 
 import { FrontProjects, BackProjects, MobileProjects } from '../data/MyProjects'
+import { UIButton } from './UIComponents';
 
 const Projects = () => {
     const [showQtdProjects, setQtdProjects] = useState(2)
@@ -39,11 +40,11 @@ const Projects = () => {
                         <Tab.Container id='projects-tabs' defaultActiveKey={'first'}>
                             <Nav variant='pills' className="nav-pills mb-5 justify-content-center align-items-center" defaultActiveKey={'first'}>
                                 <Nav.Item onClick={() => handleChange('front')}>
-                                    <Nav.Link eventKey='first' >Front-End</Nav.Link>
+                                    <Nav.Link eventKey='first'>Web</Nav.Link>
                                 </Nav.Item>
 
                                 <Nav.Item onClick={() => handleChange('back')}>
-                                    <Nav.Link eventKey='second'>Back-End</Nav.Link>
+                                    <Nav.Link eventKey='second'>Desktop</Nav.Link>
                                 </Nav.Item>
 
                                 <Nav.Item onClick={() => handleChange('mobile')}>
@@ -113,11 +114,10 @@ const Projects = () => {
                                                         )
                                                     })}
 
-                                                <span className='d-flex align-items-center justify-content-center see-more mt-4'>
-                                                    <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
-                                                        {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
-                                                    </button>
-                                                </span>
+                                                <UIButton onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                    {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}    
+                                                </UIButton>
+
                                             </>
                                         }
                                     </Row>

@@ -1,10 +1,5 @@
 footer {
-    padding: 25px 0;
     background: var(--bg-card);
-}
-
-footer img {
-    width: 26%;
 }
 
 footer p {
@@ -12,7 +7,6 @@ footer p {
     font-size: 14px;
     color: var(--color-secundary);
     letter-spacing: 0.5px;
-    margin-top: 20px;
 }
 
 footer .social-icons a {

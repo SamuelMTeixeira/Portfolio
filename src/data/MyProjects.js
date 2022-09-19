@@ -19,7 +19,7 @@ export const FrontProjects = [
         title: "PingCast",
         description: "Plataforma de Podcasts dedicado à tecnologia. Este projeto está sendo desenvolvido em conjunto e eu fui o resposável pelo front-end, na qual usei o React como tecnologia, e também pude trabalhar pela primeira vez com o Material UI, além de outras tecnologias",
         repoUrl: 'https://github.com/IFNMG-teo-Development-team/pingcast-client',
-        tecnologias: ['React', 'Material UI', 'CSS', 'Axios'],
+        tecnologias: ['React', 'Material UI', 'CSS', 'Tailwind', 'Axios'],
 
         imgUrl: PingCast,
         previewUrl: 'https://pingcast.vercel.app',

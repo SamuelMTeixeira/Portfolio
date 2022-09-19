@@ -48,38 +48,8 @@ section#connect form textarea:focus::placeholder {
 }
 
 section#connect form button {
-    font-weight: 700;
-    padding: 14px 48px;
-    font-size: 18px;
-    margin-top: 25px;
-    border-radius: 0;
-    position: relative;
-    transition: 0.3s ease-in-out;
-
     background: var(--btn-destaque);
     color: var(--color-main);
     border-radius: 5px;
     border: none;
-}
-
-section#connect form button span {
-    z-index: 1;
-    position: relative;
-}
-
-section#connect form button::before {
-    content: "";
-    background: var(--btn-destaque-hover);
-    border-radius: 5px;
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    transition: 0.3s ease-in-out;
-}
-
-section#connect form button:hover::before {
-    width: 100%;
 }

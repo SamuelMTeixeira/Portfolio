@@ -76,7 +76,8 @@ section#projects .nav.nav-pills .nav-link.active::before {
 }
 
 .card.projectCard img.card-img-top {
-    height: 230px;
+    object-fit: cover;
+    height: 200px;
 }
 
 @media (min-width: 576px) {

@@ -46,57 +46,6 @@ section#home span {
     gap: 20px;
 }
 
-section#home a.btn-outlined {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background: var(--btn-outlined);
-    color: var(--color-main);
-    border-radius: 5px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-
-    border-color: transparent;
-}
-
-section#home a.btn-outlined:hover {
-    background: var(--bg-sub-card);
-    border-color: var(--btn-destaque);
-}
-
-section#home a:hover {
-    background: var(--btn-destaque-hover);
-}
-
-section#home a:hover,
-section#home a.btn-outlined:hover {
-    transform: scale(1.02);
-}
-
-section#home a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 30px;
-    gap: 10px;
-
-    background: var(--btn-destaque);
-    border-radius: 5px;
-    border-color: transparent;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-
-    color: var(--color-main);
-    fill: var(--color-main);
-}
-
 @media (max-width: 500px) {
     section#home span {
         flex-direction: column;
@@ -105,16 +54,6 @@ section#home a {
     section#home span a{
         width: 100%;
     }
-}
-
-section#home a svg {
-    fill: var(--color-main);
-
-    width: 18px;
-    height: 18px;
-
-    transition: 0.3s ease-in-out;
-    line-height: 1;
 }
 
 section#home img {

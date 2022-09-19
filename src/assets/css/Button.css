@@ -1,0 +1,47 @@
+.outlined {
+    background: var(--btn-outlined);
+    color: var(--color-main);
+    border: 1px solid var(--btn-destaque);
+    order: 0;
+    flex-grow: 0;
+}
+.outlined:hover {
+    background: var(--bg-sub-card);
+    border-color: var(--btn-destaque-hover);
+}
+
+
+
+.filled {
+    border: 1px solid transparent;
+    background: var(--btn-destaque);
+}
+.filled:hover {
+    background: var(--btn-destaque-hover);
+}
+
+
+
+.outlined, .filled {
+    order: 1;
+    flex-grow: 0;
+
+    text-decoration: none;
+    color: var(--color-main);
+}
+
+.outlined svg, .filled svg {
+    fill: var(--color-main);
+
+    width: 18px;
+    height: 18px;
+
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+}
+
+.outlined:hover,
+.filled:hover {
+    transform: scale(1.02);
+    color: var(--color-main);
+}

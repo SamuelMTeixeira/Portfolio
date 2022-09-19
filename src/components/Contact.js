@@ -3,7 +3,8 @@ import '../assets/css/Contact.css'
 import emailjs from '@emailjs/browser';
 
 import contatoImg from "../assets/img/contact-img.svg";
-import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form } from 'react-bootstrap'
+import { UIButton } from './UIComponents';
 
 const Contact = () => {
     // JSON COM VALORES DEFAULT DO FORMULARIO
@@ -89,10 +90,9 @@ const Contact = () => {
                             </Form.Group>
 
 
-                            <Button variant="primary" type="submit" className="w-100">
-                                <span>Enviar</span>
-                            </Button>
-
+                            <UIButton design="filled" type="submit" className="w-100">
+                                Enviar
+                            </UIButton>
                         </Form>
                     </Col>
                 </Row>

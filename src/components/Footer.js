@@ -12,11 +12,11 @@ import {
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='p-4'>
             <Container>
                 <Row className='d-flex align-items-center'>
-                    <Col sm={6} className='text-center text-sm-start'>
-                    <p>© 2022 SamuelMTeixeira. All Rights Reserved</p>
+                    <Col sm={6} className='d-flex align-items-center'>
+                        <p className="m-0 p-0">© 2022 SamuelMTeixeira. All Rights Reserved</p>
                     </Col>
 
                     <Col sm={6} className='text-center text-sm-end'>
