@@ -75,7 +75,7 @@ const Home = () => {
                     </Col>
 
                     <Col xs={12} md={6} xl={5}>
-                        <RiveBoneco onMouseOver={() => setAnimacao('Animation2')} onMouseOut={() => setAnimacao('Animation1')} style={{ height: "700px" }} />
+                        <img src={homeImg} className="d-none d-md-flex" alt="home page" />
                     </Col>
                 </Row>
             </Container>
