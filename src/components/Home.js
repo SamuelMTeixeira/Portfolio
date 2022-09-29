@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../assets/css/Home.css'
 
 import { Container, Row, Col } from 'react-bootstrap'
@@ -10,9 +10,19 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { UILink } from './UIComponents';
 
+import Rive, { useRive } from '@rive-app/react-canvas';
+import Boneco from '../assets/boneco.riv'
+
 const Home = () => {
     // minhas ocupações
     const ocupacoes = ['Sou desenvolvedor web.', 'Sou desenvolvedor Desktop.', 'Sou desenvolvedor mobile.']
+    const [animacao, setAnimacao] = useState('Animation1')
+
+    const { rive, RiveComponent: RiveBoneco } = useRive({
+        src: Boneco,
+        autoplay: true,
+        animations: animacao,
+    });
 
     return (
         <section id="home">
@@ -65,7 +75,7 @@ const Home = () => {
                     </Col>
 
                     <Col xs={12} md={6} xl={5}>
-                        <img src={homeImg} className="d-none d-md-flex" alt="home page" />
+                        <RiveBoneco onMouseOver={() => setAnimacao('Animation2')} onMouseOut={() => setAnimacao('Animation1')} style={{ height: "700px" }} />
                     </Col>
                 </Row>
             </Container>
