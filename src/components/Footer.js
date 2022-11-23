@@ -7,7 +7,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import {
     GithubFilled,
     LinkedinFilled,
-    InstagramFilled,
 } from '@ant-design/icons';
 
 const Footer = () => {
@@ -23,7 +22,6 @@ const Footer = () => {
                         <div className='social-icons px-3'>
                             <a href='https://www.linkedin.com/in/SamuelMTeixeira/' > <LinkedinFilled />  </a>
                             <a href='https://github.com/SamuelMTeixeira' > <GithubFilled />  </a>
-                            <a href='https://www.instagram.com/this.samuelteixeira/' > <InstagramFilled /> </a>
                         </div>
                     </Col>
                 </Row>

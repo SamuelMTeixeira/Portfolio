@@ -7,7 +7,7 @@
     --bg-rgba-opacity: rgba(36, 38, 64, 0);
 
     --bg-card: #2F314F;
-    
+
     --bg-sub-card: #41436B;
     --bg-sub-card-border: #64678F;
 
@@ -23,24 +23,47 @@
     --gradient-1: #0052d4;
     --gradient-2: #4364f7;
     --gradient-3: #629bdb;
-} 
+}
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 65px;
 }
+
 body {
     font-weight: 400 !important;
     position: relative;
     font-family: 'Open Sans', sans-serif !important;
 
     background-color: var(--bg) !important;
-    color: var(--color-main) !important;    
+    color: var(--color-main) !important;
 }
-body, html {
+
+body::-webkit-scrollbar {
+    width: 13px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bg-card);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--btn-destaque);
+    border-radius: 20px;
+    border: 3px solid var(--bg-card);
+}
+
+body,
+html {
     overflow-x: hidden !important;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Open Sans', sans-serif !important;
     margin: 0;
     padding: 0;

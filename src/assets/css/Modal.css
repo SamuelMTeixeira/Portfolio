@@ -1,6 +1,5 @@
 .projectModal .modal-content {
-    width: 600px;
-    height: 500px;
+
     margin: auto;
 
     background: var(--bg-card);
@@ -40,6 +39,10 @@
     font-size: 26px;
     font-weight: 700;
 }
+.projectModal .modal-content .modal-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
 
 .projectModal .modal-content .modal-body p {
     text-align: justify;
@@ -48,16 +51,17 @@
 .projectModal .modal-content .modal-body div.tecnologias {
     background: var(--btn-outlined);
     border: 1px solid var(--bg-sub-card-border);
-    border-radius: 57px;
-    padding: 7px;
+    border-radius: 50px;
+    padding: 8px;
     width: 100%;
-    display: flex;
 }
 
 .projectModal .modal-content .modal-body div.tecnologias span {
     padding: 0px;
     margin: 0;
     gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .projectModal .modal-content .modal-body div.tecnologias span p {
@@ -67,7 +71,7 @@
     font-size: 14px;
     background: var(--bg-sub-card);
     border: 1px solid var(--bg-sub-card-border);
-    border-radius: 32px;
+    border-radius: 30px;
 
     flex: none;
     order: 0;

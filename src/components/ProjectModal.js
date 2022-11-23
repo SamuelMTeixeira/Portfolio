@@ -36,7 +36,9 @@ const ProjectModal = (props) => {
                     </p>
                 </div>
 
-                <div className="tecnologias">
+                <h3 className="mt-4">Algumas tecnologias utilizadas:</h3>
+
+                <div className="d-flex tecnologias">
                     <span className='d-flex align-items-center justify-content-center'>{tech.map((e, i) => (<p className='d-flex align-items-center flex-row' key={i}>{e}</p>))}</span>
                 </div>
 

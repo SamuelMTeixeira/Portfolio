@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../assets/css/Home.css'
 
 import { Container, Row, Col } from 'react-bootstrap'
@@ -10,19 +10,9 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { UILink } from './UIComponents';
 
-import Rive, { useRive } from '@rive-app/react-canvas';
-import Boneco from '../assets/boneco.riv'
-
 const Home = () => {
     // minhas ocupações
     const ocupacoes = ['Sou desenvolvedor web.', 'Sou desenvolvedor Desktop.', 'Sou desenvolvedor mobile.']
-    const [animacao, setAnimacao] = useState('Animation1')
-
-    const { rive, RiveComponent: RiveBoneco } = useRive({
-        src: Boneco,
-        autoplay: true,
-        animations: animacao,
-    });
 
     return (
         <section id="home">
@@ -47,11 +37,9 @@ const Home = () => {
                                     </div>
 
                                     <p className='text-center text-md-start'>
-                                        Atuo na área de desenvolvimento de softwares há 3 anos, e no presente instante
-                                        me encontro no último semestre da graduação.
-                                        <br />
-                                        No momento busco oportunidades de atuar profissionalmente como desenvolvedor Front‑End,
-                                        aberto para trabalhar de forma presencial ou remota.
+                                        Graduando em Análise e Desenvolvimento de Sistemas e instrutor de robótica com Arduíno.
+                                        No momento me encontro aberto para oportunidades de atuar como desenvolvedor Front End, ou outra área correlata.
+                                        <br />Fique a vontade para saber mais sobre meus projetos e habilidades ;)
                                     </p>
                                     <span className='d-flex align-items-center justify-content-center justify-content-md-start mt-5'>
                                         <UILink design="outlined" href={CurriculoPT} download='cv-in-portuguese'>

@@ -7,7 +7,6 @@ import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap'
 import {
   GithubFilled,
   LinkedinFilled,
-  InstagramFilled,
   MenuOutlined,
 } from '@ant-design/icons';
 
@@ -40,7 +39,7 @@ const AppBar = () => {
   // ESTADO DO SCROLL DO MOUSE
   const [scrolled, setScrolled] = useState(false)
 
-  const pageName = '  Samuel M. Teixeira '
+  const pageName = 'Samuel M. Teixeira'
 
   // EFEITO PARA VERIFICAR SE ROLOU O SCROLL VERTICAL
   useEffect(() => {
@@ -96,7 +95,6 @@ const AppBar = () => {
                 <div className='social-icons px-3'>
                   <a href='https://www.linkedin.com/in/SamuelMTeixeira/' > <LinkedinFilled />  </a>
                   <a href='https://github.com/SamuelMTeixeira' > <GithubFilled />  </a>
-                  <a href='https://www.instagram.com/this.samuelteixeira/' > <InstagramFilled /> </a>
                 </div>
                 <a className='btn contato' href='#connect'> <span>Contate-me</span>  </a>
               </span>
