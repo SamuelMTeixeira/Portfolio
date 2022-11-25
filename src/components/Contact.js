@@ -2,9 +2,11 @@ import React, { useState, useRef } from 'react'
 import '../assets/css/Contact.css'
 import emailjs from '@emailjs/browser';
 
-import contatoImg from "../assets/img/contact-img.svg";
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import { UIButton } from './UIComponents';
+
+import Lottie from 'react-lottie';
+import * as contactAnimation from "../assets/img/contactAnimation.json";
 
 const Contact = () => {
     // JSON COM VALORES DEFAULT DO FORMULARIO
@@ -41,6 +43,16 @@ const Contact = () => {
         }
     }
 
+    // Contact animation configs
+    const animation = { isStopped: false, isPaused: false }
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: contactAnimation
+    }
+    // End contact animation configs
+
     // ENVIA O EMAIL
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -58,12 +70,19 @@ const Contact = () => {
         <section id="connect">
             <Container>
                 <Row className='d-flex align-items-center'>
-                    <Col md={6} >
-                        <img src={contatoImg} className="d-none d-md-flex" alt='contate-me' />
+                    <Col md={6} className='animation'>
+                        <Lottie
+                            width={'80%'}
+                            options={defaultOptions}
+                            isStopped={animation.isStopped}
+                            isPaused={animation.isPaused} />
                     </Col>
 
                     <Col md={6} >
-                        <h2 className="text-center text-md-start">Entrar em contato</h2>
+                        <h2 className="text-center text-md-start ms-1">Entrar em contato</h2>
+                        <p className="ms-1">Tem uma idéia legal para compartilhar, ou uma proposta interessante?
+                            Fale comigo através do formulário abaixo
+                        </p>
                         <Form onSubmit={handleSubmit} ref={form}>
                             <Row className="px-1">
                                 <Form.Group as={Col} controlId="formGridName">
@@ -90,9 +109,11 @@ const Contact = () => {
                             </Form.Group>
 
 
-                            <UIButton design="filled" type="submit" className="w-100">
-                                Enviar
-                            </UIButton>
+                            <div className="px-1">
+                                <UIButton design="filled" type="submit" className="w-100">
+                                    Enviar
+                                </UIButton>
+                            </div>
                         </Form>
                     </Col>
                 </Row>

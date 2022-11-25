@@ -56,21 +56,6 @@ section#home span {
     }
 }
 
-section#home img {
-    animation: updown 3s linear infinite;
-    width: 500px;
-}
-
-@keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-
-    50% {
-        transform: translateY(20px);
-    }
-
-    100% {
-        transform: translateY(-20px);
-    }
+section#home .animation {
+    pointer-events: none;
 }

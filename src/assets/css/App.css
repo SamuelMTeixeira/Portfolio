@@ -13,18 +13,17 @@
 
     --color-main: #FFFFFF;
     --color-secundary: #B8B8B8;
-    --color-destaque: #9b5ce4;
+    --color-destaque: #AC92FF;
     --color-alternative: #121212;
 
     --btn-destaque: #717FFF;
     --btn-destaque-hover: #6774eb;
     --btn-outlined: #292B48;
 
-    --gradient-1: #0052d4;
-    --gradient-2: #4364f7;
-    --gradient-3: #629bdb;
+    --gradient-1: #4457ff;
+    --gradient-2: #717FFF;
+    --gradient-3: #6774eb;
 }
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 65px;

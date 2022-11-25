@@ -117,6 +117,7 @@
 
     background: var(--btn-outlined) !important;
     border-radius: 5px !important;
+    border-color: var(--btn-destaque);
 
     flex: none;
     order: 0;

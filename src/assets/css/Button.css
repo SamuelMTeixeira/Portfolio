@@ -42,6 +42,6 @@
 
 .outlined:hover,
 .filled:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     color: var(--color-main);
 }
