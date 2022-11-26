@@ -34,11 +34,11 @@ const ProjectCard = (props) => {
                 <div className='card-footer d-flex align-items-center justify-content-between'>
                     <Card.Link className='btn d-flex align-items-center' onClick={() => setModalShow(true)}>
                         <InfoCircleFilled />
-                        Detalhes
+                        {t('buttons.details')}
                     </Card.Link>
                     <Card.Link className={props.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={props.previewUrl} target="_blank">
                         <EyeFilled />
-                        Preview
+                        {t('buttons.preview')}
                     </Card.Link>
                 </div>
             </Card>

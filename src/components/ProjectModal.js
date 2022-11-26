@@ -53,7 +53,7 @@ const ProjectModal = (props) => {
                     {t('buttons.close')}
                 </Button>
 
-                <a className={props.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={props.previewUrl}>
+                <a className={props.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={props.previewUrl} target="_blank">
                     <EyeFilled />
                     {t('buttons.preview')}
                 </a>

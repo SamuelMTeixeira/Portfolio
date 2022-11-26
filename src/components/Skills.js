@@ -46,7 +46,7 @@ const Skills = () => {
                                 {listSkills.map(skill => (
                                     <div className='item' key={skill.name}>
                                         <span><SkillBar className='skillbar-item' percent={skill.percent} /></span>
-                                        <h5 className='mt-3'>{skill.name}</h5>
+                                        <h5 className='mt-2'>{skill.name}</h5>
                                     </div>
                                 ))}
                             </Carousel>

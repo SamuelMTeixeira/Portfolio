@@ -30,7 +30,7 @@ const Home = () => {
     return (
         <section id="home">
             <Container>
-                <Row className='d-flex align-items-center'>
+                <Row className='d-flex align-items-center flex-column-reverse flex-md-row'>
                     <Col xs={12} md={6} xl={7}>
                         <div className='d-flex align-items-center justify-content-center justify-content-md-start'><span className='tagline'>{t('home.welcome')}</span></div>
                         <h1 className='text-center text-md-start'>{t('home.title')}</h1>
