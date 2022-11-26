@@ -1,0 +1,50 @@
+{
+    "navbar": {
+        "home": "Home",
+        "skills": "habilidades",
+        "projects": "Projetos"
+    },
+    "home": {
+        "title": "Olá! Meu nome é Samuel",
+        "welcome": "Bem vindo ao meu portfolio",
+        "occupation": {
+            "1": "Sou desenvolvedor web.",
+            "2": "Sou desenvolvedor desktop",
+            "3": "Sou desenvolvedor android."
+        },
+        "description": "Graduando em Análise e Desenvolvimento de Sistemas e instrutor de robótica com Arduíno.\nNo momento me encontro aberto para oportunidades de atuar como desenvolvedor Front End, ou outra área correlata.\n\nFique a vontade para saber mais sobre meus projetos e habilidades ;)"
+    },
+    "skills": {
+        "title": "Minhas habilidades",
+        "description": "Aqui vai uma lista de habilidade que adquiri ao decorrer da minha caminhada"
+    },
+    "projects": {
+        "title": "Meus projetos",
+        "description": "Dê uma olhada em alguns projetos já desenvolvidos",
+        "technologies": "Algumas tecnologias utilizadas"
+    },
+    "contact": {
+        "title": "Entrar em contato",
+        "description": "Tem uma idéia legal para compartilhar, ou uma proposta interessante? Fale comigo através do formulário abaixo"
+    },
+    "buttons": {
+        "resume": "Currículo",
+        "contact": "Estabelecer contato",
+        "see-more": "Ver mais",
+        "see-less": "Ver menos",
+        "close": "Fechar",
+        "preview": "Visualizar",
+        "details": "Detalhes",
+        "back": "Voltar",
+        "send": "Enviar"
+    },
+    "inputs": {
+        "name": "Nome",
+        "lastname": "Sobrenome",
+        "phone": "Telefone",
+        "message": "Mensagem"
+    },
+    "errors": {
+        "no-projects": "Projetos não adicionados ainda, volte outra hora!"
+    }
+}

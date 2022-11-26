@@ -1,25 +1,26 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "license": "MIT",
+  "main": "src/index.js",
+  "author": "Samuel Teixeira",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@emailjs/browser": "^3.6.2",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "animate.css": "^4.1.1",
-    "bootstrap": "^5.2.0",
+    "@emailjs/browser": "^3.9.1",
+    "bootstrap": "^5.2.3",
+    "i18next": "^22.0.6",
+    "i18next-browser-languagedetector": "^7.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.0.0",
     "react-lottie": "^1.2.3",
     "react-multi-carousel": "^2.8.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.5",
     "typewriter-effect": "^2.19.0",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,8 +29,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {

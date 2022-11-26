@@ -6,9 +6,13 @@ import { Container, Row, Col, Form } from 'react-bootstrap'
 import { UIButton } from './UIComponents';
 
 import Lottie from 'react-lottie';
-import * as contactAnimation from "../assets/img/contactAnimation.json";
+import contactAnimation from "../assets/img/contactAnimation.json";
+import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
+    // Translator
+    const { t } = useTranslation()
+
     // JSON COM VALORES DEFAULT DO FORMULARIO
     const formInitialDetails = {
         firstName: '',
@@ -79,18 +83,17 @@ const Contact = () => {
                     </Col>
 
                     <Col md={6} >
-                        <h2 className="text-center text-md-start ms-1">Entrar em contato</h2>
-                        <p className="ms-1">Tem uma idéia legal para compartilhar, ou uma proposta interessante?
-                            Fale comigo através do formulário abaixo
-                        </p>
+                        <h2 className="text-center text-md-start ms-1">{t('contact.title')}</h2>
+                        <p className="ms-1">{t('contact.description')} </p>
+
                         <Form onSubmit={handleSubmit} ref={form}>
                             <Row className="px-1">
                                 <Form.Group as={Col} controlId="formGridName">
-                                    <Form.Control value={formDetails.firstName} onChange={event => onFormUpdate('firstName', event.target.value)} type="text" placeholder="Nome" required name="firstName" />
+                                    <Form.Control value={formDetails.firstName} onChange={event => onFormUpdate('firstName', event.target.value)} type="text" placeholder={t('inputs.name')} required name="firstName" />
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridLastName">
-                                    <Form.Control value={formDetails.lastName} onChange={event => onFormUpdate('lastName', event.target.value)} type="text" placeholder="Sobrenome" required name="lastName" />
+                                    <Form.Control value={formDetails.lastName} onChange={event => onFormUpdate('lastName', event.target.value)} type="text" placeholder={t('inputs.lastname')} required name="lastName" />
                                 </Form.Group>
                             </Row>
 
@@ -100,18 +103,18 @@ const Contact = () => {
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridPhone">
-                                    <Form.Control value={formDetails.phone} onChange={event => onFormUpdate('phone', event.target.value)} type='tel' placeholder="Telefone" name="phone" />
+                                    <Form.Control value={formDetails.phone} onChange={event => onFormUpdate('phone', event.target.value)} type='tel' placeholder={t('inputs.phone')} name="phone" />
                                 </Form.Group>
                             </Row>
 
                             <Form.Group className="px-1" controlId="formGridAMessage">
-                                <Form.Control value={formDetails.message} onChange={event => onFormUpdate('message', event.target.value)} as="textarea" rows={6} placeholder="Mensagem" required name="message" />
+                                <Form.Control value={formDetails.message} onChange={event => onFormUpdate('message', event.target.value)} as="textarea" rows={6} placeholder={t('inputs.message')} required name="message" />
                             </Form.Group>
 
 
                             <div className="px-1">
                                 <UIButton design="filled" type="submit" className="w-100">
-                                    Enviar
+                                    {t('buttons.send')}
                                 </UIButton>
                             </div>
                         </Form>

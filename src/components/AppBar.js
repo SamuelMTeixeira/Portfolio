@@ -3,6 +3,8 @@ import '../assets/css/AppBar.css'
 
 import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap'
 
+import { useTranslation } from 'react-i18next'
+
 // ICONES
 import {
   GithubFilled,
@@ -10,29 +12,37 @@ import {
   MenuOutlined,
 } from '@ant-design/icons';
 
-// LISTA DE OPÇÕES QUE IRÁ APARECER NA NAVBAR
-const pages = [
-  {
-    id: 0,
-    name: "Home",
-    url: "#home",
-    active: "home"
-  },
-  {
-    id: 1,
-    name: "Skills",
-    url: "#skills",
-    active: "skills"
-  },
-  {
-    id: 2,
-    name: "Projetos",
-    url: "#projects",
-    active: "projetos"
-  }
-]
-
 const AppBar = () => {
+
+  // Translator
+  const { t, i18n } = useTranslation()
+
+  const handleCHangeLang = language => {
+    i18n.changeLanguage(language);
+  }
+
+  // LISTA DE OPÇÕES QUE IRÁ APARECER NA NAVBAR
+  const pages = [
+    {
+      id: 0,
+      name: t('navbar.home'),
+      url: "#home",
+      active: "home"
+    },
+    {
+      id: 1,
+      name: t('navbar.skills'),
+      url: "#skills",
+      active: "skills"
+    },
+    {
+      id: 2,
+      name: t('navbar.projects'),
+      url: "#projects",
+      active: "projetos"
+    }
+  ]
+
   // ESTADO DA OPÇÃO CLICADA
   const [activeLink, setActiveLink] = useState('home')
 
@@ -81,7 +91,7 @@ const AppBar = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                Menu principal
+                Menu
               </Offcanvas.Title>
             </Offcanvas.Header>
 
@@ -96,7 +106,7 @@ const AppBar = () => {
                   <a href='https://www.linkedin.com/in/SamuelMTeixeira/' > <LinkedinFilled />  </a>
                   <a href='https://github.com/SamuelMTeixeira' > <GithubFilled />  </a>
                 </div>
-                <a className='btn contato' href='#connect'> <span>Contate-me</span>  </a>
+                <a className='btn contato' href='#connect'> <span>{t('buttons.contact')}</span>  </a>
               </span>
 
             </Offcanvas.Body>

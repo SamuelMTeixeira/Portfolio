@@ -6,6 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { Container, Row, Col } from 'react-bootstrap'
 import SkillBar from './SkillBar'
 import listSkills from '../data/MySkills.json'
+import { useTranslation } from 'react-i18next'
 
 // JSON DO CAROUSEL
 const responsive = {
@@ -29,14 +30,18 @@ const responsive = {
 };
 
 const Skills = () => {
+
+    // Translator
+    const { t } = useTranslation()
+
     return (
         <section id="skills">
             <Container>
                 <Row>
                     <Col>
                         <div className='skills-box'>
-                            <h2>Minhas habilidades</h2>
-                            <p>Aqui vai uma lista de skills que adquiri ao decorrer dessa caminhada</p>
+                            <h2>{t('skills.title')}</h2>
+                            <p>{t('skills.description')}</p>
                             <Carousel responsive={responsive} infinite={true} className={"skill-slider"}>
                                 {listSkills.map(skill => (
                                     <div className='item' key={skill.name}>

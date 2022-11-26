@@ -7,7 +7,13 @@ import ProjectCard from './ProjectCard';
 import { FrontProjects, BackProjects, MobileProjects } from '../data/MyProjects'
 import { UIButton } from './UIComponents';
 
+import { useTranslation } from 'react-i18next'
+
 const Projects = () => {
+
+    // Translator
+    const { t } = useTranslation()
+
     const [showQtdProjects, setQtdProjects] = useState(2)
     const [ElementProjects, setElementProjects] = useState('front')
 
@@ -35,8 +41,8 @@ const Projects = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Meus projetos</h2>
-                        <p>Dê uma olhadinha em alguns logo abaixo!</p>
+                        <h2>{t('projects.title')}</h2>
+                        <p>{t('projects.description')}</p>
                         <Tab.Container id='projects-tabs' defaultActiveKey={'first'}>
                             <Nav variant='pills' className="nav-pills mb-5 justify-content-center align-items-center" defaultActiveKey={'first'}>
                                 <Nav.Item onClick={() => handleChange('front')}>
@@ -55,7 +61,7 @@ const Projects = () => {
                             <Tab.Content>
                                 <Tab.Pane eventKey={'first'}>
                                     <Row>
-                                        {FrontProjects.length === 0 ? <p>Projetos ainda não adicionados, volte outra hora!</p> :
+                                        {FrontProjects.length === 0 ? <p>{t('errors.no-projects')}</p> :
                                             <>
                                                 {FrontProjects
                                                     .filter((projeto, index) => index < showQtdProjects)
@@ -67,11 +73,10 @@ const Projects = () => {
                                                     })}
                                                 <span className='d-flex align-items-center justify-content-center see-more mt-4'>
                                                     <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
-                                                        {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
+                                                        {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')}
                                                     </button>
                                                 </span>
                                             </>
-
                                         }
 
                                     </Row>
@@ -79,7 +84,7 @@ const Projects = () => {
 
                                 <Tab.Pane eventKey={'second'}>
                                     <Row>
-                                        {BackProjects.length === 0 ? <p>Projetos ainda não adicionados, volte outra hora!</p> :
+                                        {BackProjects.length === 0 ? <p>{t('errors.no-projects')}</p> :
                                             <>
                                                 {BackProjects
                                                     .filter((projeto, index) => index < showQtdProjects)
@@ -92,7 +97,7 @@ const Projects = () => {
 
                                                 <span className='d-flex align-items-center justify-content-center see-more mt-4'>
                                                     <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
-                                                        {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}
+                                                        {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')}
                                                     </button>
                                                 </span>
 
@@ -103,7 +108,7 @@ const Projects = () => {
 
                                 <Tab.Pane eventKey={'third'}>
                                     <Row>
-                                        {MobileProjects.length === 0 ? <p>Projetos ainda não adicionados, volte outra hora!</p> :
+                                        {MobileProjects.length === 0 ? <p>{t('errors.no-projects')}</p> :
                                             <>
                                                 {MobileProjects
                                                     .filter((projeto, index) => index < showQtdProjects)
@@ -115,7 +120,7 @@ const Projects = () => {
                                                     })}
 
                                                 <UIButton onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
-                                                    {showQtdProjects === 2 ? 'Ver mais projetos' : 'Ver menos projetos'}    
+                                                    {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')} 
                                                 </UIButton>
 
                                             </>

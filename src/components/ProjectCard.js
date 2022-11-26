@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import { Col, Card } from 'react-bootstrap'
 import ProjectModal from './ProjectModal';
+import { useTranslation } from 'react-i18next'
 
 // ICONES
 import {
@@ -11,8 +12,10 @@ import {
 } from '@ant-design/icons';
 
 const ProjectCard = (props) => {
-    const prop = props
 
+    // Translator
+    const { t } = useTranslation()
+    
     const [modalShow, setModalShow] = useState(false);
 
     return (
@@ -21,11 +24,11 @@ const ProjectCard = (props) => {
             <ProjectModal {...props} show={modalShow} onHide={() => setModalShow(false)} />
 
             <Card className='projectCard'>
-                <Card.Img variant="top" src={prop.imgUrl} />
+                <Card.Img variant="top" src={props.imgUrl} />
                 <Card.Body className='d-flex align-items-center justify-content-between '>
-                    <Card.Title>{prop.title}</Card.Title>
+                    <Card.Title>{props.title}</Card.Title>
                     <div className='d-flex align-items-center tech-icons'>
-                        <a className='d-flex align-items-center' target="_blank" rel="noreferrer noopener" href={prop.repoUrl}><GithubFilled /></a>
+                        <a className='d-flex align-items-center' target="_blank" rel="noreferrer noopener" href={props.repoUrl}><GithubFilled /></a>
                     </div>
                 </Card.Body>
                 <div className='card-footer d-flex align-items-center justify-content-between'>
@@ -33,7 +36,7 @@ const ProjectCard = (props) => {
                         <InfoCircleFilled />
                         Detalhes
                     </Card.Link>
-                    <Card.Link className={prop.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={prop.previewUrl} target="_blank">
+                    <Card.Link className={props.previewDisable ? 'btn d-flex align-items-center disable' : 'btn d-flex align-items-center'} href={props.previewUrl} target="_blank">
                         <EyeFilled />
                         Preview
                     </Card.Link>
