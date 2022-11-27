@@ -5,14 +5,14 @@
         "projects": "Projects"
     },
     "home": {
-        "title": "Hi there! I'm Samuel",
+        "title": "Hey! My name is Samuel",
         "welcome": "Welcome to my portfolio",
         "occupation": {
             "1": "I'm web developer.",
             "2": "I'm Desktop developer.",
             "3": "I'm mobile developer."
         },
-        "description": "Undergraduating in Systems Development and I'm robotics instructor with Arduino. \\n I am currently open for opportunities to work as a Front End developer, or other related area.\nFeel free to know more about my projects and skills ;)"
+        "description": "Undergraduating in Systems Development and I'm robotics instructor with Arduino. \n I am currently open for opportunities to work as a Front End developer, or other related area.\nFeel free to know more about my projects and skills ;)"
     },
     "skills": {
         "title": "My skills",
