@@ -72,47 +72,12 @@ section#projects .nav.nav-pills .nav-link.active::before {
     border: none;
 
     margin: 20px;
-    width: 400px;
+    width: 100%;
 }
 
 .card.projectCard img.card-img-top {
     object-fit: cover;
-    height: 200px;
-}
-
-@media (min-width: 576px) {
-    .card.projectCard {
-        width: 400px;
-        margin: 20px;
-    }
-
-    .card.projectCard img.card-img-top {
-        height: 230px;
-    }
-}
-
-
-@media (min-width: 768px) {
-    .card.projectCard {
-        width: 400px;
-        margin: 20px;
-    }
-
-    .card.projectCard img.card-img-top {
-        height: 230px;
-    }
-}
-
-
-@media (min-width: 992px) {
-    .card.projectCard {
-        width: 450px;
-        margin: 30px;
-    }
-
-    .card.projectCard img.card-img-top {
-        height: 280px;
-    }
+    height: 180px;
 }
 
 .card.projectCard .card-body {
@@ -134,17 +99,29 @@ section#projects .nav.nav-pills .nav-link.active::before {
     .card.projectCard .card-body .card-title {
         font-size: 16px;
     }
+    .card.projectCard img.card-img-top {
+        object-fit: cover;
+        height: 150px;
+    }
 }
 
 @media (min-width: 768px) {
     .card.projectCard .card-body .card-title {
         font-size: 16px;
     }
+    .card.projectCard img.card-img-top {
+        object-fit: cover;
+        height: 180px;
+    }
 }
 
 @media (min-width: 992px) {
     .card.projectCard .card-body .card-title {
         font-size: 18px;
+    }
+    .card.projectCard img.card-img-top {
+        object-fit: cover;
+        height: 250px;
     }
 }
 

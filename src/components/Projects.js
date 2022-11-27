@@ -6,7 +6,6 @@ import ProjectCard from './ProjectCard';
 
 import { FrontProjects, BackProjects, MobileProjects } from '../data/MyProjects'
 import { UIButton } from './UIComponents';
-
 import { useTranslation } from 'react-i18next'
 
 const Projects = () => {
@@ -14,18 +13,18 @@ const Projects = () => {
     // Translator
     const { t } = useTranslation()
 
-    const [showQtdProjects, setQtdProjects] = useState(2)
+    const [showQtdProjects, setQtdProjects] = useState(4)
     const [ElementProjects, setElementProjects] = useState('front')
 
     const handleClick = () => {
         if (ElementProjects === 'front')
-            showQtdProjects === 2 ? setQtdProjects(FrontProjects.length) : setQtdProjects(2)
+            showQtdProjects === 4 ? setQtdProjects(FrontProjects.length) : setQtdProjects(4)
 
         else if (ElementProjects === 'back')
-            showQtdProjects === 2 ? setQtdProjects(BackProjects.length) : setQtdProjects(2)
+            showQtdProjects === 4 ? setQtdProjects(BackProjects.length) : setQtdProjects(4)
 
         if (ElementProjects === 'mobile')
-            showQtdProjects === 2 ? setQtdProjects(MobileProjects.length) : setQtdProjects(2)
+            showQtdProjects === 4 ? setQtdProjects(MobileProjects.length) : setQtdProjects(4)
     }
 
     const handleChange = (e) => {
@@ -72,9 +71,9 @@ const Projects = () => {
                                                         )
                                                     })}
                                                 <span className='d-flex align-items-center justify-content-center see-more mt-4'>
-                                                    <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                    <UIButton onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
                                                         {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')}
-                                                    </button>
+                                                    </UIButton>
                                                 </span>
                                             </>
                                         }
@@ -96,9 +95,9 @@ const Projects = () => {
                                                     })}
 
                                                 <span className='d-flex align-items-center justify-content-center see-more mt-4'>
-                                                    <button onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                    <UIButton onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
                                                         {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')}
-                                                    </button>
+                                                    </UIButton>
                                                 </span>
 
                                             </>
@@ -119,9 +118,11 @@ const Projects = () => {
                                                         )
                                                     })}
 
-                                                <UIButton onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
-                                                    {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')} 
-                                                </UIButton>
+                                                <span className='d-flex align-items-center justify-content-center see-more mt-4'>
+                                                    <UIButton onClick={() => handleClick()} className='btn d-flex flex-column align-items-center'>
+                                                        {showQtdProjects === 2 ? t('buttons.see-more') : t('buttons.see-less')}
+                                                    </UIButton>
+                                                </span>
 
                                             </>
                                         }

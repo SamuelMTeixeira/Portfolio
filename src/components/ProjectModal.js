@@ -15,13 +15,13 @@ const ProjectModal = (props) => {
     // Translator
     const { t } = useTranslation()
 
-    const tech = props.tecnologias || ['no one lang keys']
+    const tech = props.tecnologias || ['no one language keys']
     return (
         <Modal
             show={props.show}
             onHide={props.onHide}
             size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
+            aria-labelledby="contained-modal-title"
             centered
             className="projectModal"
         >
