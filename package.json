@@ -1,47 +1,27 @@
 {
-  "name": "portfolio",
-  "version": "1.1.0",
+  "name": "portfolio-v2",
+  "version": "0.1.0",
   "private": true,
-  "license": "MIT",
-  "main": "src/index.js",
-  "author": "Samuel Teixeira",
-  "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@emailjs/browser": "^3.9.1",
-    "bootstrap": "^5.2.3",
-    "i18next": "^22.0.6",
-    "i18next-browser-languagedetector": "^7.0.1",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.4.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^12.0.0",
-    "react-lottie": "^1.2.3",
-    "react-multi-carousel": "^2.8.2",
-    "react-scripts": "^5.0.1",
-    "styled-components": "^5.3.5",
-    "typewriter-effect": "^2.19.0",
-    "web-vitals": "^3.1.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@chakra-ui/next-js": "^2.0.1",
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@types/node": "18.15.3",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "framer-motion": "^10.3.2",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5"
   }
 }
