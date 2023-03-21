@@ -21,6 +21,30 @@ const theme = {
             700: "#444E86",
             800: "#2D3249",
             900: "#161A27"
+        },
+        golden: {
+            900: "#ED5500",
+            800: "#F07400",
+            700: "#F28C00",
+            600: "#F4A400",
+            500: "#F7B843",
+            400: "#F7AB00",
+            300: "#F7B413",
+            200: "#F9CA52",
+            100: "#FBDF91",
+            50: "#FDF3D0",
+        },
+        dark_slate: {
+            900: "#272b45",
+            800: "#3d4058",
+            700: "#4a4e69",
+            600: "#5f627f",
+            500: "#737790",
+            400: "#8b8ea7",
+            300: "#a2a5be",
+            200: "#b9bcd5",
+            100: "#d1d3ec",
+            50: "#e8e9f3"
         }
     },
     styles: {
@@ -45,7 +69,7 @@ const theme = {
                 bg: 'dark_blue.900',
             },
             '::-webkit-scrollbar-thumb': {
-                bg: 'blue.500',
+                bg: 'dark_slate.600',
                 borderTopLeftRadius: '20px',
                 borderBottomLeftRadius: '20px',
             },
@@ -56,8 +80,9 @@ const theme = {
             variants: {
                 outline: {
                     border: '1px solid',
-                    borderColor: 'blue.500',
-                    color: 'blue.500',
+                    borderColor: 'blue.600',
+                    color: 'blue.600',
+                    borderRadius: "xl",
                     _hover: {
                         bg: 'dark_blue.700',
                         textDecoration: 'none',
@@ -66,6 +91,29 @@ const theme = {
                         bg: 'dark_blue.800'
                     }
                 },
+                solid: {
+                    bg: "dark_slate.900",
+                    fontWeight: "lg",
+                    borderRadius: "xl",
+                    _hover: {
+                        bg: 'dark_slate.800',
+                    },
+                    _active: {
+                        bg: 'dark_slate.700'
+                    }
+                },
+                'catchy': {
+                    bg: 'golden.500',
+                    color: "gray.800",
+                    fontWeight: 600,
+                    borderRadius: "xl",
+                    _hover: {
+                        bg: 'golden.300',
+                    },
+                    _active: {
+                        bg: 'golden.400'
+                    }
+                }
             },
         },
     }
