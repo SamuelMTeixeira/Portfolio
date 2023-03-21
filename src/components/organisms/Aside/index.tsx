@@ -6,8 +6,9 @@ export default function Aside() {
     return (
         <Flex
             as="aside"
-            position={'fixed'} left={9} bottom={"50%"} zIndex={"docked"}
-            direction={"column"} gap={4}>
+            position={'fixed'} left={9} bottom={"40%"} zIndex={"docked"}
+            direction={"column"} gap={4}
+            display={{ base: "none", md: "flex" }}>
 
             <Link href="https://github.com/SamuelMTeixeira">
                 <IconButton

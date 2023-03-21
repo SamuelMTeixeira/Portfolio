@@ -1,4 +1,5 @@
-
+// React
+import { useEffect, useState } from 'react'
 
 // Chakra UI
 import {
@@ -9,9 +10,7 @@ import {
     useDisclosure,
 } from '@chakra-ui/react'
 
-import {
-    HamburgerIcon,
-} from '@chakra-ui/icons'
+import { Menu as HamburgerIcon } from 'react-feather'
 
 // Atoms
 import { Link, Button } from "@components/atoms"
@@ -29,12 +28,34 @@ export interface NavItemProps {
 export default function Header({ menuOptions }: { menuOptions: Array<NavItemProps> }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        }
+
+        window.addEventListener("scroll", onScroll);
+
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [])
+
     return (
-        <Box as={"header"}>
+        <Box as={"header"}
+            position={'fixed'}
+            w={"100%"}
+            backgroundColor={scrolled ? "dark_blue.900" : "transparent"}
+            boxShadow={scrolled ? "md" : "none"}
+            zIndex={"docked"}>
+
             <Flex
                 as={"nav"}
                 minH={'60px'}
-                py={{ base: 6 }}
+                py={{ base: scrolled ? 4 : 6 }}
                 px={{ base: 8 }}
                 align={'center'}>
 
@@ -51,7 +72,7 @@ export default function Header({ menuOptions }: { menuOptions: Array<NavItemProp
                     {/* Btn hamburguer */}
                     <IconButton
                         onClick={onOpen}
-                        icon={<HamburgerIcon w={8} h={8} />}
+                        icon={<HamburgerIcon size={32} />}
                         bg={'transparent'}
                         _hover={{
                             bg: 'dark_blue.800'
@@ -84,7 +105,7 @@ const NavItens = ({ data }: { data: Array<NavItemProps> }) => {
         <Flex align={'center'} display={{ base: 'none', md: 'inline-flex' }}>
             {data.map((item, index) => <NavLink href={item.href} key={index}>{item.children}</NavLink>)}
 
-            <Button size={'md'} variant={'outline'}>
+            <Button size={'md'} >
                 <Link href='#contact' _hover={{
                     textDecoration: 'none'
                 }}> Contato</Link>
