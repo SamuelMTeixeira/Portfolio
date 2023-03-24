@@ -116,6 +116,24 @@ const theme = {
                 }
             },
         },
+        Link: {
+            variants: {
+                'catchy': {
+                    bg: 'golden.500',
+                    color: "gray.800",
+                    fontWeight: 600,
+                    borderRadius: "xl",
+                    px: 4,
+                    py: 3,
+                    _hover: {
+                        bg: 'golden.300',
+                    },
+                    _active: {
+                        bg: 'golden.400'
+                    }
+                }
+            },
+        },
     }
 }
 
