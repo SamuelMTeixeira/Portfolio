@@ -5,7 +5,7 @@ interface ImageProps {
     src: string | StaticImageData;
     alt: string;
     width: number;
-    height: number;
+    height?: number;
     style?: CSSProperties;
     priority?: boolean;
 }
