@@ -127,9 +127,24 @@ const theme = {
                     py: 3,
                     _hover: {
                         bg: 'golden.300',
+                        textDecoration: 'none'
                     },
                     _active: {
                         bg: 'golden.400'
+                    }
+                },
+                'button': {
+                    bg: "dark_slate.900",
+                    fontWeight: "lg",
+                    borderRadius: "xl",
+                    px: 4,
+                    py: 2,
+                    _hover: {
+                        bg: 'dark_slate.800',
+                        textDecoration: 'none'
+                    },
+                    _active: {
+                        bg: 'dark_slate.700'
                     }
                 }
             },
