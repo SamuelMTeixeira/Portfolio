@@ -9,16 +9,26 @@ export default function Introduction() {
             fullSize
             justify={'center'}>
 
-            <Title
-                as={'h2'}
-                position={'relative'}
-                color={'golden.500'}
-                textDecoration={"underline"}
-                textAlign={{ base: "center", md: "start" }}
-                fontSize={{ base: "sm", sm: "md", md: "2xl" }}
-                textUnderlineOffset={{ base: 4, md: 8, lg: 9 }}>
-                👋 Olá! meu nome é Samuel Teixeira
-            </Title>
+            <Flex
+                justify={{ base: "center", md: "flex-start" }}
+                gap={2}>
+                <Title
+                    as={'h2'}
+                    position={'relative'}
+                    fontSize={{ base: "sm", sm: "md", md: "2xl" }}>
+                    👋
+                </Title>
+
+                <Title
+                    as={'h2'}
+                    position={'relative'}
+                    color={'golden.500'}
+                    textDecoration={"underline"}
+                    fontSize={{ base: "sm", sm: "md", md: "2xl" }}
+                    textUnderlineOffset={{ base: 4, md: 8, lg: 9 }}>
+                    Olá! meu nome é Samuel Teixeira
+                </Title>
+            </Flex>
 
             <Title
                 as={"h1"}

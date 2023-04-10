@@ -48,7 +48,7 @@ export default function Projects() {
         subtitle="Projetos recentes">
 
             <Container maxWidth={'full'} mt={10}>
-                <Flex flexWrap="wrap" gridGap={5} align={'center'} justify={'center'}>
+                <Flex flexWrap="wrap" gridGap={4} align={'center'} justify={'center'}>
                     {
                         projects.map(({ title, description, image, repo, preview }, index) => (
                             <Card

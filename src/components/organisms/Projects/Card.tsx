@@ -31,6 +31,7 @@ export default function Card({ title, description, preview, repo, image, ...prop
         <>
 
             <CardBase
+                maxW={{ base: 'lg', md: 'sm' }}
                 width={'lg'}
                 bg={"dark_slate.900"}
                 color={'white'}
@@ -42,8 +43,7 @@ export default function Card({ title, description, preview, repo, image, ...prop
                     borderTopRadius={"md"}
                     src={image}
                     alt='Imagem'
-                    height={250}
-                />
+                    height={{ base: 200, md: 250 }} />
 
                 <CardBody py={4}>
 

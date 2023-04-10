@@ -43,9 +43,12 @@ export default function Home() {
 
                 <Projects />
 
+                <Contact />
+                
+                <Footer />
             </Flex>
 
-            <Footer />
+
         </>
     )
 }
