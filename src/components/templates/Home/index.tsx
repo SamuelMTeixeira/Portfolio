@@ -1,6 +1,13 @@
-
-import { Box } from "@chakra-ui/react"
-import { Header } from "@components/organisms"
+import { Flex } from "@chakra-ui/react"
+import {
+    Aside,
+    Footer,
+    Header,
+    Introduction,
+    Skills,
+    Projects,
+    Contact
+} from "@components/organisms"
 
 export default function Home() {
 
@@ -10,11 +17,11 @@ export default function Home() {
             href: "#"
         },
         {
-            children: "Skills",
+            children: "Habilidades",
             href: "#skills"
         },
         {
-            children: "Projects",
+            children: "Projetos",
             href: "#projects"
         }
     ]
@@ -23,13 +30,22 @@ export default function Home() {
         <>
             <Header menuOptions={menuOptions} />
 
-            <Box as="main">
-                <h1>Welcome to my portfolio</h1>
-            </Box>
+            <Aside />
 
-            <Box as={"footer"}>
-                Footer not yet implemented
-            </Box>
+            <Flex
+                as="main"
+                direction={'column'}
+                maxWidth="100%"
+                ps={{ base: 6, md: 32 }}
+                px={{ base: 6, sm: 10 }}>
+
+                <Introduction />
+
+                <Projects />
+
+            </Flex>
+
+            <Footer />
         </>
     )
 }

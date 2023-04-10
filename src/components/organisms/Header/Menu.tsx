@@ -27,8 +27,7 @@ interface IMenu extends DrawerProps {
 export default function Menu({ children, isOpen, onClose, data }: IMenu) {
     const router = useRouter()
 
-    const goTo = (sectionName: string) => {
-        router.push(sectionName)
+    const goTo = () => {
         onClose()
     }
 
@@ -41,11 +40,16 @@ export default function Menu({ children, isOpen, onClose, data }: IMenu) {
                 <DrawerBody>
 
                     <Flex direction={'column'} gap={3}>
-                        {data.map((item, index) => <NavLink onClick={() => goTo(item.href)} href={item.href} key={index}>{item.children}</NavLink>)}
+                        {data.map((item, index) => <NavLink onClick={goTo} href={item.href} key={index}>{item.children}</NavLink>)}
 
-                        <Button mx={6} size={'md'} variant={'outline'} onClick={() => goTo('#contact')}>
+                        <Link
+                            onClick={goTo}
+                            href={"#contact"}
+                            textAlign={"center"}
+                            mx={4}
+                            variant={"button"}>
                             Contato
-                        </Button>
+                        </Link>
                     </Flex>
 
 

@@ -13,7 +13,7 @@ import {
 import { Menu as HamburgerIcon } from 'react-feather'
 
 // Atoms
-import { Link, Button } from "@components/atoms"
+import { Link } from "@components/atoms"
 import NavLink from "./NavLink"
 
 // Molecules
@@ -48,7 +48,7 @@ export default function Header({ menuOptions }: { menuOptions: Array<NavItemProp
         <Box as={"header"}
             position={'fixed'}
             w={"100%"}
-            backgroundColor={scrolled ? "dark_blue.900" : "transparent"}
+            backgroundColor={"dark_blue.900"}
             boxShadow={scrolled ? "md" : "none"}
             zIndex={"docked"}>
 
@@ -105,11 +105,14 @@ const NavItens = ({ data }: { data: Array<NavItemProps> }) => {
         <Flex align={'center'} display={{ base: 'none', md: 'inline-flex' }}>
             {data.map((item, index) => <NavLink href={item.href} key={index}>{item.children}</NavLink>)}
 
-            <Button size={'md'} >
-                <Link href='#contact' _hover={{
-                    textDecoration: 'none'
-                }}> Contato</Link>
-            </Button>
+
+            <Link
+                href='#contact'
+                variant={"button"}
+               >
+                Contato
+            </Link>
+
 
         </Flex>
     )
