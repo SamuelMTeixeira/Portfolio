@@ -1,5 +1,5 @@
 import Logo from "./Logo"
-import SkillCard from "./SkillCard"
 import Section from "./Section"
+import Carousel from "./Carousel"
 
-export { Logo, SkillCard, Section }
+export { Logo, Section, Carousel }

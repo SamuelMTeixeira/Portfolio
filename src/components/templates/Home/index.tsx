@@ -41,10 +41,12 @@ export default function Home() {
 
                 <Introduction />
 
+                <Skills />
+
                 <Projects />
 
                 <Contact />
-                
+
                 <Footer />
             </Flex>
 
