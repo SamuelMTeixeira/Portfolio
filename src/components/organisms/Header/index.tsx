@@ -28,7 +28,9 @@ export interface NavItemProps {
 export default function Header({ menuOptions }: { menuOptions: Array<NavItemProps> }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const [scrolled, setScrolled] = useState(false)
+    const [scrolled, setScrolled] = useState<boolean>(false)
+
+    const [selectedOption, setSelectedOption] = useState<string>('')
 
     useEffect(() => {
         const onScroll = () => {
@@ -105,14 +107,9 @@ const NavItens = ({ data }: { data: Array<NavItemProps> }) => {
         <Flex align={'center'} display={{ base: 'none', md: 'inline-flex' }}>
             {data.map((item, index) => <NavLink href={item.href} key={index}>{item.children}</NavLink>)}
 
-
-            <Link
-                href='#contact'
-                variant={"button"}
-               >
+            <Link href='#contact' variant={"button"}>
                 Contato
             </Link>
-
 
         </Flex>
     )

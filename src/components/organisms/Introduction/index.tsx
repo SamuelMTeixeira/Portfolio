@@ -1,6 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import { Title, Text, Link } from "@components/atoms";
 import { Section } from '@components/molecules'
+import { Send } from "react-feather";
+import './transitions.css'
 
 export default function Introduction() {
     return (
@@ -13,6 +15,7 @@ export default function Introduction() {
                 justify={{ base: "center", md: "flex-start" }}
                 gap={2}>
                 <Title
+                    className="emoji"
                     as={'h2'}
                     position={'relative'}
                     fontSize={{ base: "sm", sm: "md", md: "2xl" }}>
@@ -55,9 +58,13 @@ export default function Introduction() {
             <Flex mt={4} direction={{ base: "column", md: "row" }}>
 
                 <Link
-                    textAlign={'center'}
+                    display={'flex'}
+                    gap={3}
+                    justifyContent={'center'}
+                    alignItems={'center'}
                     variant={'catchy'}
                     href='#contact'>
+                        <Send size={20} />
                     Entrar em contato
                 </Link>
 
