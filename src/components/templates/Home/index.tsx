@@ -9,22 +9,10 @@ import {
     Contact
 } from "@components/organisms"
 
-export default function Home() {
+// Data
+import menuOptions from "@/data/menuOptions"
 
-    const menuOptions = [
-        {
-            children: "Home",
-            href: "#"
-        },
-        {
-            children: "Habilidades",
-            href: "#skills"
-        },
-        {
-            children: "Projetos",
-            href: "#projects"
-        }
-    ]
+export default function Home() {
 
     return (
         <>
