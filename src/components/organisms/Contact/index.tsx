@@ -1,5 +1,10 @@
+// Hooks
+import { useState } from 'react';
+import useEmail from '@hooks/useEmail';
+
+// Form
 import {
-    Box, 
+    Box,
     Flex,
     Button,
     FormControl,
@@ -10,14 +15,63 @@ import {
     Textarea,
 } from '@chakra-ui/react';
 
+// Molecules
 import { Section } from "@components/molecules";
+import Lottie from "lottie-react";
+import SucessAlert from './SucessAlert';
 
-import Lottie from 'react-lottie';
-import contactAnimation from '@assets/lottie/contact.json'
-
+// Assets
+import contactAnimation from '@assets/lottie/contact.json';
 import { Mail, User } from 'react-feather';
 
+interface FormProps {
+    name: string;
+    email: string;
+    message: string;
+}
+
+const initialFormData = {
+    name: '',
+    email: '',
+    message: ''
+}
+
 export default function Contact() {
+    const [formData, setFormData] = useState<FormProps>(initialFormData)
+
+    const [showAlert, setShowAlert] = useState<boolean>(false)
+
+    const { sendEmail, success, error } = useEmail()
+
+    const handleSubmit = async (event: React.FormEvent<any>) => {
+        event.preventDefault();
+
+        await sendEmail({
+            form: formData,
+            publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '',
+            serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
+            templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || ''
+        });
+
+        if (error) {
+            console.error(error)
+        }
+        if (success) {
+            setFormData(initialFormData)
+            setShowAlert(true)
+        }
+    }
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
+        const { name, value } = event.target;
+
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    }
+
     return (
         <Section
             id="contact"
@@ -38,13 +92,10 @@ export default function Contact() {
 
                     <Lottie
                         width={'100%'}
-                        options={{
-                            loop: true,
-                            autoplay: true,
-                            animationData: contactAnimation
-                        }}
-                        isStopped={false}
-                        isPaused={false} />
+                        animationData={contactAnimation}
+                        autoPlay
+                        loop
+                        initialSegment={[20, 91]} />
                 </Box>
 
                 <Flex
@@ -56,15 +107,21 @@ export default function Contact() {
                     direction={'column'}
                     bg={'dark_slate.900'}
                     color={'white'}
-                    shadow="base">
-
+                    shadow="base"
+                    as={'form'}
+                    onSubmit={handleSubmit}>
 
                     <FormControl isRequired>
                         <FormLabel>Nome</FormLabel>
 
                         <InputGroup>
                             <InputLeftElement children={<User size={20} />} />
-                            <Input type="text" name="name" placeholder="Seu nome" />
+                            <Input
+                                type="text"
+                                name="name"
+                                onChange={handleChange}
+                                value={formData.name}
+                                placeholder="Seu nome" />
                         </InputGroup>
                     </FormControl>
 
@@ -73,7 +130,12 @@ export default function Contact() {
 
                         <InputGroup>
                             <InputLeftElement children={<Mail size={20} />} />
-                            <Input type="email" name="email" placeholder="Seu Email" />
+                            <Input
+                                type="email"
+                                name="email"
+                                onChange={handleChange}
+                                value={formData.email}
+                                placeholder="Seu Email" />
                         </InputGroup>
                     </FormControl>
 
@@ -81,17 +143,26 @@ export default function Contact() {
                         <FormLabel>Mensagem</FormLabel>
 
                         <Textarea
+                            onChange={handleChange}
                             name="message"
                             placeholder="Escreva sua mensagem"
+                            value={formData.message}
                             rows={5}
                             resize="none"
                         />
                     </FormControl>
 
-                    <Button bg={'dark_slate.800'} _hover={{ bg: 'dark_slate.700' }}>Enviar mensagem</Button>
+                    <Button type={'submit'} bg={'dark_slate.700'} _hover={{ bg: 'dark_slate.600' }}>Enviar mensagem</Button>
+
+                    {
+                        showAlert ? (
+                            <SucessAlert
+                                onClose={() => setShowAlert(false)}
+                                message='A mensagem foi encaminhada e em breve será respondida' />
+                        ) : null
+                    }
 
                 </Flex>
-
 
             </Flex >
 

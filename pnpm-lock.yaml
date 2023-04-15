@@ -7,6 +7,9 @@ dependencies:
   '@chakra-ui/react':
     specifier: ^2.5.1
     version: 2.5.1(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(framer-motion@10.3.2)(react-dom@18.2.0)(react@18.2.0)
+  '@emailjs/browser':
+    specifier: ^3.11.0
+    version: 3.11.0
   '@emotion/react':
     specifier: ^11.10.6
     version: 11.10.6(@types/react@18.0.28)(react@18.2.0)
@@ -22,9 +25,6 @@ dependencies:
   '@types/react-dom':
     specifier: 18.0.11
     version: 18.0.11
-  '@types/react-lottie':
-    specifier: ^1.2.6
-    version: 1.2.6
   eslint:
     specifier: 8.36.0
     version: 8.36.0
@@ -34,6 +34,9 @@ dependencies:
   framer-motion:
     specifier: ^10.3.2
     version: 10.3.2(react-dom@18.2.0)(react@18.2.0)
+  lottie-react:
+    specifier: ^2.4.0
+    version: 2.4.0(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: 13.2.4
     version: 13.2.4(react-dom@18.2.0)(react@18.2.0)
@@ -46,9 +49,6 @@ dependencies:
   react-feather:
     specifier: ^2.0.10
     version: 2.0.10(react@18.2.0)
-  react-lottie:
-    specifier: ^1.2.3
-    version: 1.2.3(react@18.2.0)
   swiper:
     specifier: ^9.2.0
     version: 9.2.0
@@ -1183,6 +1183,11 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@emailjs/browser@3.11.0:
+    resolution: {integrity: sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==}
+    engines: {node: '>=14.0.0'}
+    dev: false
+
   /@emotion/babel-plugin@11.10.6:
     resolution: {integrity: sha512-p2dAqtVrkhSa7xz1u/m9eHYdLi+en8NowrmXeF/dKtJpU8lCWli8RUAati7NcSl0afsBott48pdnANuD0wh9QQ==}
     dependencies:
@@ -1575,12 +1580,6 @@ packages:
       '@types/react': 18.0.28
     dev: false
 
-  /@types/react-lottie@1.2.6:
-    resolution: {integrity: sha512-fvGJHD7SeUdVESHo7f7erRnXkTWaa/6Mo5TB+R0/ieSftKoFspA4sMlF2qMH6BljXI7ehFJbBtrD5bzDxPCkGg==}
-    dependencies:
-      '@types/react': 18.0.28
-    dev: false
-
   /@types/react@18.0.28:
     resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==}
     dependencies:
@@ -1804,13 +1803,6 @@ packages:
       resolve: 1.22.1
     dev: false
 
-  /babel-runtime@6.26.0:
-    resolution: {integrity: sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g==}
-    dependencies:
-      core-js: 2.6.12
-      regenerator-runtime: 0.11.1
-    dev: false
-
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: false
@@ -1907,12 +1899,6 @@ packages:
     resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==}
     dependencies:
       toggle-selection: 1.0.6
-    dev: false
-
-  /core-js@2.6.12:
-    resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
-    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
-    requiresBuild: true
     dev: false
 
   /cosmiconfig@7.1.0:
@@ -3010,6 +2996,17 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
+  /lottie-react@2.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-pDJGj+AQlnlyHvOHFK7vLdsDcvbuqvwPZdMlJ360wrzGFurXeKPr8SiRCjLf3LrNYKANQtSsh5dz9UYQHuqx4w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      lottie-web: 5.11.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /lottie-web@5.11.0:
     resolution: {integrity: sha512-9vSt0AtdOH98GKDXwD5LPfFg9Pcmxt5+1BllAbudKM5iqPxpJnJUfuGaP45OyudDrESCOBgsjnntVUTygBNlzw==}
     dev: false
@@ -3352,17 +3349,6 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
-  /react-lottie@1.2.3(react@18.2.0):
-    resolution: {integrity: sha512-qLCERxUr8M+4mm1LU0Ruxw5Y5Fn/OmYkGfnA+JDM/dZb3oKwVAJCjwnjkj9TMHtzR2U6sMEUD3ZZ1RaHagM7kA==}
-    engines: {npm: ^3.0.0}
-    peerDependencies:
-      react: ^0.14.7 || ^15.0.0 || ^16.0.0
-    dependencies:
-      babel-runtime: 6.26.0
-      lottie-web: 5.11.0
-      react: 18.2.0
-    dev: false
-
   /react-remove-scroll-bar@2.3.4(@types/react@18.0.28)(react@18.2.0):
     resolution: {integrity: sha512-63C4YQBUt0m6ALadE9XV56hV8BgJWDmmTPY758iIJjfQKt2nYwoUrPk0LXRXcB/yIj82T1/Ixfdpdk68LwIB0A==}
     engines: {node: '>=10'}
@@ -3420,10 +3406,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
-
-  /regenerator-runtime@0.11.1:
-    resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
     dev: false
 
   /regenerator-runtime@0.13.11:
