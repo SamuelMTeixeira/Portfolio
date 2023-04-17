@@ -115,7 +115,10 @@ export default function Contact() {
                         <FormLabel>Nome</FormLabel>
 
                         <InputGroup>
-                            <InputLeftElement children={<User size={20} />} />
+                            <InputLeftElement
+                                pointerEvents='none'>
+                                <User size={20} />
+                            </InputLeftElement>
                             <Input
                                 type="text"
                                 name="name"
@@ -129,7 +132,10 @@ export default function Contact() {
                         <FormLabel>Email</FormLabel>
 
                         <InputGroup>
-                            <InputLeftElement children={<Mail size={20} />} />
+                            <InputLeftElement
+                                pointerEvents='none'>
+                                <Mail size={20} />
+                            </InputLeftElement>
                             <Input
                                 type="email"
                                 name="email"

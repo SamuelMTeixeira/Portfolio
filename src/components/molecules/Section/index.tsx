@@ -1,14 +1,16 @@
+import { ReactNode } from 'react'
 import { Flex, FlexProps } from "@chakra-ui/react";
 import { Title, Text } from "@components/atoms";
 
 interface ISection extends FlexProps {
+    children: ReactNode;
     id: string;
     fullSize?: boolean;
     title?: string;
     subtitle?: string;
 }
 
-export default function ({ children, id, fullSize, title, subtitle, ...props }: ISection) {
+export default function Section ({ children, id, fullSize, title, subtitle, ...props }: ISection) {
 
     return (
         <Flex
