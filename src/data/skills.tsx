@@ -2,48 +2,40 @@ import { Code, Database, GitBranch, PenTool, Smartphone } from 'react-feather';
 
 const skills = [
     {
-        title: 'Como desenvolvedor React',
-        description: 'Minhas habilidades para desenvolvimento front-end web.',
-        languages: 'Javascript, Typescript | Next, Create React App',
-        tools: ['Bootstrap 5', 'Tailwind', 'Material UI', 'Chakra UI'],
+        title: 'Desenvolvimento Front-End',
+        description: 'Experiência em desenvolvimento de aplicações web com foco em interfaces modernas e responsivas.',
+        languages: 'HTML, CSS, JavaScript, TypeScript | Next, React App',
+        tools: ['React.js', 'Material UI', 'Chakra UI'],
         icon: <PenTool size={30} />,
     },
     {
-        title: 'Como desenvolvedor Mobile',
-        description: 'Minhas habilidades em desenvolvimento mobile, como foco principal em JS.',
-        languages: 'Javascript, Typescript, Android | React Native',
-        tools: ['Native base', 'UI kitten'],
+        title: 'Desenvolvimento Mobile',
+        description: 'Experiência em desenvolvimento de aplicativos mobile para Android e iOS, com foco em desempenho e usabilidade.',
+        languages: 'JavaScript, TypeScript, Android',
+        tools: ['React Native', 'NativeBase', 'UI Kitten'],
         icon: <Smartphone size={30} />,
     },
     {
-        title: 'Como desenvolvedor PHP',
-        description: 'Minhas habilidades em desenvolvimento back-end web',
-        languages: 'PHP | Laravel',
-        tools: [''],
+        title: 'Desenvolvimento Back-End',
+        description: 'Experiência em desenvolvimento de APIs robustas e escaláveis para suportar as necessidades de negócio.',
+        languages: 'JavaScript, TypeScript, PHP, Java',
+        tools: ['Node.js', 'Express.js', 'Laravel'],
         icon: <Code size={30} />,
     },
     {
-        title: 'Como desenvolvedor SQL',
-        description: 'Minhas habilidades em desenvolvimento de banco de dados',
+        title: 'Bancos de Dados',
+        description: 'Experiência em modelagem e implementação de bancos de dados para atender às necessidades de negócio.',
         languages: 'MySQL, MariaDB',
-        tools: [''],
+        tools: ['SQL'],
         icon: <Database size={30} />,
     },
     {
-        title: 'Como desenvolvedor back-end node',
-        description: 'Minhas habilidades em desenvolvimento de API',
-        languages: 'Node, Javascript, Typescript | Express.js',
-        tools: [''],
-        icon: <Code size={30} />,
-    },
-    {
-        title: 'Como DevOps e microserviços',
-        description: 'Minhas habilidades em devops',
+        title: 'DevOps e Infraestrutura',
+        description: 'Experiência em gerenciamento de infraestrutura e aplicativos em ambientes de produção.',
         languages: 'CLI',
         tools: ['Docker', 'Linux', 'Oracle Cloud'],
         icon: <GitBranch size={30} />,
     },
-]
-
+];
 
 export default skills
