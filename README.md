@@ -49,7 +49,7 @@ Start the project
 
 ## ⚙️ Environment Variables
 
-For the e-mail service to work, you need to create an account at emailjs.com and then you need to set up tokens in the ```.env``` file for the following services:
+For the e-mail service to work, you need to create an account at emailjs.com and then you need to set up tokens in the ```.env``` file (use the .env.example template as a reference) for the following services:
 
 `NEXT_PUBLIC_EMAIL_PUBLIC_KEY`
 
@@ -57,11 +57,10 @@ For the e-mail service to work, you need to create an account at emailjs.com and
 
 `NEXT_PUBLIC_EMAIL_TEMPLATE_ID`
 
-For more information how to configure the service, see the documentation: [🔗 Email.js | Docs](https://www.emailjs.com/docs/introduction/how-does-emailjs-work/)
+For more information how to configure the service, see the documentation: [🔗 Email.js docs](https://www.emailjs.com/docs/introduction/how-does-emailjs-work/)
 
 ## 🤝 Collabs
 
-| Samuel M. Teixeira                                                   |
-| ----------------------------------------------------------------- |
 | ![Samuel](https://avatars.githubusercontent.com/u/91707483?s=150) |
-| [Github profile](https://github.com/SamuelMTeixeira)             
+| ----------------------------------------------------------------- |
+| [Samuel M. Teixeira](https://github.com/SamuelMTeixeira)          |
