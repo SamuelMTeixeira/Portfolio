@@ -1,0 +1,41 @@
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Samuel Molendolff Teixeira - Portfolio",
+    "headline": "Portfolio of Samuel Molendolff Teixeira - Software Developer",
+    "url": "https://samuelmteixeira.vercel.app",
+    "description": "A Software Developer's Portofio",
+    "author": {
+        "@type": "Person",
+        "givenName": "Samuel",
+        "familyName": "Molendolff Teixeira",
+        "gender": "male",
+        "sameAs": [
+            "https://www.linkedin.com/in/SamuelMTeixeira",
+            "https://github.com/SamuelMTeixeira"
+        ],
+        "jobTitle": {
+            "@type": "DefinedTerm",
+            "name": "Software Developer",
+            "description": "Software Developers use programming languages and tools to design, develop, and maintain software applications. They write efficient, reliable, and secure code that meets client and user requirements.",
+            "url": "https://simple.wikipedia.org/wiki/Software_developer"
+        }
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://samuelmteixeira.vercel.app/logo.svg"
+    },
+    "keywords": [
+        "Portfolio",
+        "Developer",
+        "Software Developer",
+        "Front-End Developer",
+        "Back-End Developer",
+        "Software Engineer",
+        "Desenvolvedor",
+        "Front-End",
+        "Back-End",
+        "Engenheiro de software",
+        "Portfólio"
+    ]
+}
