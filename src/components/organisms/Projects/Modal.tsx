@@ -20,23 +20,30 @@ export default function ModalBox({ isOpen, onClose, description }: ModalProps) {
     return (
         <Modal
             isOpen={isOpen}
-            onClose={onClose}>
+            onClose={onClose}
+            size={'xl'}>
 
-            <ModalOverlay />
+            <ModalOverlay
+                bg='none'
+                backdropFilter='auto'
+                backdropInvert='5%'
+                backdropBlur='2px' />
+
             <ModalContent
                 bg={"dark_slate.900"}
-                color={'white'}>
+                color={'white'}
+                px={3}>
 
                 <ModalHeader>Detalhes do projeto</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text>
+                    <Text textAlign={'justify'}>
                         {description}
                     </Text>
                 </ModalBody>
 
                 <ModalFooter>
-                    <Button variant={'catchy'} mr={3} onClick={onClose}>
+                    <Button variant={'catchy'} onClick={onClose}>
                         Fechar
                     </Button>
                 </ModalFooter>

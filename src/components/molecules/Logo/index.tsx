@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react"
 import { Image, Link } from "@components/atoms"
 
-import logo from "@assets/img/s.png"
+import logo from "public/logo.png"
 
 export default function Logo() {
     return (

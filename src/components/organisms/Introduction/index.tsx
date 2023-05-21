@@ -64,7 +64,7 @@ export default function Introduction() {
                     alignItems={'center'}
                     variant={'catchy'}
                     href='#contact'>
-                        <Send size={20} />
+                    <Send size={20} />
                     Entrar em contato
                 </Link>
 

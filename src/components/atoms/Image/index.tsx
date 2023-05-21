@@ -4,7 +4,7 @@ import { CSSProperties } from 'react';
 interface ImageProps {
     src: string | StaticImageData;
     alt: string;
-    width: number;
+    width?: number;
     height?: number;
     style?: CSSProperties;
     priority?: boolean;

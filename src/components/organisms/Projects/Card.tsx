@@ -5,13 +5,13 @@ import {
     CardBody,
     CardFooter,
     Flex,
-    Image,
 } from '@chakra-ui/react'
 
 // Modal components
 import { useDisclosure } from '@chakra-ui/react'
 
-import { Button, Title, Link, IconLink } from '@components/atoms'
+import { Button, Title, Link, IconLink, Image } from '@components/atoms'
+import { StaticImageData } from 'next/image';
 import { Eye, GitHub, Info } from 'react-feather';
 import ModalBox from './Modal';
 
@@ -20,7 +20,7 @@ interface ICard extends CardProps {
     repo?: string;
     preview?: string;
     description: string;
-    image: string;
+    image: string | StaticImageData;
 }
 
 export default function Card({ title, description, preview, repo, image, ...props }: ICard) {
@@ -39,16 +39,20 @@ export default function Card({ title, description, preview, repo, image, ...prop
                 {...props}>
 
                 <Image
-                    objectFit='cover'
-                    borderTopRadius={"md"}
                     src={image}
-                    alt='Imagem'
-                    height={{ base: 200, md: 250 }} />
+                    alt='Preview do projeto'
+                    height={225}
+                    style={{
+                        objectFit: 'cover',
+                        borderTopRightRadius: 7,
+                        borderTopLeftRadius: 7,
+                        width: "100%"
+                    }} />
 
                 <CardBody py={4}>
 
                     <Flex align={'center'} justify={'space-between'}>
-                        <Title fontSize={'xl'}>{title}</Title>
+                        <Title fontSize={{base: 'lg', md: 'xl'}} lineHeight={"initial"}>{title}</Title>
 
                         <IconLink
                             pointerEvents={repo ? 'auto' : 'none'}
