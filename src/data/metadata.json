@@ -3,7 +3,7 @@
     "@type": "WebSite",
     "name": "Samuel Molendolff Teixeira - Portfolio",
     "headline": "Portfolio of Samuel Molendolff Teixeira - Software Developer",
-    "url": "https://samuelmteixeira.vercel.app",
+    "url": "https://samuelmteixeira.dev",
     "description": "A Software Developer's Portofio",
     "author": {
         "@type": "Person",
@@ -23,7 +23,7 @@
     },
     "image": {
         "@type": "ImageObject",
-        "url": "https://samuelmteixeira.vercel.app/logo.svg"
+        "url": "https://samuelmteixeira.dev/logo.png"
     },
     "keywords": [
         "Portfolio",
@@ -35,7 +35,6 @@
         "Desenvolvedor",
         "Front-End",
         "Back-End",
-        "Engenheiro de software",
-        "Portfólio"
+        "Engenheiro de software"
     ]
 }
