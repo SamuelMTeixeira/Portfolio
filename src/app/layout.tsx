@@ -19,7 +19,7 @@ export const metadata = {
     "Engenheiro de software"
   ],
   alternates: {
-    canonical: "/"
+    canonical: "https://samuelmteixeira.dev"
   },
   openGraph: {
     images: {
