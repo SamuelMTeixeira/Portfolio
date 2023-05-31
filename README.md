@@ -6,7 +6,7 @@ This is my personal web portfolio built with React, showcasing my skills and pro
 
 ![Logo](demo/preview.png)
 
-[🔗 Click here to see the website](https://samuelmteixeira.vercel.app/)
+[🔗 Click here to see the website](https://samuelmteixeira.dev)
 ## 🛠 Technologies used
 Typscript, React, Next.js, Chakra UI, Lottie, EmailJS and more...
 

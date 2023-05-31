@@ -1,5 +1,49 @@
 {
     "@context": "http://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Teófilo Otoni, Minas Gerais, Brasil",
+                "addressCountry": "br"
+            },
+            "alumniOf": [
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "Instituto Federal do Norte de Minas Gerais - IFNMG",
+                    "member": {
+                        "@type": "OrganizationRole",
+                        "startDate": "2020-01",
+                        "endDate": "2023-04"
+                    }
+                }
+            ],
+            "awards": [],
+            "image": {
+                "@type": "ImageObject",
+                "contentUrl": "https://media.licdn.com/dms/image/D4D03AQGZstd8fuU3oQ/profile-displayphoto-shrink_800_800/0/1668741601215?e=2147483647&v=beta&t=QTNvBrdvAdvN0IVKpMPeiJLEsEMpl46lQf1oNd4fVI8"
+            },
+            "jobTitle": [
+                "Information Technology Support Analyst",
+                "Software Developer",
+                "Software Analyst"
+            ],
+            "name": "Samuel Molendolff Teixeira",
+            "sameAs": "https://br.linkedin.com/in/samuelmteixeira",
+            "url": "https://samuelmteixeira.dev",
+            "memberOf": [],
+            "description": "A software developer who thrives on crafting elegant solutions to complex problems. With a passion for clean code and innovative technologies, I specialize in creating robust and scalable software applications."
+        },
+        {
+            "@type": "WebPage",
+            "url": "https://samuelmteixeira.dev",
+            "reviewedBy": {
+                "@type": "Person",
+                "name": "Samuel Molendolff Teixeira"
+            }
+        }
+    ],
     "@type": "WebSite",
     "name": "Samuel Molendolff Teixeira - Portfolio",
     "headline": "Portfolio of Samuel Molendolff Teixeira - Software Developer",
