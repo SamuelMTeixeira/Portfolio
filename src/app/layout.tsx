@@ -3,6 +3,10 @@ import ThemeProvider from '@assets/theme/ThemeProvider'
 import jsonLd from '@/data/metadata.json'
 
 export const metadata = {
+  robots: {
+    index: true,
+    follow: true,
+  },
   title: "Samuel Molendolff Teixeira",
   description: "A Software Developer's Portofio",
   authors: { name: "Samuel Molendolff Teixeira", url: "https://www.linkedin.com/in/samuelmteixeira/" },
