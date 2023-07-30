@@ -1,17 +1,5 @@
-import {
-    Button as Btn, ButtonProps
-} from '@chakra-ui/react'
-import { MutableRefObject } from 'react'
+import { Button as Btn, ButtonProps } from '@chakra-ui/react'
 
-
-interface IButton extends ButtonProps {
-    ref?: MutableRefObject<any>;
-}
-
-export default function Button({ children, ...props }: IButton) {
-    return (
-        <Btn {...props}>
-            {children}
-        </Btn>
-    )
+export default function Button({ children, ...props }: ButtonProps) {
+  return <Btn {...props}>{children}</Btn>
 }

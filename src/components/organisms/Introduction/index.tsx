@@ -1,78 +1,70 @@
-import { Flex } from "@chakra-ui/react";
-import { Title, Text, Link } from "@components/atoms";
+import { Flex } from '@chakra-ui/react'
+import { Title, Text, Link } from '@components/atoms'
 import { Section } from '@components/molecules'
-import { Send } from "react-feather";
+import { Send } from 'react-feather'
 import './transitions.css'
 
 export default function Introduction() {
-    return (
-        <Section
-            id="home"
-            fullSize
-            justify={'center'}>
+  return (
+    <Section id="home" fullSize justify={'center'}>
+      <Flex justify={{ base: 'center', md: 'flex-start' }} gap={2}>
+        <Title
+          className="emoji"
+          as={'h2'}
+          position={'relative'}
+          fontSize={{ base: 'sm', sm: 'md', md: '2xl' }}
+        >
+          👋
+        </Title>
 
-            <Flex
-                justify={{ base: "center", md: "flex-start" }}
-                gap={2}>
-                <Title
-                    className="emoji"
-                    as={'h2'}
-                    position={'relative'}
-                    fontSize={{ base: "sm", sm: "md", md: "2xl" }}>
-                    👋
-                </Title>
+        <Title
+          as={'h2'}
+          position={'relative'}
+          color={'golden.500'}
+          textDecoration={'underline'}
+          fontSize={{ base: 'sm', sm: 'md', md: '2xl' }}
+          textUnderlineOffset={{ base: 4, md: 8, lg: 9 }}
+        >
+          Olá! meu nome é Samuel Teixeira
+        </Title>
+      </Flex>
 
-                <Title
-                    as={'h2'}
-                    position={'relative'}
-                    color={'golden.500'}
-                    textDecoration={"underline"}
-                    fontSize={{ base: "sm", sm: "md", md: "2xl" }}
-                    textUnderlineOffset={{ base: 4, md: 8, lg: 9 }}>
-                    Olá! meu nome é Samuel Teixeira
-                </Title>
-            </Flex>
+      <Title
+        as={'h1'}
+        fontSize={{ base: '2xl', sm: '2xl', md: '4xl', lg: '6xl' }}
+        mt={2}
+        maxW={'5xl'}
+        textAlign={{ base: 'center', md: 'start' }}
+        lineHeight={'initial'}
+      >
+        Transformo ideias em soluções tecnológicas disruptivas
+      </Title>
 
-            <Title
-                as={"h1"}
-                fontSize={{ base: "2xl", sm: "2xl", md: "4xl", lg: '6xl' }}
-                mt={2}
-                maxW={"5xl"}
-                textAlign={{ base: "center", md: "start" }}
-                lineHeight={"initial"}>
-                Transformo ideias em soluções tecnológicas disruptivas
-            </Title>
+      <Text
+        maxW={'2xl'}
+        textAlign={{ base: 'justify', md: 'start' }}
+        mt={4}
+        color={'gray.400'}
+      >
+        Sou um desenvolvedor especializado em desenvolvimento web e mobile, com
+        habilidades em JavaScript, React, Node.js e outras tecnologias. Além
+        disso, sou um grande apreciador de café e acredito que uma boa pausa
+        para um café pode ajudar a manter a produtividade e a criatividade.
+      </Text>
 
-            <Text
-                maxW={"2xl"}
-                textAlign={{ base: "justify", md: "start" }}
-                mt={4}
-                color={"gray.400"}>
-                Sou um desenvolvedor especializado em desenvolvimento web e mobile, com habilidades em JavaScript,
-                React, Node.js e outras tecnologias.
-                Além disso, sou um grande apreciador de café e acredito que uma boa pausa para um café
-                pode ajudar a manter a produtividade e a criatividade.
-            </Text>
-
-
-            <Flex mt={4} direction={{ base: "column", md: "row" }}>
-
-                <Link
-                    display={'flex'}
-                    gap={3}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    variant={'catchy'}
-                    href='#contact'>
-                    <Send size={20} />
-                    Entrar em contato
-                </Link>
-
-            </Flex>
-
-
-
-
-        </Section>
-    )
+      <Flex mt={4} direction={{ base: 'column', md: 'row' }}>
+        <Link
+          display={'flex'}
+          gap={3}
+          justifyContent={'center'}
+          alignItems={'center'}
+          variant={'catchy'}
+          href="#contact"
+        >
+          <Send size={20} />
+          Entrar em contato
+        </Link>
+      </Flex>
+    </Section>
+  )
 }

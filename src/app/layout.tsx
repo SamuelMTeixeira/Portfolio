@@ -7,35 +7,39 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  title: "Samuel Molendolff Teixeira",
+  title: 'Samuel Molendolff Teixeira',
   description: "A Software Developer's Portofio",
-  authors: { name: "Samuel Molendolff Teixeira", url: "https://www.linkedin.com/in/samuelmteixeira/" },
+  authors: {
+    name: 'Samuel Molendolff Teixeira',
+    url: 'https://www.linkedin.com/in/samuelmteixeira/',
+  },
   keywords: [
-    "Portfolio",
-    "Developer",
-    "Software Developer",
-    "Front-End Developer",
-    "Back-End Developer",
-    "Software Engineer",
-    "Desenvolvedor",
-    "Front-End",
-    "Back-End",
-    "Engenheiro de software"
+    'Portfolio',
+    'Developer',
+    'Software Developer',
+    'Front-End Developer',
+    'Back-End Developer',
+    'Software Engineer',
+    'Desenvolvedor',
+    'Front-End',
+    'Back-End',
+    'Engenheiro de software',
   ],
   alternates: {
-    canonical: "https://samuelmteixeira.dev"
+    canonical: 'https://samuelmteixeira.dev',
   },
   openGraph: {
     images: {
-      url: "/logo.png",
-      alt: "Yellow letter S, used as the representative logo of the website",
-      type: "image/png"
+      url: '/logo.png',
+      alt: 'Yellow letter S, used as the representative logo of the website',
+      type: 'image/png',
     },
-    title: "Samuel Molendolff Teixeira",
-    type: "website",
-    description: "Check out my software development portfolio, where I share my projects and experiences in the area.",
-    url: "https://samuelmteixeira.dev",
-  }
+    title: 'Samuel Molendolff Teixeira',
+    type: 'website',
+    description:
+      'Check out my software development portfolio, where I share my projects and experiences in the area.',
+    url: 'https://samuelmteixeira.dev',
+  },
 }
 
 export default function RootLayout({
@@ -44,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" prefix="og: https://ogp.me/ns#">
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"

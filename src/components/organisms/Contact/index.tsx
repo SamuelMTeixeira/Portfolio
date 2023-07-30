@@ -1,177 +1,183 @@
 // Hooks
-import { useState } from 'react';
-import useEmail from '@hooks/useEmail';
+import { useState } from 'react'
+import useEmail from '@hooks/useEmail'
 
 // Form
 import {
-    Box,
-    Flex,
-    Button,
-    FormControl,
-    FormLabel,
-    Input,
-    InputGroup,
-    InputLeftElement,
-    Textarea,
-} from '@chakra-ui/react';
+  Box,
+  Flex,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Textarea,
+} from '@chakra-ui/react'
 
 // Molecules
-import { Section } from "@components/molecules";
-import Lottie from "lottie-react";
-import SucessAlert from './SucessAlert';
+import { Section } from '@components/molecules'
+import Lottie from 'lottie-react'
+import SucessAlert from './SucessAlert'
 
 // Assets
-import contactAnimation from '@assets/lottie/contact.json';
-import { Mail, User } from 'react-feather';
+import contactAnimation from '@assets/lottie/contact.json'
+import { Mail, User } from 'react-feather'
 
 interface FormProps {
-    name: string;
-    email: string;
-    message: string;
+  name: string
+  email: string
+  message: string
 }
 
 const initialFormData = {
-    name: '',
-    email: '',
-    message: ''
+  name: '',
+  email: '',
+  message: '',
 }
 
 export default function Contact() {
-    const [formData, setFormData] = useState<FormProps>(initialFormData)
+  const [formData, setFormData] = useState<FormProps>(initialFormData)
 
-    const [showAlert, setShowAlert] = useState<boolean>(false)
+  const [showAlert, setShowAlert] = useState<boolean>(false)
 
-    const { sendEmail, success, error } = useEmail()
+  const { sendEmail, success, error } = useEmail()
 
-    const handleSubmit = async (event: React.FormEvent<any>) => {
-        event.preventDefault();
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement | HTMLDivElement>,
+  ) => {
+    event.preventDefault()
 
-        await sendEmail({
-            form: formData,
-            publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '',
-            serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
-            templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || ''
-        });
+    await sendEmail({
+      form: formData,
+      publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '',
+      serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
+      templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || '',
+    })
 
-        if (error) {
-            console.error(error)
-        }
-        if (success) {
-            setFormData(initialFormData)
-            setShowAlert(true)
-        }
+    if (error) {
+      console.error(error)
     }
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-
-        const { name, value } = event.target;
-
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+    if (success) {
+      setFormData(initialFormData)
+      setShowAlert(true)
     }
+  }
 
-    return (
-        <Section
-            id="contact"
-            title="Entrar em contato"
-            subtitle="Vamos transformar suas ideias em realidade?"
-            mt={12}>
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target
 
-            <Flex
-                mt={4}
-                gap={10}
-                direction={{ base: 'column', md: 'row' }}
-                align={'center'}
-                justify={'space-evenly'}>
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
 
-                <Box
-                    pointerEvents={'none'}
-                    w={{ base: '100%', sm: '80%', md: '60%', lg: '50%', xl: '55%' }}>
+  return (
+    <Section
+      id="contact"
+      title="Entrar em contato"
+      subtitle="Vamos transformar suas ideias em realidade?"
+      mt={12}
+    >
+      <Flex
+        mt={4}
+        gap={10}
+        direction={{ base: 'column', md: 'row' }}
+        align={'center'}
+        justify={'space-evenly'}
+      >
+        <Box
+          pointerEvents={'none'}
+          w={{ base: '100%', sm: '80%', md: '60%', lg: '50%', xl: '55%' }}
+        >
+          <Lottie
+            width={'100%'}
+            animationData={contactAnimation}
+            autoPlay
+            loop
+            initialSegment={[20, 91]}
+          />
+        </Box>
 
-                    <Lottie
-                        width={'100%'}
-                        animationData={contactAnimation}
-                        autoPlay
-                        loop
-                        initialSegment={[20, 91]} />
-                </Box>
+        <Flex
+          flex={1}
+          gap={5}
+          borderRadius="lg"
+          p={8}
+          mx={{ base: 0, md: 0, lg: 5 }}
+          direction={'column'}
+          bg={'dark_slate.900'}
+          color={'white'}
+          shadow="base"
+          as={'form'}
+          onSubmit={handleSubmit}
+        >
+          <FormControl isRequired>
+            <FormLabel>Nome</FormLabel>
 
-                <Flex
-                    flex={1}
-                    gap={5}
-                    borderRadius="lg"
-                    p={8}
-                    mx={{ base: 0, md: 0, lg: 5 }}
-                    direction={'column'}
-                    bg={'dark_slate.900'}
-                    color={'white'}
-                    shadow="base"
-                    as={'form'}
-                    onSubmit={handleSubmit}>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <User size={20} />
+              </InputLeftElement>
+              <Input
+                type="text"
+                name="name"
+                onChange={handleChange}
+                value={formData.name}
+                placeholder="Seu nome"
+              />
+            </InputGroup>
+          </FormControl>
 
-                    <FormControl isRequired>
-                        <FormLabel>Nome</FormLabel>
+          <FormControl isRequired>
+            <FormLabel>Email</FormLabel>
 
-                        <InputGroup>
-                            <InputLeftElement
-                                pointerEvents='none'>
-                                <User size={20} />
-                            </InputLeftElement>
-                            <Input
-                                type="text"
-                                name="name"
-                                onChange={handleChange}
-                                value={formData.name}
-                                placeholder="Seu nome" />
-                        </InputGroup>
-                    </FormControl>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Mail size={20} />
+              </InputLeftElement>
+              <Input
+                type="email"
+                name="email"
+                onChange={handleChange}
+                value={formData.email}
+                placeholder="Seu Email"
+              />
+            </InputGroup>
+          </FormControl>
 
-                    <FormControl isRequired>
-                        <FormLabel>Email</FormLabel>
+          <FormControl isRequired>
+            <FormLabel>Mensagem</FormLabel>
 
-                        <InputGroup>
-                            <InputLeftElement
-                                pointerEvents='none'>
-                                <Mail size={20} />
-                            </InputLeftElement>
-                            <Input
-                                type="email"
-                                name="email"
-                                onChange={handleChange}
-                                value={formData.email}
-                                placeholder="Seu Email" />
-                        </InputGroup>
-                    </FormControl>
+            <Textarea
+              onChange={handleChange}
+              name="message"
+              placeholder="Escreva sua mensagem"
+              value={formData.message}
+              rows={5}
+              resize="none"
+            />
+          </FormControl>
 
-                    <FormControl isRequired>
-                        <FormLabel>Mensagem</FormLabel>
+          <Button
+            type={'submit'}
+            bg={'dark_slate.700'}
+            _hover={{ bg: 'dark_slate.600' }}
+          >
+            Enviar mensagem
+          </Button>
 
-                        <Textarea
-                            onChange={handleChange}
-                            name="message"
-                            placeholder="Escreva sua mensagem"
-                            value={formData.message}
-                            rows={5}
-                            resize="none"
-                        />
-                    </FormControl>
-
-                    <Button type={'submit'} bg={'dark_slate.700'} _hover={{ bg: 'dark_slate.600' }}>Enviar mensagem</Button>
-
-                    {
-                        showAlert ? (
-                            <SucessAlert
-                                onClose={() => setShowAlert(false)}
-                                message='A mensagem foi encaminhada e em breve será respondida' />
-                        ) : null
-                    }
-
-                </Flex>
-
-            </Flex >
-
-        </Section >
-    )
+          {showAlert ? (
+            <SucessAlert
+              onClose={() => setShowAlert(false)}
+              message="A mensagem foi encaminhada e em breve será respondida"
+            />
+          ) : null}
+        </Flex>
+      </Flex>
+    </Section>
+  )
 }

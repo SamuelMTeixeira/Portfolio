@@ -1,3 +1,3 @@
-import useEmail from "./useEmail";
+import useEmail from './useEmail'
 
 export { useEmail }
