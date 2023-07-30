@@ -1,6 +1,6 @@
 // Hooks
 import { useState } from 'react'
-import useEmail from '@hooks/useEmail'
+import { useEmail } from '@/features/email'
 
 // Form
 import {
@@ -164,8 +164,7 @@ export default function Contact() {
 
           <Button
             type={'submit'}
-            bg={'dark_slate.700'}
-            _hover={{ bg: 'dark_slate.600' }}
+            variant={'catchy'}
           >
             Enviar mensagem
           </Button>

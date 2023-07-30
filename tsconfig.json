@@ -24,9 +24,6 @@
       }
     ],
     "paths": {
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
       "@components/*": [
         "./src/components/*"
       ],
