@@ -1,36 +1,62 @@
-import { Container, Flex } from "@chakra-ui/react";
-import { Section } from '@components/molecules'
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import Card from "./Card";
-import projects from "@/data/projects";
+import { useQuery } from "react-query";
+import ProjectsSection from "./ProjectsSection";
+import { fetchProjects } from "@/features/projects";
+import Skeleton from "./Skeleton";
 
 export default function Projects() {
 
-    return (
-        <Section
-            id="projects"
-            title="Explorando minhas criações"
-            subtitle="Projetos recentes">
+    const { isLoading, data } = useQuery("projects", fetchProjects)
 
-            <Container maxWidth={'full'} mt={10}>
-                <Flex flexWrap="wrap" gridGap={{ base: 4, lg: 6 }} align={'center'} justify={{ base: 'center' }}>
-                    {
-                        projects.map(({ title, description, image, repo, preview }, index) => (
+    if (isLoading || !data) {
+        return (
+            <ProjectsSection>
+                <Grid
+                    templateColumns={{
+                        base: 'repeat(1, 1fr)',
+                        lg: 'repeat(2, 1fr)',
+                    }}
+                    gap={{ base: 4, lg: 6 }}
+                    gridAutoFlow="dense"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <Skeleton />
+                    <Skeleton />
+                </Grid>
+
+            </ProjectsSection>
+        )
+    }
+
+    return (
+        <ProjectsSection>
+            <Grid
+                templateColumns={{
+                    base: 'repeat(1, 1fr)',
+                    lg: 'repeat(2, 1fr)',
+                }}
+                gap={{ base: 4, lg: 6 }}
+                gridAutoFlow="dense"
+                justifyContent="center"
+                alignItems="center"
+            >
+                {
+                    data.map(({ name, description, image, repo, preview }, index) => (
+                        <Flex key={index} justifyContent={'center'} alignItems="center">
                             <Card
                                 key={index}
-                                title={title}
+                                title={name}
                                 description={description}
                                 image={image}
                                 preview={preview}
                                 repo={repo}
                             />
-                        ))
-                    }
-                </Flex>
-            </Container>
-
-
-
-
-        </Section>
+                        </Flex>
+                    ))
+                }
+            </Grid>
+        </ProjectsSection>
     )
 }

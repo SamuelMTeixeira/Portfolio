@@ -5,6 +5,7 @@ import {
     CardBody,
     CardFooter,
     Flex,
+    Box
 } from '@chakra-ui/react'
 
 // Modal components
@@ -29,34 +30,32 @@ export default function Card({ title, description, preview, repo, image, ...prop
 
     return (
         <>
-
             <CardBase
-                maxW={{ base: 'lg', md: 'sm' }}
-                width={'lg'}
+                width={{ base: 'xs', sm: 'sm', md: 'md', xl: 'lg' }}
                 bg={"dark_slate.900"}
                 color={'white'}
                 boxShadow={'sm'}
+                borderRadius={'lg'}
                 {...props}>
 
                 <Image
                     src={image}
                     alt='Preview do projeto'
-                    height={225}
+                    width={200}
+                    height={200}
                     style={{
                         objectFit: 'cover',
-                        borderTopRightRadius: 7,
-                        borderTopLeftRadius: 7,
+                        borderTopRightRadius: '0.5rem',
+                        borderTopLeftRadius: '0.5rem',
                         width: "100%"
                     }} />
-
                 <CardBody py={4}>
 
                     <Flex align={'center'} justify={'space-between'}>
-                        <Title fontSize={{base: 'lg', md: 'xl'}} lineHeight={"initial"}>{title}</Title>
+                        <Title fontSize={{ base: 'lg', md: 'xl' }} lineHeight={"initial"}>{title}</Title>
 
                         <IconLink
-                            pointerEvents={repo ? 'auto' : 'none'}
-                            color={repo ? "white" : 'whiteAlpha.400'}
+                            isDisable={!!repo}
                             icon={<GitHub size={20} />}
                             href={repo ? repo : '#'}
                             target="_blank"
@@ -83,6 +82,7 @@ export default function Card({ title, description, preview, repo, image, ...prop
                     <Button
                         onClick={onOpen}
                         variant='ghost'
+                        color={'white'}
                         fontWeight={'bold'}
                         flex='1'
                         borderRadius={'md'}

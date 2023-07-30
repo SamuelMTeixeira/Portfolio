@@ -13,11 +13,14 @@ import {
 
 // Data
 import menuOptions from "@/data/menuOptions"
+import { QueryClient, QueryClientProvider } from "react-query"
 
 export default function Home() {
 
+    const queryClient = new QueryClient()
     return (
-        <>
+        <QueryClientProvider client={queryClient}>
+            
             <Header menuOptions={menuOptions} />
 
             <Aside />
@@ -40,7 +43,6 @@ export default function Home() {
                 <Footer />
             </Flex>
 
-
-        </>
+        </QueryClientProvider>
     )
 }

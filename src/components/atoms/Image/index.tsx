@@ -1,16 +1,14 @@
-import Img, { StaticImageData } from 'next/image'
-import { CSSProperties } from 'react';
+import Img, { ImageProps } from 'next/image'
 
-interface ImageProps {
-    src: string | StaticImageData;
+interface Image extends ImageProps {
     alt: string;
-    width?: number;
-    height?: number;
-    style?: CSSProperties;
+    width?: number; 
+    height?: number; 
+    fill?: boolean;
     priority?: boolean;
 }
 
-export default function Image({ alt, src, width, height, style, priority, ...props }: ImageProps) {
+export default function Image({ alt, src, width, height, style, priority, ...props }: Image) {
     return (
         <Img
             style={style}
