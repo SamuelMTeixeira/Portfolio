@@ -1,6 +1,7 @@
 // Hooks
 import { useState } from 'react'
-import { useEmail } from '@/features/email'
+import { EmailProps, useEmail, useForm } from '@/features/email'
+import { SubmitHandler } from 'react-hook-form'
 
 // Form
 import {
@@ -24,30 +25,14 @@ import SucessAlert from './SucessAlert'
 import contactAnimation from '@assets/lottie/contact.json'
 import { Mail, User } from 'react-feather'
 
-interface FormProps {
-  name: string
-  email: string
-  message: string
-}
-
-const initialFormData = {
-  name: '',
-  email: '',
-  message: '',
-}
-
 export default function Contact() {
-  const [formData, setFormData] = useState<FormProps>(initialFormData)
+  const { handleSubmit, register } = useForm()
 
   const [showAlert, setShowAlert] = useState<boolean>(false)
 
   const { sendEmail, success, error } = useEmail()
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement | HTMLDivElement>,
-  ) => {
-    event.preventDefault()
-
+  const onSubmit: SubmitHandler<EmailProps> = async (formData) => {
     await sendEmail({
       form: formData,
       publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '',
@@ -59,20 +44,8 @@ export default function Contact() {
       console.error(error)
     }
     if (success) {
-      setFormData(initialFormData)
       setShowAlert(true)
     }
-  }
-
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = event.target
-
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }))
   }
 
   return (
@@ -92,13 +65,13 @@ export default function Contact() {
         <Box
           pointerEvents={'none'}
           w={{ base: '100%', sm: '80%', md: '60%', lg: '50%', xl: '55%' }}
+          display={{ base: 'none', md: 'flex' }}
         >
           <Lottie
-            width={'100%'}
+            width={'70%'}
             animationData={contactAnimation}
             autoPlay
             loop
-            initialSegment={[20, 91]}
           />
         </Box>
 
@@ -113,7 +86,7 @@ export default function Contact() {
           color={'white'}
           shadow="base"
           as={'form'}
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <FormControl isRequired>
             <FormLabel>Nome</FormLabel>
@@ -124,10 +97,8 @@ export default function Contact() {
               </InputLeftElement>
               <Input
                 type="text"
-                name="name"
-                onChange={handleChange}
-                value={formData.name}
                 placeholder="Seu nome"
+                {...register('name')}
               />
             </InputGroup>
           </FormControl>
@@ -141,10 +112,8 @@ export default function Contact() {
               </InputLeftElement>
               <Input
                 type="email"
-                name="email"
-                onChange={handleChange}
-                value={formData.email}
                 placeholder="Seu Email"
+                {...register('email')}
               />
             </InputGroup>
           </FormControl>
@@ -153,19 +122,14 @@ export default function Contact() {
             <FormLabel>Mensagem</FormLabel>
 
             <Textarea
-              onChange={handleChange}
-              name="message"
+              {...register('message')}
               placeholder="Escreva sua mensagem"
-              value={formData.message}
               rows={5}
               resize="none"
             />
           </FormControl>
 
-          <Button
-            type={'submit'}
-            variant={'catchy'}
-          >
+          <Button type={'submit'} variant={'catchy'}>
             Enviar mensagem
           </Button>
 

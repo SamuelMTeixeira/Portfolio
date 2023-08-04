@@ -1,3 +1,5 @@
-import useEmail from "./hooks/useEmail";
+import useEmail from './hooks/useEmail'
+import useForm from './hooks/useForm'
+import type EmailProps from './types/EmailProps'
 
-export { useEmail }
+export { useEmail, EmailProps, useForm }
