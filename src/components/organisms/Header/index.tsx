@@ -66,7 +66,7 @@ export default function Header({
           {/* Btn hamburguer */}
           <IconButton
             onClick={onOpen}
-            icon={<HamburgerIcon size={32} />}
+            icon={<HamburgerIcon size={32} color={'#FFFFFF'} />}
             bg={'transparent'}
             _hover={{
               bg: 'dark_blue.800',

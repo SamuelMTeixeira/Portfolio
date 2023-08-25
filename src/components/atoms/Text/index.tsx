@@ -4,23 +4,18 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'], weight: ['300', '400'] })
 
-interface IText extends TextProps {
-  children: string
-}
-
 export default function Text({
   children,
   fontSize,
   fontWeight,
   ...props
-}: IText) {
-  const size = fontSize || 'md'
+}: TextProps) {
   const weight = fontWeight || 'normal'
 
   return (
     <Txt
       className={inter.className}
-      fontSize={size}
+      fontSize={fontSize || 'md'}
       fontWeight={weight}
       {...props}
     >

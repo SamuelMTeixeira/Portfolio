@@ -6,7 +6,7 @@ const skills = [
     description:
       'Experiência em desenvolvimento de aplicações web com foco em interfaces modernas e responsivas.',
     languages: 'HTML, CSS, JavaScript, TypeScript | Next',
-    tools: ['React.js', 'Material UI', 'Chakra UI'],
+    tools: ['React.js', 'Material UI, Chakra', 'Tailwind, Bootstrap'],
     icon: <PenTool size={30} />,
   },
   {
@@ -14,7 +14,7 @@ const skills = [
     description:
       'Experiência em desenvolvimento de aplicativos mobile para Android e iOS, com foco em desempenho e usabilidade.',
     languages: 'JavaScript, TypeScript, Java',
-    tools: ['React Native', 'NativeBase', 'UI Kitten'],
+    tools: ['React Native, Expo', 'NativeBase, UI Kitten'],
     icon: <Smartphone size={30} />,
   },
   {
@@ -22,23 +22,23 @@ const skills = [
     description:
       'Experiência em desenvolvimento de APIs robustas e escaláveis para suportar as necessidades de negócio.',
     languages: 'JavaScript, TypeScript, PHP, Java, Arduino',
-    tools: ['Node.js', 'Express.js', 'Laravel'],
+    tools: ['Node.js', 'Laravel', 'Express, Fastify'],
     icon: <Code size={30} />,
   },
   {
     title: 'Bancos de Dados',
     description:
       'Experiência em modelagem e implementação de bancos de dados para atender às necessidades de negócio.',
-    languages: 'MySQL, MariaDB, GraphQL',
-    tools: ['SQL', 'Apollo Server'],
+    languages: 'MySQL, MariaDB, PostgreSQL e GraphQL',
+    tools: ['SQL', 'Apollo Server', 'Sequelize, Prisma'],
     icon: <Database size={30} />,
   },
   {
     title: 'DevOps e Infraestrutura',
     description:
       'Experiência em gerenciamento de infraestrutura e aplicativos em ambientes de produção.',
-    languages: 'CLI, Git',
-    tools: ['Docker', 'Linux', 'Oracle Cloud'],
+    languages: 'Bash, CLI, Git',
+    tools: ['Docker, Portainer', 'Linux, Nginx', 'Oracle Cloud'],
     icon: <GitBranch size={30} />,
   },
 ]

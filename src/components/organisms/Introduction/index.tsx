@@ -22,7 +22,7 @@ export default function Introduction() {
           position={'relative'}
           color={'golden.500'}
           textDecoration={'underline'}
-          fontSize={{ base: 'sm', sm: 'md', md: '2xl' }}
+          fontSize={{ base: 'lg', md: '2xl' }}
           textUnderlineOffset={{ base: 4, md: 8, lg: 9 }}
         >
           Olá! meu nome é Samuel Teixeira

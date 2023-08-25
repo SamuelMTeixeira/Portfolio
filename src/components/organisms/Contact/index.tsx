@@ -24,27 +24,27 @@ import SucessAlert from './SucessAlert'
 // Assets
 import contactAnimation from '@assets/lottie/contact.json'
 import { Mail, User } from 'react-feather'
+import { Text } from '@components/atoms'
 
 export default function Contact() {
-  const { handleSubmit, register } = useForm()
+  const { handleSubmit, register, errors, isSubmitted } = useForm()
 
   const [showAlert, setShowAlert] = useState<boolean>(false)
 
-  const { sendEmail, success, error } = useEmail()
+  const { sendEmail } = useEmail()
 
   const onSubmit: SubmitHandler<EmailProps> = async (formData) => {
-    await sendEmail({
-      form: formData,
-      publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '',
-      serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
-      templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || '',
-    })
-
-    if (error) {
-      console.error(error)
-    }
-    if (success) {
-      setShowAlert(true)
+    if (isSubmitted) {
+      console.log('gatilho de enviar ativado')
+      await sendEmail({
+        form: formData,
+        publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '',
+        serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '',
+        templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || '',
+      }).finally(() => {
+        setShowAlert(true)
+        console.log('email enviado')
+      })
     }
   }
 
@@ -56,7 +56,7 @@ export default function Contact() {
       mt={12}
     >
       <Flex
-        mt={4}
+        mt={{ base: 4, lg: 0 }}
         gap={10}
         direction={{ base: 'column', md: 'row' }}
         align={'center'}
@@ -68,7 +68,7 @@ export default function Contact() {
           display={{ base: 'none', md: 'flex' }}
         >
           <Lottie
-            width={'70%'}
+            width={'60%'}
             animationData={contactAnimation}
             autoPlay
             loop
@@ -98,9 +98,16 @@ export default function Contact() {
               <Input
                 type="text"
                 placeholder="Seu nome"
+                isRequired={false}
                 {...register('name')}
               />
             </InputGroup>
+
+            {errors.name && (
+              <Text color={'red.500'} fontSize={'sm'} pt={1} ps={1}>
+                {errors.name?.message}
+              </Text>
+            )}
           </FormControl>
 
           <FormControl isRequired>
@@ -112,33 +119,47 @@ export default function Contact() {
               </InputLeftElement>
               <Input
                 type="email"
-                placeholder="Seu Email"
+                placeholder="exemplo@dominio.com"
+                isRequired={false}
                 {...register('email')}
               />
             </InputGroup>
+
+            {errors.email && (
+              <Text color={'red.500'} fontSize={'sm'} pt={1} ps={1}>
+                {errors.email?.message}
+              </Text>
+            )}
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Mensagem</FormLabel>
 
             <Textarea
-              {...register('message')}
-              placeholder="Escreva sua mensagem"
+              placeholder="Olá, vamos conversar? tenho uma proposta para você."
               rows={5}
               resize="none"
+              isRequired={false}
+              {...register('message')}
             />
+
+            {errors.message && (
+              <Text color={'red.500'} fontSize={'sm'} pt={1} ps={1}>
+                {errors.message?.message}
+              </Text>
+            )}
           </FormControl>
 
           <Button type={'submit'} variant={'catchy'}>
             Enviar mensagem
           </Button>
 
-          {showAlert ? (
+          {showAlert && (
             <SucessAlert
               onClose={() => setShowAlert(false)}
               message="A mensagem foi encaminhada e em breve será respondida"
             />
-          ) : null}
+          )}
         </Flex>
       </Flex>
     </Section>

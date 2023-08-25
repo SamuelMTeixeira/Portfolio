@@ -34,7 +34,7 @@ export default function Footer() {
         mt={3}
       >
         <Text textAlign={'center'} fontSize={'sm'}>
-          © 2022 - 2023 | Coded with 💛 by SamuelMTeixeira
+          © 2022 - 2023 | Coded with 💛 and ☕ by SamuelMTeixeira
         </Text>
 
         <Flex gap={3} display={{ base: 'flex', md: 'none' }}>
