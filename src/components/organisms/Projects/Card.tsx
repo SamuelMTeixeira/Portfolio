@@ -29,6 +29,7 @@ export default function Card({
   ...props
 }: ICard) {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const isDisabled = !!repo
 
   return (
     <>
@@ -59,9 +60,9 @@ export default function Card({
             </Title>
 
             <IconLink
-              isDisable={!!repo}
+              isDisable={!isDisabled}
               icon={<GitHub size={20} />}
-              href={repo || '#'}
+              href={repo || ''}
               target="_blank"
               label={'Ver código base'}
             />
