@@ -14,6 +14,12 @@ class NotionDatabase<T> implements IDatabase<T> {
     try {
       const query = await this.notionClient.databases.query({
         database_id: databaseId,
+        sorts: [
+          {
+            "property": "date",
+            "direction": "descending"
+          }
+        ]
       })
 
       if (!query || !query.results) {
