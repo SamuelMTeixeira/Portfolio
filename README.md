@@ -3,21 +3,9 @@
 
 This is my personal web portfolio built with React, showcasing my skills and projects as a developer.
 ## ⚡️ Demo
+###### [🔗 samuelmteixeira.dev](https://samuelmteixeira.dev)
 
 ![Logo](demo/preview.png)
-
-[🔗 Click here to see the website](https://samuelmteixeira.dev)
-## 🛠 Technologies used
-Typscript, React, Next.js, Chakra UI, Lottie, EmailJS and more...
-
-## ℹ️ Contributing
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
-
 
 ## ▶️ Run Locally
 
@@ -57,8 +45,19 @@ For the e-mail service to work, you need to create an account at emailjs.com and
 
 `NEXT_PUBLIC_EMAIL_TEMPLATE_ID`
 
-For more information how to configure the service, see the documentation: [🔗 Email.js docs](https://www.emailjs.com/docs/introduction/how-does-emailjs-work/)
+`NOTION_TOKEN`
 
+`NOTION_PROJECTS_DATABASE_ID`
+
+For more information how to configure the email service, see the documentation: [🔗 Email.js docs](https://www.emailjs.com/docs/introduction/how-does-emailjs-work/)
+
+## ℹ️ Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
 ## 🤝 Collabs
 
 | ![Samuel](https://avatars.githubusercontent.com/u/91707483?s=150) |
