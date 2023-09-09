@@ -10,16 +10,23 @@ class NotionDatabase<T> implements IDatabase<T> {
     })
   }
 
-  async queryDatabase(databaseId: string): Promise<T[]> {
+  async queryDatabase(
+    databaseId: string,
+    sorts?: Array<
+      | {
+          property: string
+          direction: 'ascending' | 'descending'
+        }
+      | {
+          timestamp: 'created_time' | 'last_edited_time'
+          direction: 'ascending' | 'descending'
+        }
+    >,
+  ): Promise<T[]> {
     try {
       const query = await this.notionClient.databases.query({
         database_id: databaseId,
-        sorts: [
-          {
-            property: 'date',
-            direction: 'descending',
-          },
-        ],
+        sorts,
       })
 
       if (!query || !query.results) {

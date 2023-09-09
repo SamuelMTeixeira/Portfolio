@@ -3,6 +3,11 @@ import ProjectProps from '../types/ProjectProps'
 
 export default class ProjectsDatabase extends NotionDatabase<ProjectProps> {
   async queryDatabase(databaseId: string): Promise<ProjectProps[]> {
-    return await super.queryDatabase(databaseId)
+    return await super.queryDatabase(databaseId, [
+      {
+        property: 'date',
+        direction: 'descending',
+      },
+    ])
   }
 }
