@@ -1,29 +1,23 @@
-import { Text as Txt, TextProps } from '@chakra-ui/react'
-
-import { Inter } from 'next/font/google'
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['500', '600', '700', '800', '900'],
-})
+import { inter } from '@/app/fonts'
+import { Heading, HeadingProps } from '@chakra-ui/react'
 
 export default function Title({
   children,
   fontSize,
   fontWeight,
   ...props
-}: TextProps) {
+}: HeadingProps) {
   const size = fontSize || '2xl'
   const weight = fontWeight || 'bold'
 
   return (
-    <Txt
+    <Heading
       className={inter.className}
       fontSize={size}
       fontWeight={weight}
       {...props}
     >
       {children}
-    </Txt>
+    </Heading>
   )
 }

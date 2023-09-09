@@ -16,10 +16,10 @@ class NotionDatabase<T> implements IDatabase<T> {
         database_id: databaseId,
         sorts: [
           {
-            "property": "date",
-            "direction": "descending"
-          }
-        ]
+            property: 'date',
+            direction: 'descending',
+          },
+        ],
       })
 
       if (!query || !query.results) {

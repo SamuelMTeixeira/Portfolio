@@ -1,6 +1,8 @@
+import Providers from './providers'
+
 // Meta dados
-import ThemeProvider from '@assets/theme/ThemeProvider'
 import jsonLd from '@/data/metadata.json'
+import { inter } from './fonts'
 
 export const metadata = {
   robots: {
@@ -48,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <script
           type="application/ld+json"
@@ -56,7 +58,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

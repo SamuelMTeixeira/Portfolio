@@ -7,22 +7,21 @@ import './transitions.css'
 export default function Introduction() {
   return (
     <Section id="home" fullSize justify={'center'}>
-      <Flex justify={{ base: 'center', md: 'flex-start' }} gap={2}>
+      <Flex justify={{ base: 'center', md: 'flex-start' }} gap={1}>
         <Title
           className="emoji"
           as={'h2'}
           position={'relative'}
-          fontSize={{ base: 'sm', sm: 'md', md: '2xl' }}
+          fontSize={{ base: 'md', sm: 'lg', md: '2xl' }}
         >
           👋
         </Title>
 
         <Title
           as={'h2'}
-          position={'relative'}
           color={'golden.500'}
           textDecoration={'underline'}
-          fontSize={{ base: 'lg', md: '2xl' }}
+          fontSize={{ base: 'sm', sm: 'lg', md: '2xl' }}
           textUnderlineOffset={{ base: 4, md: 8, lg: 9 }}
         >
           Olá! meu nome é Samuel Teixeira
@@ -46,12 +45,11 @@ export default function Introduction() {
         mt={4}
         color={'gray.400'}
       >
-        Sou um desenvolvedor especializado em desenvolvimento web e mobile, com
-        habilidades em JavaScript, React, Node.js e outras tecnologias. Além
-        disso, sou um grande apreciador de café e acredito que uma boa pausa
-        para um café pode ajudar a manter a produtividade e a criatividade.
+        Sou um engenheiro de software com foco em arquitetura de software e no
+        desenvolvimento de aplicações web. Para mim, o café é uma fonte de
+        inspiração, e acredito que uma boa música é a chave para elevar a
+        produtividade e a criatividade.
       </Text>
-
       <Flex mt={4} direction={{ base: 'column', md: 'row' }}>
         <Link
           display={'flex'}

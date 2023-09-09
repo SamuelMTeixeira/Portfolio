@@ -6,7 +6,11 @@ import { fetchProjects } from '@/features/projects'
 import Skeleton from './Skeleton'
 
 export default function Projects() {
-  const { isLoading, data } = useQuery('projects', fetchProjects)
+  const { isLoading, data } = useQuery('projects', fetchProjects, {
+    staleTime: 5000,
+    cacheTime: 10,
+    refetchInterval: 2000,
+  })
 
   if (isLoading || !data) {
     return (
