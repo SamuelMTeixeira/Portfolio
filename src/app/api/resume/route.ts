@@ -2,12 +2,15 @@ import { NextResponse } from 'next/server'
 import { ResumeDatabase } from '@/features/resumes'
 import IResume from '@/interfaces/IResume'
 
-export async function GET() {
+export async function POST() {
   const notionToken = process.env.NOTION_TOKEN
   const databaseID = process.env.NOTION_CV_DATABASE_ID
 
-  if (!notionToken) throw Error('Missing Notion database ID')
-  if (!databaseID) throw Error('Missing Notion database ID')
+  if (!notionToken || !databaseID)
+    return NextResponse.json(
+      { message: 'Missing Notion database ID' },
+      { status: 401 },
+    )
 
   const resumeDatabase = new ResumeDatabase(notionToken)
 

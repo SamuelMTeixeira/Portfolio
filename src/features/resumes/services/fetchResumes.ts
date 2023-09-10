@@ -5,7 +5,8 @@ export async function fetchResumes() {
     next: {
       revalidate: 1,
     },
-    cache: 'no-store'
+    cache: 'no-store',
+    method: 'POST',
   })
   const resumes: Array<IResume> = await response.json()
   return resumes

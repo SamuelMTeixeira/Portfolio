@@ -5,7 +5,8 @@ export async function fetchProjects() {
     next: {
       revalidate: 1,
     },
-    cache: 'no-store'
+    cache: 'no-store',
+    method: 'POST',
   })
   const projects: Array<IProject> = await response.json()
   return projects

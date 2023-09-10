@@ -2,12 +2,15 @@ import { NextResponse } from 'next/server'
 import IProject from '@/interfaces/IProject'
 import { ProjectsDatabase } from '@/features/projects'
 
-export async function GET() {
+export async function POST() {
   const notionToken = process.env.NOTION_TOKEN
   const databaseID = process.env.NOTION_PROJECTS_DATABASE_ID
 
-  if (!notionToken) throw Error('Missing Notion database ID')
-  if (!databaseID) throw Error('Missing Notion database ID')
+  if (!notionToken || !databaseID)
+    return NextResponse.json(
+      { message: 'Missing Notion database ID' },
+      { status: 401 },
+    )
 
   const projectDatabase = new ProjectsDatabase(notionToken)
 
