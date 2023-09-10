@@ -44,8 +44,8 @@ export default function Card({
         <Image
           src={image}
           alt="Preview do projeto"
-          width={200}
-          height={200}
+          width={1200}
+          height={672}
           style={{
             objectFit: 'cover',
             borderTopRightRadius: '0.5rem',
