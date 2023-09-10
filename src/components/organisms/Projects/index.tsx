@@ -1,15 +1,14 @@
 import { Flex, Grid } from '@chakra-ui/react'
 import Card from './Card'
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 import ProjectsSection from './ProjectsSection'
 import { fetchProjects } from '@/features/projects'
 import Skeleton from './Skeleton'
 
 export default function Projects() {
-  const { isLoading, data } = useQuery('projects', fetchProjects, {
-    staleTime: 5000,
-    cacheTime: 10,
-    refetchInterval: 2000,
+  const { isLoading, data } = useQuery({
+    queryKey: ['projects'],
+    queryFn: fetchProjects,
   })
 
   if (isLoading || !data) {

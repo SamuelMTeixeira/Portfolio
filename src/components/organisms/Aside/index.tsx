@@ -2,13 +2,12 @@ import { fetchResumes } from '@/features/resumes/services/fetchResumes'
 import { Flex } from '@chakra-ui/react'
 import { IconLink } from '@components/atoms'
 import { GitHub, Linkedin, FileText } from 'react-feather'
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 
 export default function Aside() {
-  const { isLoading, data } = useQuery('resumes', fetchResumes, {
-    staleTime: 5000,
-    cacheTime: 10,
-    refetchInterval: 2000,
+  const { isLoading, data } = useQuery({
+    queryKey: ['resumes'],
+    queryFn: fetchResumes,
   })
 
   if (isLoading || !data) {
