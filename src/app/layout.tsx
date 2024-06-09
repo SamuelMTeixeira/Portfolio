@@ -1,4 +1,5 @@
 import Providers from './providers'
+import './globals.css'
 
 // Meta dados
 import jsonLd from '@/data/metadata.json'
