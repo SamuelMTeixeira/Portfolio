@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <>
-      <h1>new interface coming!</h1>
+      <h1 className="underline">new interface coming!</h1>
     </>
   )
 }

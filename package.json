@@ -10,22 +10,23 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
-    "@hookform/resolvers": "^3.3.1",
-    "@notionhq/client": "^2.2.13",
-    "@tanstack/react-query": "^4.35.0",
+    "@emailjs/browser": "^3.12.1",
+    "@hookform/resolvers": "^3.6.0",
+    "@notionhq/client": "^2.2.15",
+    "@tanstack/react-query": "^4.36.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
     "lottie-react": "^2.4.0",
-    "next": "13.4.19",
+    "lucide-react": "^0.395.0",
+    "next": "15.0.0-rc.0",
     "next-themes": "^0.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "^7.46.1",
+    "react": "19.0.0-rc-e684ca66ab-20240619",
+    "react-dom": "19.0.0-rc-e684ca66ab-20240619",
+    "react-hook-form": "^7.52.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.2"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",

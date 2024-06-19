@@ -24,12 +24,6 @@
       }
     ],
     "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
       "@/*": [
         "./src/*"
       ]
