@@ -10,11 +10,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@chakra-ui/next-js": "^2.1.5",
-    "@chakra-ui/react": "^2.8.1",
     "@emailjs/browser": "^3.11.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.3.1",
     "@notionhq/client": "^2.2.13",
     "@tanstack/react-query": "^4.35.0",
@@ -22,15 +18,11 @@
     "clsx": "^2.1.1",
     "framer-motion": "^10.16.4",
     "lottie-react": "^2.4.0",
-    "lucide-react": "^0.390.0",
     "next": "13.4.19",
     "next-themes": "^0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-feather": "^2.0.10",
     "react-hook-form": "^7.46.1",
-    "sharp": "^0.32.5",
-    "swiper": "^9.4.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.2"
