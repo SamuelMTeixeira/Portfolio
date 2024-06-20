@@ -1,6 +1,14 @@
-import { Inter } from 'next/font/google'
+import {
+  Bricolage_Grotesque as BricolageGrotesque,
+  Manrope,
+} from 'next/font/google'
 
-export const inter = Inter({
+export const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--manrope-font',
+})
+
+export const bricolageGrotesque = BricolageGrotesque({
+  subsets: ['latin'],
+  variable: '--bricolage-grotesque-font',
 })

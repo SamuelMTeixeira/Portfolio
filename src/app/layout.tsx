@@ -1,9 +1,7 @@
-import Providers from './providers'
 import './globals.css'
-
-// Meta dados
+import Providers from './providers'
 import jsonLd from '@/data/metadata.json'
-import { inter } from './fonts'
+import { bricolageGrotesque, manrope } from './fonts'
 
 export const metadata = {
   robots: {
@@ -51,14 +49,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html
+      lang="en"
+      className={`${manrope.variable} ${bricolageGrotesque.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body className={'font-manrope'}>
         <Providers>{children}</Providers>
       </body>
     </html>
