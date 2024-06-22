@@ -3,6 +3,9 @@ import Providers from './providers'
 import jsonLd from '@/data/metadata.json'
 import { bricolageGrotesque, manrope } from './fonts'
 
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
+
 export const metadata = {
   robots: {
     index: true,
@@ -43,14 +46,18 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
+  const messages = await getMessages()
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
     >
       <head>
@@ -60,7 +67,11 @@ export default function RootLayout({
         />
       </head>
       <body className={'font-manrope'}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   )

@@ -1,0 +1,9 @@
+{
+    "Header": {
+        "languages":{
+            "title": "Change language",
+            "en": "English",
+            "pt": "Portuguese"
+        }
+    }
+}
