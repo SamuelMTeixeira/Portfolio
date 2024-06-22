@@ -45,7 +45,7 @@ export default function Header() {
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger>
-            <Settings />
+            <Settings className="h-5 w-5" />
           </MenubarTrigger>
           <MenubarContent>
             <MenubarSub>

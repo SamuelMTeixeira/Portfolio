@@ -1,9 +1,15 @@
 {
     "Header": {
-        "languages":{
+        "languages": {
             "title": "Change language",
             "en": "English",
             "pt": "Portuguese"
         }
+    },
+    "Hero": {
+        "title": "I turn ideas into disruptive technological solutions!",
+        "description": "I'm a software engineer and architecture specialist (in training) with more than 2 years' experience in web and mobile applications, and I also work as a freelancer.",
+        "primaryButton": "Get in touch",
+        "secondaryButton": "Explore my work"
     }
 }
