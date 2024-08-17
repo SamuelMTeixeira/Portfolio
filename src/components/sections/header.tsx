@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header className="container mx-auto flex items-center justify-between h-[7vh] md:h-[10vh]">
-      <span className="w-5" />
+      <span className="hidden md:block w-5" />
 
       <div className="flex gap-4 items-center">
         <Image
@@ -45,9 +45,9 @@ export default function Header() {
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger>
-            <Settings className="h-5 w-5" />
+            <Settings className="h-6 w-6" />
           </MenubarTrigger>
-          <MenubarContent>
+          <MenubarContent className="rounded-sm">
             <MenubarSub>
               <MenubarSubTrigger>{t('languages.title')}</MenubarSubTrigger>
               <MenubarSubContent>
