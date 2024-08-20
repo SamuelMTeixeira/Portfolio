@@ -5,12 +5,14 @@ interface MarqueeProps {
   children: ReactNode
   speed?: number
   direction?: 'left' | 'right'
+  className?: string
 }
 
 const Marquee: React.FC<MarqueeProps> = ({
   children,
   speed = 20,
   direction = 'left',
+  className,
 }) => {
   const [contentWidth, setContentWidth] = useState(0)
   const [repeatCount, setRepeatCount] = useState(10)
@@ -50,7 +52,7 @@ const Marquee: React.FC<MarqueeProps> = ({
         maskImage:
           'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
       }}
-      className="max-w-[768px] m-auto overflow-hidden "
+      className={'m-auto overflow-hidden ' + className}
     >
       <motion.div className="flex whitespace-nowrap gap-5" animate={controls}>
         {[...Array(repeatCount)].map((_, index) => (

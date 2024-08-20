@@ -17,5 +17,8 @@
         "tests": "Testes automatizados",
         "accessibility": "Acessibilidade",
         "prototyping": "Prototipagem"
+    },
+    "Skills": {
+        "title": "Minhas habilidades técnicas"
     }
 }

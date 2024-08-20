@@ -17,5 +17,8 @@
         "tests": "Automated testing",
         "accessibility": "Accessibility",
         "prototyping": "Prototyping"
+    },
+    "Skills": {
+        "title": "My technical skills"
     }
 }

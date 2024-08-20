@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import Marquee from '../ui/marquee'
 
 import {
@@ -28,13 +29,15 @@ import {
 } from 'devicons-react'
 
 export default function Skills() {
+  const t = useTranslations('Skills')
+
   return (
     <section id="skills">
-      <h2 className="text-center font-semibold font-bricolage text-2xl my-6">
-        Minhas habilidades técnicas
+      <h2 className="text-center font-semibold font-bricolage text-3xl mt-14 mb-10">
+        {t('title')}
       </h2>
 
-      <Marquee speed={60} direction="left">
+      <Marquee speed={60} direction="left" className="max-w-5xl">
         <JavascriptOriginal size="50" />
         <TypescriptOriginal size="50" />
         <Html5Plain size="50" />
