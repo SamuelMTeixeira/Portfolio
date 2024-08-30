@@ -24,5 +24,14 @@
     "Aboutme": {
         "position": "Developer and Software Architect",
         "content": "My journey is driven by the relentless pursuit of challenges and excellence, in which I am committed to seeking excellence and making a significant difference in the world of technology. I work as a technology analyst and apply my passion and skills to create impact. My journey is just beginning, and I am always open to new opportunities to grow and make a difference!"
+    },
+    "Projects": {
+        "title": "Highlighted projects",
+        "description": "Take a look at my work", 
+        "subtitle": "Projects gallery",
+        "card": {
+            "view": "Preview",
+            "source": "Source code"
+        }
     }
 }
