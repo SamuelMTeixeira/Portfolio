@@ -8,7 +8,7 @@
     },
     "Hero": {
         "title": "Transformo ideias em soluções tecnológicas disruptivas!",
-        "description": "Sou um engenheiro de software e especialista em arquitetura (em formação) com mais de 2 anos de experiência em aplicações web e mobile, também atuo como freelancer.",
+        "description": "Sou um engenheiro de software e especialista em arquitetura de software (em formação) com mais de 2 anos de experiência em aplicações web e mobile, também atuo como freelancer.",
         "primaryButton": "Entrar em contato",
         "secondaryButton": "Explorar projetos",
         "frontend": "Front-End",
@@ -32,6 +32,40 @@
         "card": {
             "view": "Visualizar",
             "source": "Código fonte"
+        }
+    },
+    "Getintouch": {
+        "title": "Entre em contato",
+        "description": "Vamos transformar suas ideias em realidade?",
+        "subtitle": "Contato & social",
+        "form": {
+            "name": {
+                "label": "Nome",
+                "placeholder": "Digite seu nome",
+                "errors": {
+                    "required": "Nome é obrigatório",
+                    "minLength": "Nome deve ter no mínimo 3 caracteres",
+                    "maxLength": "Nome deve ter no máximo 50 caracteres"
+                }
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Digite seu email",
+                "errors": {
+                    "required": "Email é obrigatório",
+                    "invalid": "Email inválido"
+                }
+            },
+            "message": {
+                "label": "Mensagem",
+                "placeholder": "Digite sua mensagem",
+                "errors": {
+                    "required": "Mensagem é obrigatória",
+                    "minLength": "Mensagem deve ter no mínimo 10 caracteres",
+                    "maxLength": "Mensagem deve ter no máximo 500 caracteres"
+                }
+            },
+            "submit": "Enviar mensagem"
         }
     }
 }

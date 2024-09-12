@@ -8,7 +8,7 @@
     },
     "Hero": {
         "title": "I turn ideas into disruptive technological solutions!",
-        "description": "I'm a software engineer and architecture specialist (in training) with more than 2 years' experience in web and mobile applications, and I also work as a freelancer.",
+        "description": "I'm a software engineer and software architecture specialist (in training) with more than 2 years' experience in web and mobile applications, and I also work as a freelancer.",
         "primaryButton": "Get in touch",
         "secondaryButton": "Explore my work",
         "frontend": "Front-End",
@@ -27,11 +27,45 @@
     },
     "Projects": {
         "title": "Highlighted projects",
-        "description": "Take a look at my work", 
+        "description": "Take a look at my work",
         "subtitle": "Projects gallery",
         "card": {
             "view": "Preview",
             "source": "Source code"
+        }
+    },
+    "Getintouch": {
+        "title": "Get in touch",
+        "description": "Shall we turn your ideas into reality?",
+        "subtitle": "Contact & social",
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Type your name",
+                "errors": {
+                    "required": "Name is required",
+                    "minLength": "Name must have at least 3 characters",
+                    "maxLength": "Name must have a maximum of 50 characters"
+                }
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Type your email",
+                "errors": {
+                    "required": "Email is required",
+                    "invalid": "Invalid email"
+                }
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Type your message",
+                "errors": {
+                    "required": "Message is required",
+                    "minLength": "Message must have at least 3 characters",
+                    "maxLength": "Message must have a maximum of 500 characters"
+                }
+            },
+            "submit": "Send message"
         }
     }
 }

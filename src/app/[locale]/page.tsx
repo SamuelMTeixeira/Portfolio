@@ -1,4 +1,5 @@
 import AboutMe from '@/components/sections/aboutme'
+import Contact from '@/components/sections/contact'
 import Footer from '@/components/sections/footer'
 import Header from '@/components/sections/header'
 import Hero from '@/components/sections/hero'
@@ -20,6 +21,8 @@ export default function Page() {
       <AboutMe />
 
       <Projects />
+
+      <Contact />
 
       <Footer />
     </>

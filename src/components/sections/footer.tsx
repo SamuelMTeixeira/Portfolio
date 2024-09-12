@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -11,7 +11,10 @@ export default function Footer() {
             href="https://github.com/samuelmteixeira"
             target="_blank"
             rel="noopener noreferrer"
-          >@SamuelMTeixeira</a>.
+          >
+            @SamuelMTeixeira
+          </a>
+          .
         </p>
 
         <Image
@@ -22,11 +25,8 @@ export default function Footer() {
           className="w-6 h-6"
         />
 
-        <p>
-          Coded with 🧡 and ☕
-        </p>
+        <p>Coded with 🧡 and ☕</p>
       </div>
-
     </footer>
   )
 }
