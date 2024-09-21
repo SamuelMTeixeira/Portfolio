@@ -17,7 +17,7 @@ export function Draggable({
 }: DraggableProps) {
   return (
     <motion.div
-      className={'absolute hidden lg:block ' + className}
+      className={'absolute hidden lg:block cursor-grab active:cursor-grabbing ' + className}
       drag
       dragConstraints={dragConstraints}
       dragTransition={{ bounceStiffness: 600, bounceDamping: 50 }}
