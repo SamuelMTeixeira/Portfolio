@@ -10,6 +10,7 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useTranslations } from 'next-intl'
+import { ArrowRight } from 'lucide-react'
 
 export default function AboutMe() {
   const t = useTranslations('Aboutme')
@@ -38,8 +39,17 @@ export default function AboutMe() {
               <CardTitle className="font-bricolage">
                 Samuel Molendolff Teixeira
               </CardTitle>
-              <CardDescription className="font-manrope text-md font-medium">
-                {t('position')}
+              <CardDescription>
+                <a
+                  href="https://linkedin.com/in/samuelmteixeira"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-manrope text-md font-medium text-primary flex items-center gap-1 hover:underline"
+                >
+                  {t('linkedinProfile')}
+
+                  <ArrowRight size={14} />
+                </a>
               </CardDescription>
             </div>
           </div>

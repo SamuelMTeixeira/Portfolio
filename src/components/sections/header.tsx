@@ -18,6 +18,7 @@ import { useTranslations } from 'next-intl'
 import { locales } from '@/lib/next-intl'
 import { useRouter } from '@/navigation'
 import { usePathname } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 
 export default function Header() {
   const t = useTranslations('Header')
@@ -42,31 +43,35 @@ export default function Header() {
         </h1>
       </div>
 
-      <Menubar>
-        <MenubarMenu>
-          <MenubarTrigger>
-            <Settings className="h-6 w-6" />
-          </MenubarTrigger>
-          <MenubarContent className="rounded-sm">
-            <MenubarSub>
-              <MenubarSubTrigger>{t('languages.title')}</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarRadioGroup value={pathname}>
-                  {locales.map((locale, index) => (
-                    <MenubarRadioItem
-                      onSelect={() => router.replace(locale)}
-                      key={index}
-                      value={locale}
-                    >
-                      {t(`languages.${locale}`)}
-                    </MenubarRadioItem>
-                  ))}
-                </MenubarRadioGroup>
-              </MenubarSubContent>
-            </MenubarSub>
-          </MenubarContent>
-        </MenubarMenu>
-      </Menubar>
+      <div className="flex flex-row gap-2 items-center">
+        <Menubar>
+          <MenubarMenu>
+            <MenubarTrigger asChild>
+              <Button size={'icon'} variant={'outline'}>
+                <Settings size={24} />
+              </Button>
+            </MenubarTrigger>
+            <MenubarContent className="rounded-sm">
+              <MenubarSub>
+                <MenubarSubTrigger>{t('languages.title')}</MenubarSubTrigger>
+                <MenubarSubContent>
+                  <MenubarRadioGroup value={pathname}>
+                    {locales.map((locale, index) => (
+                      <MenubarRadioItem
+                        onSelect={() => router.replace(locale)}
+                        key={index}
+                        value={locale}
+                      >
+                        {t(`languages.${locale}`)}
+                      </MenubarRadioItem>
+                    ))}
+                  </MenubarRadioGroup>
+                </MenubarSubContent>
+              </MenubarSub>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
+      </div>
     </header>
   )
 }
