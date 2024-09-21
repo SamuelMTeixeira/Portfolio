@@ -49,10 +49,10 @@ export default function ProjectCard({
           alt={`Representative image of the project ${title}`}
           className="w-full h-auto object-cover"
         />
-        <span className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></span>
+        <span className="absolute inset-0 bg-gradient-to-t from-white/[.5] to-transparent"></span>
       </div>
 
-      <CardHeader className="relative z-10 -mt-16 bg-white bg-opacity-90 mx-4 rounded-t-lg p-6">
+      <CardHeader className="relative z-10 -mt-16 bg-white mx-4 rounded-t-lg p-6">
         <div className="space-x-2">
           <Badge className="bg-primary/[.8]">{type}</Badge>
         </div>
