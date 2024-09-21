@@ -29,7 +29,7 @@ export default function Projects() {
       .min(2, {
         message: t('form.name.errors.minLength'),
       })
-      .max(5, {
+      .max(50, {
         message: t('form.name.errors.maxLength'),
       }),
     email: z
@@ -60,8 +60,28 @@ export default function Projects() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  async function onSubmit({
+    email,
+    message,
+    name,
+  }: z.infer<typeof formSchema>) {
+    const { ok } = await fetch('/api/send/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        subject: message,
+        name,
+      }),
+    })
+
+    if (ok) {
+      console.log('Email sent successfully')
+    } else {
+      console.log('error sending email')
+    }
   }
 
   return (
