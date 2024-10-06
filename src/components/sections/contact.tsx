@@ -17,9 +17,11 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import useEmail from '@/hooks/useEmail'
 
 export default function Projects() {
   const t = useTranslations('Getintouch')
+  const { sendRequest, isSuccess, isPending, isError } = useEmail()
 
   const formSchema = z.object({
     name: z
@@ -65,22 +67,18 @@ export default function Projects() {
     message,
     name,
   }: z.infer<typeof formSchema>) {
-    const { ok } = await fetch('/api/send/email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        subject: message,
-        name,
-      }),
-    })
+    sendRequest({ email, message, name })
 
-    if (ok) {
+    if (isPending) {
+      console.log('Sending email...')
+    }
+
+    if (isSuccess) {
       console.log('Email sent successfully')
-    } else {
-      console.log('error sending email')
+    }
+
+    if (isError) {
+      console.error('error sending email')
     }
   }
 

@@ -5,6 +5,7 @@ import { bricolageGrotesque, manrope } from './fonts'
 
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
+import ReactQueryProvider from '@/providers/reactQueryProvider'
 
 export const metadata = {
   robots: {
@@ -69,7 +70,7 @@ export default async function RootLayout({
       <body className={'font-manrope'}>
         <Providers>
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <ReactQueryProvider>{children}</ReactQueryProvider>
           </NextIntlClientProvider>
         </Providers>
       </body>

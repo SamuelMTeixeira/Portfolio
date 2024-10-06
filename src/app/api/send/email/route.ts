@@ -16,10 +16,10 @@ export async function POST(req: Request) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'contact@samuelmteixeira.dev',
+      from: 'Samuel Molendolff by Portfolio <contact@samuelmteixeira.dev>',
       to: 'contact@samuelmteixeira.dev',
       subject,
-      react: EmailTemplate({ email, subject, recipientName: name }), // using our custom react component to render email content/body
+      react: EmailTemplate({ email, subject, recipientName: name }),
     })
 
     if (error) {
