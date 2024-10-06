@@ -5,8 +5,7 @@ import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { z } from 'zod'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+
 import {
   Form,
   FormControl,
@@ -18,68 +17,18 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import useEmail from '@/hooks/useEmail'
+import { LoaderCircle } from 'lucide-react'
 
 export default function Projects() {
   const t = useTranslations('Getintouch')
-  const { sendRequest, isSuccess, isPending, isError } = useEmail()
-
-  const formSchema = z.object({
-    name: z
-      .string({
-        required_error: t('form.name.errors.required'),
-      })
-      .min(2, {
-        message: t('form.name.errors.minLength'),
-      })
-      .max(50, {
-        message: t('form.name.errors.maxLength'),
-      }),
-    email: z
-      .string({
-        required_error: t('form.email.errors.required'),
-      })
-      .email({
-        message: t('form.email.errors.invalid'),
-      }),
-    message: z
-      .string({
-        required_error: t('form.message.errors.required'),
-      })
-      .min(10, {
-        message: t('form.message.errors.minLength'),
-      })
-      .max(500, {
-        message: t('form.message.errors.maxLength'),
-      }),
-  })
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-  })
+  const { sendRequest, isPending, emailSchema, form } = useEmail()
 
   async function onSubmit({
     email,
     message,
     name,
-  }: z.infer<typeof formSchema>) {
+  }: z.infer<typeof emailSchema>) {
     sendRequest({ email, message, name })
-
-    if (isPending) {
-      console.log('Sending email...')
-    }
-
-    if (isSuccess) {
-      console.log('Email sent successfully')
-    }
-
-    if (isError) {
-      console.error('error sending email')
-    }
   }
 
   return (
@@ -168,7 +117,10 @@ export default function Projects() {
                 />
 
                 <div className="flex justify-center">
-                  <Button type="submit" size={'lg'}>
+                  <Button type="submit" size={'lg'} disabled={isPending}>
+                    {isPending && (
+                      <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
+                    )}
                     {t('form.submit')}
                   </Button>
                 </div>

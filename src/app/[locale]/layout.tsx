@@ -6,6 +6,7 @@ import { bricolageGrotesque, manrope } from './fonts'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import ReactQueryProvider from '@/providers/reactQueryProvider'
+import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
   robots: {
@@ -73,6 +74,8 @@ export default async function RootLayout({
             <ReactQueryProvider>{children}</ReactQueryProvider>
           </NextIntlClientProvider>
         </Providers>
+
+        <Toaster />
       </body>
     </html>
   )

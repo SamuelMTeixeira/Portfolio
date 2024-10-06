@@ -66,6 +66,10 @@
                 }
             },
             "submit": "Send message"
+        },
+        "emailStatus": {
+            "success": "Email sent successfully!",
+            "error": "An error occurred while sending the email. Please try again later."
         }
     }
 }
