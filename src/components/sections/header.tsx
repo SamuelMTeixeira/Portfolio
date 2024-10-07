@@ -26,8 +26,8 @@ export default function Header() {
   const pathname = usePathname()?.split('/')[1]
 
   return (
-    <header className="container mx-auto flex items-center justify-between h-[7vh] md:h-[10vh]">
-      <span className="hidden md:block w-5" />
+    <header className="container mx-auto flex items-center justify-between h-[10vh]">
+      <span className="block w-5" />
 
       <div className="flex gap-4 items-center">
         <Image
