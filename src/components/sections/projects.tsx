@@ -1,41 +1,14 @@
 'use client'
 
-import preview from '@/assets/img/project-previews/preview.png'
-import preview2 from '@/assets/img/project-previews/preview-2.png'
-import ProjectCard, { ProjectCardProps } from '@/components/ui/projectcard'
+import ProjectCard from '@/components/ui/projectcard'
+import useProject from '@/hooks/useProject'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
-const projects: ProjectCardProps[] = [
-  {
-    title: 'Projeto 1',
-    description: 'Descrição do projeto 1',
-    imageUrl: preview,
-    previewUrl: 'https://google.com',
-    sourceUrl: 'https://google.com',
-    type: 'Web Application',
-    tags: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    title: 'Projeto 1',
-    description: 'Descrição do projeto 1',
-    imageUrl: preview2,
-    previewUrl: 'https://google.com',
-    type: 'Web Application',
-    tags: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    title: 'Projeto 1',
-    description: 'Descrição do projeto 1',
-    imageUrl: preview,
-    sourceUrl: 'https://google.com',
-    type: 'Web Application',
-    tags: ['React', 'Node.js', 'MongoDB'],
-  },
-]
-
 export default function Projects() {
   const t = useTranslations('Projects')
+
+  const { data } = useProject()
 
   return (
     <section
@@ -65,7 +38,7 @@ export default function Projects() {
       </div>
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
+        {data?.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
       </div>

@@ -16,7 +16,10 @@ export default function AboutMe() {
   const t = useTranslations('Aboutme')
 
   return (
-    <section id="about-me" className="container mx-auto flex flex-col justify-center items-center my-20">
+    <section
+      id="about-me"
+      className="container mx-auto flex flex-col justify-center items-center my-20"
+    >
       <div className="w-full max-w-4xl">
         <Card className="max-w-5xl font-bricolage p-8">
           <CardContent>
@@ -57,7 +60,6 @@ export default function AboutMe() {
           </CardFooter>
         </Card>
       </div>
-
     </section>
   )
 }

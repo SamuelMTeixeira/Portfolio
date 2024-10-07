@@ -1,6 +1,6 @@
 'use client'
 
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight, CodeXml } from 'lucide-react'
 import {
@@ -12,28 +12,19 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
-
-export interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string
-  description: string
-  imageUrl: StaticImageData
-  sourceUrl?: string
-  previewUrl?: string
-  type: string
-  tags: string[]
-}
+import { ProjectProps } from '@/services/projects'
 
 export default function ProjectCard({
   imageUrl,
   sourceUrl = '',
   previewUrl = '',
   title,
-  type,
+  category,
   tags,
   description,
   className,
   ...props
-}: ProjectCardProps) {
+}: ProjectProps & React.HTMLAttributes<HTMLDivElement>) {
   const t = useTranslations('Projects.card')
 
   return (
@@ -46,6 +37,7 @@ export default function ProjectCard({
       <div className="relative h-64 overflow-hidden">
         <Image
           src={imageUrl}
+          fill
           alt={`Representative image of the project ${title}`}
           className="w-full h-auto object-cover"
         />
@@ -54,7 +46,7 @@ export default function ProjectCard({
 
       <CardHeader className="relative z-10 -mt-16 bg-white mx-4 rounded-t-lg p-6">
         <div className="space-x-2">
-          <Badge className="bg-primary/[.8]">{type}</Badge>
+          <Badge className="bg-primary/[.8]">{category}</Badge>
         </div>
         <CardTitle className="text-2xl font-bold text-foreground/[.9]">
           {title}

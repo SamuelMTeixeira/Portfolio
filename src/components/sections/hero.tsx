@@ -74,11 +74,13 @@ export default function Hero() {
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
         <a href="#contact">
-          <Button size={'xl'} className='w-full'>{t('primaryButton')}</Button>
+          <Button size={'xl'} className="w-full">
+            {t('primaryButton')}
+          </Button>
         </a>
 
         <a href="#projects">
-          <Button size={'xl'} variant={'outline'} className='w-full'>
+          <Button size={'xl'} variant={'outline'} className="w-full">
             {t('secondaryButton')}
           </Button>
         </a>
