@@ -1,0 +1,75 @@
+{
+    "Header": {
+        "languages": {
+            "title": "Change language",
+            "en": "English",
+            "pt": "Portuguese"
+        }
+    },
+    "Hero": {
+        "title": "I turn ideas into disruptive technological solutions!",
+        "description": "I'm a software engineer and software architecture specialist (in training) with more than 2 years' experience in web and mobile applications, and I also work as a freelancer.",
+        "primaryButton": "Get in touch",
+        "secondaryButton": "Explore my work",
+        "frontend": "Front-End",
+        "backend": "Back-End",
+        "cloud": "Cloud",
+        "tests": "Automated testing",
+        "accessibility": "Accessibility",
+        "prototyping": "Prototyping"
+    },
+    "Skills": {
+        "title": "My technical skills"
+    },
+    "Aboutme": {
+        "linkedinProfile": "View linkedin profile",
+        "content": "My journey is driven by the relentless pursuit of challenges and excellence, in which I am committed to seeking excellence and making a significant difference in the world of technology. I work as a technology analyst and apply my passion and skills to create impact. My journey is just beginning, and I am always open to new opportunities to grow and make a difference!"
+    },
+    "Projects": {
+        "title": "Highlighted projects",
+        "description": "Take a look at my work",
+        "subtitle": "Projects gallery",
+        "card": {
+            "view": "Preview",
+            "source": "Source code"
+        }
+    },
+    "Getintouch": {
+        "title": "Get in touch",
+        "description": "Shall we turn your ideas into reality?",
+        "subtitle": "Contact & social",
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Type your name",
+                "errors": {
+                    "required": "Name is required",
+                    "minLength": "Name must have at least 3 characters",
+                    "maxLength": "Name must have a maximum of 50 characters"
+                }
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Type your email",
+                "errors": {
+                    "required": "Email is required",
+                    "invalid": "Invalid email"
+                }
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Type your message",
+                "errors": {
+                    "required": "Message is required",
+                    "minLength": "Message must have at least 3 characters",
+                    "maxLength": "Message must have a maximum of 500 characters"
+                }
+            },
+            "submit": "Send message"
+        },
+        "emailStatus": {
+            "success": "Email sent successfully!",
+            "error": "An error occurred while sending the email. Please try again later."
+        }
+    }
+}

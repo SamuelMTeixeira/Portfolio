@@ -1,0 +1,46 @@
+name: Test project before merge
+
+on: pull_request
+
+jobs:
+    check:
+        name: Check the code formatting
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                version: 9
+                run_install: false
+            
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Verify linter
+              run: pnpm lint
+            
+    build:
+        name: Build the project
+        runs-on: ubuntu-latest
+        needs: [check]
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                version: 9
+                run_install: false
+            
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build project
+              run: pnpm build
+            

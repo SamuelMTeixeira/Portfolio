@@ -1,0 +1,75 @@
+{
+    "Header": {
+        "languages": {
+            "title": "Mudar Idioma",
+            "en": "Inglês",
+            "pt": "Português"
+        }
+    },
+    "Hero": {
+        "title": "Transformo ideias em soluções tecnológicas disruptivas!",
+        "description": "Sou um engenheiro de software e especialista em arquitetura de software (em formação) com mais de 2 anos de experiência em aplicações web e mobile, também atuo como freelancer.",
+        "primaryButton": "Entrar em contato",
+        "secondaryButton": "Explorar projetos",
+        "frontend": "Front-End",
+        "backend": "Back-End",
+        "cloud": "Cloud",
+        "tests": "Testes automatizados",
+        "accessibility": "Acessibilidade",
+        "prototyping": "Prototipagem"
+    },
+    "Skills": {
+        "title": "Minhas habilidades técnicas"
+    },
+    "Aboutme": {
+        "linkedinProfile": "Ver perfil do linkedin",
+        "content": "Minha jornada é impulsionada pela busca incessante por desafios e excelência na qual estou comprometido em buscar a excelência e fazer uma diferença significativa no mundo da tecnologia. Atuo como analista de tecnologia e aplico minha paixão e habilidades para criar impacto. Minha jornada está apenas começando e estou sempre aberto a novas oportunidades para crescer e fazer a diferença!"
+    },
+    "Projects": {
+        "title": "Projetos em destaque",
+        "description": "Veja um pouco do meu trabalho",
+        "subtitle": "Galeria de projetos",
+        "card": {
+            "view": "Visualizar",
+            "source": "Código fonte"
+        }
+    },
+    "Getintouch": {
+        "title": "Entre em contato",
+        "description": "Vamos transformar suas ideias em realidade?",
+        "subtitle": "Contato & social",
+        "form": {
+            "name": {
+                "label": "Nome",
+                "placeholder": "Digite seu nome",
+                "errors": {
+                    "required": "Nome é obrigatório",
+                    "minLength": "Nome deve ter no mínimo 3 caracteres",
+                    "maxLength": "Nome deve ter no máximo 50 caracteres"
+                }
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Digite seu email",
+                "errors": {
+                    "required": "Email é obrigatório",
+                    "invalid": "Email inválido"
+                }
+            },
+            "message": {
+                "label": "Mensagem",
+                "placeholder": "Digite sua mensagem",
+                "errors": {
+                    "required": "Mensagem é obrigatória",
+                    "minLength": "Mensagem deve ter no mínimo 10 caracteres",
+                    "maxLength": "Mensagem deve ter no máximo 500 caracteres"
+                }
+            },
+            "submit": "Enviar mensagem"
+        },
+        "emailStatus": {
+            "success": "Email enviado com sucesso!",
+            "error": "Erro ao enviar email, tente novamente mais tarde."
+        }
+    }
+}
