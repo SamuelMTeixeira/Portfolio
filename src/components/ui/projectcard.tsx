@@ -30,7 +30,8 @@ export default function ProjectCard({
   return (
     <Card
       className={
-        'w-full max-w-md overflow-hidden bg-white border-input ' + className
+        'w-full flex flex-col max-w-md overflow-hidden bg-white border-input ' +
+        className
       }
       {...props}
     >
@@ -53,7 +54,7 @@ export default function ProjectCard({
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="p-6 pt-0">
+      <CardContent className="p-6 pt-0 flex-1">
         <p className="text-sm text-foreground/[.8] mb-4"> {description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
@@ -68,29 +69,23 @@ export default function ProjectCard({
         </div>
       </CardContent>
       <CardFooter className="p-6 pt-0 flex justify-between items-center">
-        <Button variant="outline" className="text-sm" disabled={!sourceUrl}>
-          <a
-            href={sourceUrl}
-            className="flex items-center"
-            target="_blank"
-            rel="noopener noreferrer"
+        <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+          <Button
+            variant="outline"
+            className="text-sm flex items-center"
+            disabled={!sourceUrl}
           >
             <CodeXml className="w-4 h-4 mr-2" />
             {t('source')}
-          </a>
-        </Button>
+          </Button>
+        </a>
 
-        <Button className="text-sm" disabled={!previewUrl}>
-          <a
-            href={previewUrl}
-            className="flex items-center"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <a href={previewUrl} target="_blank" rel="noopener noreferrer">
+          <Button className="text-sm flex items-center" disabled={!previewUrl}>
             {t('view')}
             <ArrowUpRight className="w-4 h-4 ml-2" />
-          </a>
-        </Button>
+          </Button>
+        </a>
       </CardFooter>
     </Card>
   )
