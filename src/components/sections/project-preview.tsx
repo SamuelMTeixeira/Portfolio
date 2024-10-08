@@ -15,19 +15,16 @@ export default function ProjectPreview() {
   return (
     <div className="overflow-x-hidden mt-10" ref={containerRef}>
       <motion.div className="flex items-center flex-row gap-5" style={{ x }}>
-
-        {
-          data?.map(({imageUrl}, index) => (
-            <Image
-              key={index}
-              src={imageUrl}
-              className="rounded-md w-[370px] h-[256px]"
-              alt="Project preview"
-              width={470}
-              height={356}
-            />
-          ))
-        }
+        {data?.map(({ imageUrl }, index) => (
+          <Image
+            key={index}
+            src={imageUrl}
+            className="rounded-md w-[370px] h-[256px]"
+            alt="Project preview"
+            width={470}
+            height={356}
+          />
+        ))}
       </motion.div>
     </div>
   )
