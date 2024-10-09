@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { z } from 'zod'
+import console from '@/assets/img/console.png'
 
 import {
   Form,
@@ -39,7 +40,7 @@ export default function Projects() {
       <div className="space-y-4 mb-12">
         <h6 className="text-primary font-semibold font-bricolage text-md text-center flex items-center justify-center gap-3">
           <Image
-            src="/logo.png"
+            src={console}
             width={16}
             height={16}
             alt="Website logo"

@@ -4,6 +4,7 @@ import ProjectCard from '@/components/ui/projectcard'
 import useProject from '@/hooks/useProject'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import console from '@/assets/img/console.png'
 
 export default function Projects() {
   const t = useTranslations('Projects')
@@ -18,7 +19,7 @@ export default function Projects() {
       <div className="space-y-4 mb-12">
         <h6 className="text-primary font-semibold font-bricolage text-md text-center flex items-center justify-center gap-3">
           <Image
-            src="/logo.png"
+            src={console}
             width={16}
             height={16}
             alt="Website logo"

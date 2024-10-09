@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Settings } from 'lucide-react'
+import { Menu } from 'lucide-react'
 
 import {
   Menubar,
@@ -27,51 +27,39 @@ export default function Header() {
 
   return (
     <header className="container mx-auto flex items-center justify-between h-[10vh]">
-      <span className="block w-5" />
+      <Image src="/logo.png" width={32} height={32} alt="Website logo" />
 
-      <div className="flex gap-4 items-center">
-        <Image
-          src="/logo.png"
-          width={23}
-          height={23}
-          alt="Website logo"
-          className="w-4 h-4 md:w-5 md:h-5"
-        />
+      <h1 className="font-bricolage font-bold hidden md:block md:text-3xl text-center">
+        Samuel M. Teixeira
+      </h1>
 
-        <h1 className="font-bricolage font-bold text-lg sm:text-2xl md:text-3xl text-center">
-          Samuel M. Teixeira
-        </h1>
-      </div>
-
-      <div className="flex flex-row gap-2 items-center">
-        <Menubar>
-          <MenubarMenu>
-            <MenubarTrigger asChild>
-              <Button size={'icon'} variant={'outline'}>
-                <Settings size={24} />
-              </Button>
-            </MenubarTrigger>
-            <MenubarContent className="rounded-sm">
-              <MenubarSub>
-                <MenubarSubTrigger>{t('languages.title')}</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarRadioGroup value={pathname}>
-                    {locales.map((locale, index) => (
-                      <MenubarRadioItem
-                        onSelect={() => router.replace(locale)}
-                        key={index}
-                        value={locale}
-                      >
-                        {t(`languages.${locale}`)}
-                      </MenubarRadioItem>
-                    ))}
-                  </MenubarRadioGroup>
-                </MenubarSubContent>
-              </MenubarSub>
-            </MenubarContent>
-          </MenubarMenu>
-        </Menubar>
-      </div>
+      <Menubar>
+        <MenubarMenu>
+          <MenubarTrigger asChild>
+            <Button size={'icon'} variant={'outline'}>
+              <Menu size={24} />
+            </Button>
+          </MenubarTrigger>
+          <MenubarContent className="rounded-sm">
+            <MenubarSub>
+              <MenubarSubTrigger>{t('languages.title')}</MenubarSubTrigger>
+              <MenubarSubContent>
+                <MenubarRadioGroup value={pathname}>
+                  {locales.map((locale, index) => (
+                    <MenubarRadioItem
+                      onSelect={() => router.replace(locale)}
+                      key={index}
+                      value={locale}
+                    >
+                      {t(`languages.${locale}`)}
+                    </MenubarRadioItem>
+                  ))}
+                </MenubarRadioGroup>
+              </MenubarSubContent>
+            </MenubarSub>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
     </header>
   )
 }
