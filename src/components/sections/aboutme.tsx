@@ -22,15 +22,15 @@ export default function AboutMe() {
     >
       <div className="w-full max-w-4xl">
         <Card className="max-w-5xl font-bricolage p-8">
-          <CardContent>
-            <p className="font-bricolage text-xl md:text-2xl lg:text-3xl leading-normal tracking-tight text-center font-normal">
+          <CardContent className="p-0 md:px-6 md:pt-0">
+            <p className="font-bricolage text-xl md:text-2xl lg:text-3xl leading-normal tracking-tigh text-center font-normal">
               <span>&quot;</span>
               {t('content')}
               <span>&quot;</span>
             </p>
           </CardContent>
 
-          <CardFooter className="flex justify-center p-0">
+          <CardFooter className="flex justify-center p-0 mt-8">
             <div className="flex flex-row items-center gap-4 lg:gap-8">
               <Avatar className="w-14 lg:w-20 h-auto">
                 <AvatarImage
