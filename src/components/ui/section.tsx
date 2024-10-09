@@ -47,7 +47,7 @@ export default function Section({
         </p>
       </div>
 
-      <div className="w-full max-w-4xl">{children}</div>
+      {children}
     </section>
   )
 }

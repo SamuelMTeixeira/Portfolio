@@ -39,81 +39,83 @@ export default function Projects() {
       description={t('description')}
       className="mt-20"
     >
-      <Card className="max-w-5xl font-bricolage p-8 bg-background border-input">
-        <CardContent className="p-0">
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8 w-full"
-            >
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('form.name.label')}</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder={t('form.name.placeholder')}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('form.email.label')}</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder={t('form.email.placeholder')}
-                        type={'email'}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('form.message.label')}</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder={t('form.message.placeholder')}
-                        rows={4}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <CardFooter className="flex justify-center p-0">
-                <Button
-                  type="submit"
-                  size={'default'}
-                  disabled={isPending}
-                  className="md:h-11 md:px-8"
-                >
-                  {isPending && (
-                    <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
+      <div className="w-full max-w-4xl">
+        <Card className="max-w-5xl font-bricolage p-8 bg-background border-input">
+          <CardContent className="p-0">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8 w-full"
+              >
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('form.name.label')}</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder={t('form.name.placeholder')}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
                   )}
-                  {t('form.submit')}
-                </Button>
-              </CardFooter>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('form.email.label')}</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder={t('form.email.placeholder')}
+                          type={'email'}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('form.message.label')}</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder={t('form.message.placeholder')}
+                          rows={4}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <CardFooter className="flex justify-center p-0">
+                  <Button
+                    type="submit"
+                    size={'default'}
+                    disabled={isPending}
+                    className="md:h-11 md:px-8"
+                  >
+                    {isPending && (
+                      <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
+                    )}
+                    {t('form.submit')}
+                  </Button>
+                </CardFooter>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
+      </div>
     </Section>
   )
 }
