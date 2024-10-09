@@ -1,15 +1,17 @@
 'use client'
 
-import ProjectCard from '@/components/ui/projectcard'
-import useProject from '@/hooks/useProject'
+import ProjectCard from '@/components/project/project-card'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import console from '@/assets/img/console.png'
+import { ProjectProps } from '@/services/projects'
 
-export default function Projects() {
+export default function Projects({
+  data,
+}: {
+  data: ProjectProps[] | undefined
+}) {
   const t = useTranslations('Projects')
-
-  const { data } = useProject()
 
   return (
     <section
