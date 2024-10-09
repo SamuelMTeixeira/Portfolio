@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { z } from 'zod'
 
@@ -58,12 +58,12 @@ export default function Projects() {
       </div>
 
       <div className="w-full max-w-4xl">
-        <Card className="max-w-5xl font-bricolage px-8 pt-6 bg-background border-input">
-          <CardContent>
+        <Card className="max-w-5xl font-bricolage p-8 bg-background border-input">
+          <CardContent className="p-0">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8"
+                className="space-y-8 w-full"
               >
                 <FormField
                   control={form.control}
@@ -116,14 +116,19 @@ export default function Projects() {
                   )}
                 />
 
-                <div className="flex justify-center">
-                  <Button type="submit" size={'lg'} disabled={isPending}>
+                <CardFooter className="flex justify-center p-0">
+                  <Button
+                    type="submit"
+                    size={'default'}
+                    disabled={isPending}
+                    className="md:h-11 md:px-8"
+                  >
                     {isPending && (
                       <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
                     )}
                     {t('form.submit')}
                   </Button>
-                </div>
+                </CardFooter>
               </form>
             </Form>
           </CardContent>
