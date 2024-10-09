@@ -58,11 +58,7 @@ export default function ProjectCard({
         <p className="text-sm text-foreground/[.8] mb-4"> {description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
-            <Badge
-              key={index}
-              variant="secondary"
-              className="bg-primary/[0.05] hover:bg-primary/[0.1] text-primary"
-            >
+            <Badge key={index} variant="secondary">
               {tag}
             </Badge>
           ))}
