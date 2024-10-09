@@ -21,7 +21,7 @@ export default function Hero() {
     <motion.div
       ref={containerRef}
       id="hero"
-      className="relative min-h-[90vh] flex flex-col justify-center items-center gap-4"
+      className="relative min-h-[90vh] flex flex-col justify-center items-center gap-4 container mx-auto"
     >
       <Draggable
         dragConstraints={containerRef}
