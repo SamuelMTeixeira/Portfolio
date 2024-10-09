@@ -7,30 +7,6 @@ This is my personal web portfolio built with React, showcasing my skills and pro
 
 <img src= "public/preview.png" alt="your-image-description" style="border: 0.5px solid grey;">
 
-## ⚙️ Setup the project and configure the environment variables
-
-To configure the project, you need to set the following environment variables in your `.env` file. You can use the `.env.example` as a reference.
-
-#### Email Service
-1. Create an account at [Resend](https://resend.com).
-2. Set the following variable in the `.env` file:
-
-   ```bash
-   RESEND_API_KEY=your_resend_api_key
-   ```
-
-   For detailed setup instructions, check the [Resend documentation](https://resend.com/docs/introduction).
-
-#### Notion Database
-1. Set up the following variables in the `.env` file:
-
-   ```bash
-   NOTION_TOKEN=your_notion_token
-   NOTION_DATABASE_ID=your_database_id
-   ```
-
-   For more information on configuring Notion as a database, refer to this [guide](https://dev.to/iamhectorsosa/using-notion-as-your-database-2k15).
-
 ## ▶️ Run Locally
 
 This project uses pnpm as package installer.
@@ -58,6 +34,30 @@ Start the project
 ```bash
   pnpm dev
 ```
+
+## ⚙️ Configure the environment variables
+
+To configure the project, you need to set the following environment variables in your `.env` file. You can use the `.env.example` as a reference.
+
+#### Email Service
+1. Create an account at [Resend](https://resend.com).
+2. Set the following variable in the `.env` file:
+
+   ```bash
+   RESEND_API_KEY=your_resend_api_key
+   ```
+
+   For detailed setup instructions, check the [Resend documentation](https://resend.com/docs/introduction).
+
+#### Notion Database
+1. Set up the following variables in the `.env` file:
+
+   ```bash
+   NOTION_TOKEN=your_notion_token
+   NOTION_DATABASE_ID=your_database_id
+   ```
+
+   For more information on configuring Notion as a database, refer to this [guide](https://dev.to/iamhectorsosa/using-notion-as-your-database-2k15).
 
 ## ℹ️ Contributing
 
