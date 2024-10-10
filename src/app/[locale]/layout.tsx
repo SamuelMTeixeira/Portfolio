@@ -7,6 +7,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import ReactQueryProvider from '@/providers/reactQueryProvider'
 import { Toaster } from '@/components/ui/sonner'
+import { Suspense } from 'react'
+import Loading from '@/app/[locale]/loading'
 
 export const metadata = {
   robots: {
@@ -70,9 +72,13 @@ export default async function RootLayout({
       </head>
       <body className={'font-manrope'}>
         <Providers>
-          <NextIntlClientProvider messages={messages}>
-            <ReactQueryProvider>{children}</ReactQueryProvider>
-          </NextIntlClientProvider>
+          <ReactQueryProvider>
+            <Suspense fallback={<Loading />}>
+              <NextIntlClientProvider messages={messages}>
+                {children}
+              </NextIntlClientProvider>
+            </Suspense>
+          </ReactQueryProvider>
         </Providers>
 
         <Toaster />

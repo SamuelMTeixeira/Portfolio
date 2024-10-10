@@ -3,19 +3,16 @@
 import Image from 'next/image'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { useRef } from 'react'
-import useProject from '@/hooks/useProject'
 
-export default function ProjectPreview() {
+export default function ProjectPreview({ data }: { data: string[] }) {
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
 
-  const { data } = useProject()
-
   return (
     <div className="overflow-x-hidden mt-10" ref={containerRef}>
       <motion.div className="flex items-center flex-row gap-5" style={{ x }}>
-        {data?.map(({ imageUrl }, index) => (
+        {data?.map((imageUrl, index) => (
           <Image
             key={index}
             src={imageUrl}
