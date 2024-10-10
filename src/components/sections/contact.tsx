@@ -1,11 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { z } from 'zod'
-import console from '@/assets/img/console.png'
 
 import {
   Form,
@@ -19,6 +17,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import useEmail from '@/hooks/useEmail'
 import { LoaderCircle } from 'lucide-react'
+import Section from '@/components/ui/section'
 
 export default function Projects() {
   const t = useTranslations('Getintouch')
@@ -33,31 +32,13 @@ export default function Projects() {
   }
 
   return (
-    <section
+    <Section
       id="contact"
-      className="container mx-auto flex flex-col justify-center items-center mt-20"
+      title={t('title')}
+      subtitle={t('subtitle')}
+      description={t('description')}
+      className="mt-20"
     >
-      <div className="space-y-4 mb-12">
-        <h6 className="text-primary font-semibold font-bricolage text-md text-center flex items-center justify-center gap-3">
-          <Image
-            src={console}
-            width={16}
-            height={16}
-            alt="Website logo"
-            className="w-4 h-4"
-          />
-          {t('subtitle')}
-        </h6>
-
-        <h3 className="text-center font-bricolage font-bold text-3xl sm:text-4xl lg:text-5xl">
-          {t('title')}
-        </h3>
-
-        <p className="text-center font-manrope font-normal text-lg">
-          {t('description')}
-        </p>
-      </div>
-
       <div className="w-full max-w-4xl">
         <Card className="max-w-5xl font-bricolage p-8 bg-background border-input">
           <CardContent className="p-0">
@@ -135,6 +116,6 @@ export default function Projects() {
           </CardContent>
         </Card>
       </div>
-    </section>
+    </Section>
   )
 }
