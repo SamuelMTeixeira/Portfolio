@@ -10,31 +10,28 @@ import Projects from '@/components/sections/projects'
 import Skills from '@/components/sections/skills'
 import useProject from '@/hooks/useProject'
 import { Suspense } from 'react'
+import Loading from './loading'
 
 export default function Page() {
   const { projects } = useProject()
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
 
       <Hero />
 
-      <Suspense fallback={<div>loading...</div>}>
-        <ProjectPreview data={projects.map((project) => project.imageUrl)} />
-      </Suspense>
+      <ProjectPreview data={projects.map((project) => project.imageUrl)} />
 
       <Skills />
 
       <AboutMe />
 
-      <Suspense fallback={<div>loading...</div>}>
-        <Projects data={projects} />
-      </Suspense>
+      <Projects data={projects} />
 
       <Contact />
 
       <Footer />
-    </>
+    </Suspense>
   )
 }
