@@ -4,11 +4,7 @@ import Image from 'next/image'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { useRef } from 'react'
 
-export default function ProjectPreview({
-  data,
-}: {
-  data: string[] | undefined
-}) {
+export default function ProjectPreview({ data }: { data: string[] }) {
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])

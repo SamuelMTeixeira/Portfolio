@@ -9,9 +9,10 @@ import ProjectPreview from '@/components/sections/project-preview'
 import Projects from '@/components/sections/projects'
 import Skills from '@/components/sections/skills'
 import useProject from '@/hooks/useProject'
+import { Suspense } from 'react'
 
 export default function Page() {
-  const { data } = useProject()
+  const { projects } = useProject()
 
   return (
     <>
@@ -19,13 +20,17 @@ export default function Page() {
 
       <Hero />
 
-      <ProjectPreview data={data?.map((project) => project.imageUrl)} />
+      <Suspense fallback={<div>loading...</div>}>
+        <ProjectPreview data={projects.map((project) => project.imageUrl)} />
+      </Suspense>
 
       <Skills />
 
       <AboutMe />
 
-      <Projects data={data} />
+      <Suspense fallback={<div>loading...</div>}>
+        <Projects data={projects} />
+      </Suspense>
 
       <Contact />
 

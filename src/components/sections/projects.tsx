@@ -5,11 +5,7 @@ import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
 import Section from '@/components/ui/section'
 
-export default function Projects({
-  data,
-}: {
-  data: ProjectProps[] | undefined
-}) {
+export default function Projects({ data }: { data: ProjectProps[] }) {
   const t = useTranslations('Projects')
 
   return (
