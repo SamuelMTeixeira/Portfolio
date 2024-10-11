@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowUpRight, CodeXml } from 'lucide-react'
 import {
   Card,
   CardContent,
@@ -13,6 +12,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
+import { LinkSquare02Icon, SourceCodeIcon } from 'hugeicons-react'
 
 export default function ProjectCard({
   imageUrl,
@@ -76,7 +76,7 @@ export default function ProjectCard({
             className="text-sm flex items-center w-full"
             disabled={!sourceUrl}
           >
-            <CodeXml className="w-4 h-4 mr-2" />
+            <SourceCodeIcon className="w-4 h-4 mr-2" />
             {t('source')}
           </Button>
         </a>
@@ -92,7 +92,8 @@ export default function ProjectCard({
             disabled={!previewUrl}
           >
             {t('view')}
-            <ArrowUpRight className="w-4 h-4 ml-2" />
+
+            <LinkSquare02Icon className="w-4 h-4 ml-2" />
           </Button>
         </a>
       </CardFooter>

@@ -10,7 +10,7 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useTranslations } from 'next-intl'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight02Icon } from 'hugeicons-react'
 
 export default function AboutMe() {
   const t = useTranslations('Aboutme')
@@ -52,7 +52,7 @@ export default function AboutMe() {
                   >
                     {t('linkedinProfile')}
 
-                    <ArrowRight size={14} />
+                    <ArrowRight02Icon size={14} />
                   </a>
                 </CardDescription>
               </div>

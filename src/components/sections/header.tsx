@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Menu } from 'lucide-react'
+import { Menu01Icon } from 'hugeicons-react'
 
 import {
   Menubar,
@@ -37,7 +37,7 @@ export default function Header() {
         <MenubarMenu>
           <MenubarTrigger asChild>
             <Button size={'icon'} variant={'outline'}>
-              <Menu size={24} />
+              <Menu01Icon size={24} />
             </Button>
           </MenubarTrigger>
           <MenubarContent className="rounded-sm">
