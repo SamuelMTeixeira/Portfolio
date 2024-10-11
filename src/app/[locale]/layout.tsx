@@ -9,8 +9,9 @@ import ReactQueryProvider from '@/providers/reactQueryProvider'
 import { Toaster } from '@/components/ui/sonner'
 import { Suspense } from 'react'
 import Loading from '@/app/[locale]/loading'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
@@ -28,10 +29,12 @@ export const metadata = {
     'Front-End Developer',
     'Back-End Developer',
     'Software Engineer',
+    'Software Architect',
     'Desenvolvedor',
     'Front-End',
     'Back-End',
     'Engenheiro de software',
+    'Arquiteto de software',
   ],
   alternates: {
     canonical: 'https://samuelmteixeira.dev',
@@ -39,7 +42,7 @@ export const metadata = {
   openGraph: {
     images: {
       url: '/logo.png',
-      alt: 'Yellow letter S, used as the representative logo of the website',
+      alt: 'Orange letter S, used as the representative logo of the website',
       type: 'image/png',
     },
     title: 'Samuel Molendolff Teixeira',

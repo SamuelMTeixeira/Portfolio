@@ -64,7 +64,8 @@ export default function Loading() {
       <Image
         id="logo"
         src="/logo-128x128.png"
-        alt=""
+        alt="Website logo, an orange letter S"
+        className="h-20 w-20"
         width={128}
         height={128}
       />
