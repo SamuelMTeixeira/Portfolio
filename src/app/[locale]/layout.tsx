@@ -12,10 +12,6 @@ import Loading from '@/app/[locale]/loading'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  robots: {
-    index: true,
-    follow: true,
-  },
   title: 'Samuel Molendolff Teixeira',
   description: "A Software Developer's Portofio",
   authors: {
