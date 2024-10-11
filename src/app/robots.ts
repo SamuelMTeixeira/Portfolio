@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/preview.png',
       },
     ],
-    sitemap: ['https://samuelmteixeira.dev/en/sitemap.xml', 'https://samuelmteixeira.dev/pt/sitemap.xml'],
+    sitemap: ['https://samuelmteixeira.dev/sitemap.xml'],
   }
 }
