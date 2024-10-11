@@ -17,6 +17,15 @@
                         "startDate": "2020-01",
                         "endDate": "2023-04"
                     }
+                },
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "Faculdade de Informática e Administração Paulista - FIAP",
+                    "member": {
+                        "@type": "OrganizationRole",
+                        "startDate": "2024-01",
+                        "endDate": "2025-02"
+                    }
                 }
             ],
             "awards": [],
@@ -27,7 +36,11 @@
             "jobTitle": [
                 "Information Technology Support Analyst",
                 "Software Developer",
-                "Software Analyst"
+                "Software Analyst",
+                "Software Architect",
+                "Desenvolvedor de Software",
+                "Analista de Software",
+                "Arquiteto de Software"
             ],
             "name": "Samuel Molendolff Teixeira",
             "sameAs": "https://br.linkedin.com/in/samuelmteixeira",
@@ -76,9 +89,11 @@
         "Front-End Developer",
         "Back-End Developer",
         "Software Engineer",
+        "Software Architect",
         "Desenvolvedor",
         "Front-End",
         "Back-End",
-        "Engenheiro de software"
+        "Engenheiro de software",
+        "Arquiteto de software"
     ]
 }
