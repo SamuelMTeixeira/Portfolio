@@ -7,7 +7,7 @@ export default function Footer() {
         <p>
           © 2022 - 2024,
           <a
-            className="text-primary/[.8]"
+            className="font-bold text-foreground"
             href="https://github.com/samuelmteixeira"
             target="_blank"
             rel="noopener noreferrer"

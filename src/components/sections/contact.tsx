@@ -100,6 +100,7 @@ export default function Projects() {
 
                 <CardFooter className="flex justify-center p-0">
                   <Button
+                    aria-label="Submit form"
                     type="submit"
                     size={'default'}
                     disabled={isPending}

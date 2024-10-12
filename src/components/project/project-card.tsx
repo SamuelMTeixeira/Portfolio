@@ -16,8 +16,8 @@ import { LinkSquare02Icon, SourceCodeIcon } from 'hugeicons-react'
 
 export default function ProjectCard({
   imageUrl,
-  sourceUrl = '',
-  previewUrl = '',
+  sourceUrl,
+  previewUrl,
   title,
   category,
   tags,
@@ -41,6 +41,7 @@ export default function ProjectCard({
           fill
           alt={`Representative image of the project ${title}`}
           className="w-full h-auto object-cover"
+          loading="lazy"
         />
         <span className="absolute inset-0 bg-gradient-to-t from-white/[.5] to-transparent"></span>
       </div>
@@ -66,12 +67,13 @@ export default function ProjectCard({
       </CardContent>
       <CardFooter className="p-6 pt-0 flex justify-between items-center gap-2 flex-col md:flex-row">
         <a
-          href={sourceUrl}
+          href={sourceUrl || '#'}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full lg:w-auto"
         >
           <Button
+            aria-label="View source code"
             variant="outline"
             className="text-sm flex items-center w-full"
             disabled={!sourceUrl}
@@ -82,12 +84,13 @@ export default function ProjectCard({
         </a>
 
         <a
-          href={previewUrl}
+          href={previewUrl || '#'}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full lg:w-auto"
         >
           <Button
+            aria-label="View project"
             className="text-sm flex items-center w-full"
             disabled={!previewUrl}
           >

@@ -86,13 +86,13 @@ export default function Hero() {
       </p>
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
-        <a href="#contact">
+        <a href="#contact" aria-label="Get in touch">
           <Button size="xl" className="w-full">
             {t('primaryButton')}
           </Button>
         </a>
 
-        <a href="#projects">
+        <a href="#projects" aria-label="See portfolio projects">
           <Button size="xl" variant="outline" className="w-full">
             {t('secondaryButton')}
           </Button>

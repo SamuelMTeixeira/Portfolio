@@ -34,8 +34,8 @@ export default function AboutMe() {
             <div className="flex flex-row items-center gap-4 lg:gap-8">
               <Avatar className="w-14 lg:w-20 h-auto">
                 <AvatarImage
-                  src="https://github.com/samuelmteixeira.png"
-                  alt="@samuelmteixeira"
+                  src="/ft.jpg"
+                  alt="Photo of Samuel Molendolff Teixeira"
                 />
                 <AvatarFallback>S</AvatarFallback>
               </Avatar>

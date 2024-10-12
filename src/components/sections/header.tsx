@@ -35,7 +35,7 @@ export default function Header() {
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger asChild>
-            <Button size="icon" variant="outline">
+            <Button aria-label="open menu" size="icon" variant="outline">
               <Menu01Icon size={24} />
             </Button>
           </MenubarTrigger>
