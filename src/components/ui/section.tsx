@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import console from '@/assets/img/console.png'
+import console from '@/assets/img/console.webp'
 
 interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   id: string

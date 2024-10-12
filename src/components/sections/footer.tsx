@@ -18,7 +18,7 @@ export default function Footer() {
         </p>
 
         <Image
-          src="/logo.png"
+          src="/logo.webp"
           width={32}
           height={32}
           alt="Website logo"

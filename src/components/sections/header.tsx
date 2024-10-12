@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header className="container mx-auto flex items-center justify-between h-[10vh]">
-      <Image src="/logo.png" width={32} height={32} alt="Website logo" />
+      <Image src="/logo.webp" width={32} height={32} alt="Website logo" />
 
       <h1 className="hidden md:block font-bricolage font-bold text-center md:text-3xl">
         Samuel M. Teixeira

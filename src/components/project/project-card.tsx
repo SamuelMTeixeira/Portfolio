@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import {
@@ -39,6 +37,7 @@ export default function ProjectCard({
         <Image
           src={imageUrl}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt={`Representative image of the project ${title}`}
           className="w-full h-auto object-cover"
           loading="lazy"
@@ -67,10 +66,10 @@ export default function ProjectCard({
       </CardContent>
       <CardFooter className="p-6 pt-0 flex justify-between items-center gap-2 flex-col md:flex-row">
         <a
-          href={sourceUrl || '#'}
+          href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full lg:w-auto"
+          className={`w-full lg:w-auto ${sourceUrl ? '' : 'pointer-events-none'}`}
         >
           <Button
             aria-label="View source code"
@@ -84,10 +83,10 @@ export default function ProjectCard({
         </a>
 
         <a
-          href={previewUrl || '#'}
+          href={previewUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full lg:w-auto"
+          className={`w-full lg:w-auto ${previewUrl ? '' : 'pointer-events-none'}`}
         >
           <Button
             aria-label="View project"

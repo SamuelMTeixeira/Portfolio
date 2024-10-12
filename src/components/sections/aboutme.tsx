@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Card,
   CardContent,
@@ -34,7 +32,7 @@ export default function AboutMe() {
             <div className="flex flex-row items-center gap-4 lg:gap-8">
               <Avatar className="w-14 lg:w-20 h-auto">
                 <AvatarImage
-                  src="/ft.jpg"
+                  src="/profile.webp"
                   alt="Photo of Samuel Molendolff Teixeira"
                 />
                 <AvatarFallback>S</AvatarFallback>

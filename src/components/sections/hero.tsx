@@ -12,6 +12,8 @@ import pencil from '@/assets/img/hero/pencil.svg'
 import cloud from '@/assets/img/hero/cloud.svg'
 import tags from '@/assets/img/hero/tags.svg'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
+
 const Draggable = dynamic(
   () => import('@/components/ui/draggable').then((mod) => mod.Draggable),
   {
@@ -86,17 +88,17 @@ export default function Hero() {
       </p>
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
-        <a href="#contact" aria-label="Get in touch">
+        <Link href="#contact" aria-label="Get in touch">
           <Button size="xl" className="w-full">
             {t('primaryButton')}
           </Button>
-        </a>
+        </Link>
 
-        <a href="#projects" aria-label="See portfolio projects">
+        <Link href="#projects" aria-label="See portfolio projects">
           <Button size="xl" variant="outline" className="w-full">
             {t('secondaryButton')}
           </Button>
-        </a>
+        </Link>
       </div>
     </motion.div>
   )
