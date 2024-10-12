@@ -4,8 +4,9 @@ import ProjectCard from '@/components/project/project-card'
 import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
 import Section from '@/components/ui/section'
+import { memo } from 'react'
 
-export default function Projects({ data }: { data: ProjectProps[] }) {
+function Projects({ data }: { data: ProjectProps[] }) {
   const t = useTranslations('Projects')
 
   return (
@@ -23,3 +24,5 @@ export default function Projects({ data }: { data: ProjectProps[] }) {
     </Section>
   )
 }
+
+export default memo(Projects)

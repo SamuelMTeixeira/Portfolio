@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <footer className="container mt-8 text-xs font-medium text-slate-500">
-      <div className="flex flex-col space-y-4 border-t border-input py-8 items-center justify-between md:flex-row md:space-y-0">
+      <div className="flex flex-col items-center justify-between py-8 border-t border-input md:flex-row md:space-y-0 space-y-4">
         <p>
           © 2022 - 2024,
           <a
@@ -12,9 +12,9 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            @SamuelMTeixeira
+            {' '}
+            @SamuelMTeixeira.
           </a>
-          .
         </p>
 
         <Image
@@ -22,7 +22,7 @@ export default function Footer() {
           width={32}
           height={32}
           alt="Website logo"
-          className="w-6 h-6 hidden md:block"
+          className="hidden md:block w-6 h-6"
         />
 
         <p>Coded with 🧡 and ☕</p>

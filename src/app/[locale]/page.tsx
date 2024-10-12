@@ -9,11 +9,16 @@ import ProjectPreview from '@/components/sections/project-preview'
 import Projects from '@/components/sections/projects'
 import Skills from '@/components/sections/skills'
 import useProject from '@/hooks/useProject'
-import { Suspense } from 'react'
+import { Suspense, useMemo } from 'react'
 import Loading from './loading'
 
 export default function Page() {
   const { projects } = useProject()
+
+  const projectImages = useMemo(
+    () => projects.map(({ imageUrl }) => imageUrl),
+    [projects],
+  )
 
   return (
     <Suspense fallback={<Loading />}>
@@ -21,7 +26,7 @@ export default function Page() {
 
       <Hero />
 
-      <ProjectPreview data={projects.map((project) => project.imageUrl)} />
+      <ProjectPreview data={projectImages} />
 
       <Skills />
 

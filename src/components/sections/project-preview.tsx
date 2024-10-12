@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import { motion, useTransform, useScroll } from 'framer-motion'
-import { useRef } from 'react'
+import { memo, useRef } from 'react'
 
-export default function ProjectPreview({ data }: { data: string[] }) {
+function ProjectPreview({ data }: { data: string[] }) {
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
@@ -20,9 +20,12 @@ export default function ProjectPreview({ data }: { data: string[] }) {
             alt="Project preview"
             width={470}
             height={356}
+            priority
           />
         ))}
       </motion.div>
     </div>
   )
 }
+
+export default memo(ProjectPreview)

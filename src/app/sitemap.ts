@@ -7,8 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       alternates: {
         languages: {
-          es: 'https://samuelmteixeira.dev/en',
-          de: 'https://samuelmteixeira.dev/pt',
+          en: 'https://samuelmteixeira.dev/en',
+          pt: 'https://samuelmteixeira.dev/pt',
         },
       },
     },

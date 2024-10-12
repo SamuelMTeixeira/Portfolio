@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import { Draggable } from '@/components/ui/draggable'
 import Image from 'next/image'
 import select from '@/assets/img/hero/select-pointer.svg'
 import kube from '@/assets/img/hero/kube.svg'
@@ -12,6 +11,52 @@ import compass from '@/assets/img/hero/compass.svg'
 import pencil from '@/assets/img/hero/pencil.svg'
 import cloud from '@/assets/img/hero/cloud.svg'
 import tags from '@/assets/img/hero/tags.svg'
+import dynamic from 'next/dynamic'
+const Draggable = dynamic(
+  () => import('@/components/ui/draggable').then((mod) => mod.Draggable),
+  {
+    ssr: false,
+  },
+)
+
+const draggableItems = [
+  {
+    nameKey: 'backend',
+    src: tags,
+    size: 50,
+    className: 'top-[12vh] left-[12rem]',
+  },
+  {
+    nameKey: 'cloud',
+    src: cloud,
+    size: 40,
+    className: 'top-[42vh] left-[3rem]',
+  },
+  {
+    nameKey: 'tests',
+    src: compass,
+    size: 50,
+    className: 'top-[78vh] left-[12rem]',
+  },
+  {
+    nameKey: 'frontend',
+    src: kube,
+    size: 50,
+    className: 'top-[4rem] right-[8rem]',
+  },
+  {
+    nameKey: 'accessibility',
+    src: select,
+    size: 50,
+    className: 'top-[22rem] right-[4rem]',
+  },
+  {
+    nameKey: 'prototyping',
+    src: pencil,
+    size: 50,
+    className: 'top-[78vh] right-[12rem]',
+  },
+]
 
 export default function Hero() {
   const t = useTranslations('Hero')
@@ -23,47 +68,15 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[90vh] flex flex-col justify-center items-center gap-4 container mx-auto"
     >
-      <Draggable
-        dragConstraints={containerRef}
-        className=" top-[12vh] left-[12rem]"
-        name={t('backend')}
-        image={<Image src={tags} alt="Select pointer icon" width={50} />}
-      />
-
-      <Draggable
-        dragConstraints={containerRef}
-        className="top-[42vh] left-[3rem]"
-        name={t('cloud')}
-        image={<Image src={cloud} alt="Select pointer icon" width={40} />}
-      />
-
-      <Draggable
-        dragConstraints={containerRef}
-        className="top-[78vh] left-[12rem]"
-        name={t('tests')}
-        image={<Image src={compass} alt="Select pointer icon" />}
-      />
-
-      <Draggable
-        dragConstraints={containerRef}
-        className="top-[4rem] right-[8rem]"
-        name={t('frontend')}
-        image={<Image src={kube} alt="Select pointer icon" />}
-      />
-
-      <Draggable
-        dragConstraints={containerRef}
-        className="top-[22rem] right-[4rem]"
-        name={t('accessibility')}
-        image={<Image src={select} alt="Select pointer icon" />}
-      />
-
-      <Draggable
-        dragConstraints={containerRef}
-        className="top-[78vh] right-[12rem]"
-        name={t('prototyping')}
-        image={<Image src={pencil} alt="Select pointer icon" />}
-      />
+      {draggableItems.map(({ nameKey, src, size, className }) => (
+        <Draggable
+          key={nameKey}
+          dragConstraints={containerRef}
+          className={className}
+          name={t(nameKey)}
+          image={<Image src={src} alt={`${t(nameKey)} icon`} width={size} />}
+        />
+      ))}
 
       <h1 className="text-center font-extrabold font-bricolage text-5xl max-w-5xl md:text-6xl md:max-w-6xl">
         {t('title')}
@@ -74,13 +87,13 @@ export default function Hero() {
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
         <a href="#contact">
-          <Button size={'xl'} className="w-full">
+          <Button size="xl" className="w-full">
             {t('primaryButton')}
           </Button>
         </a>
 
         <a href="#projects">
-          <Button size={'xl'} variant={'outline'} className="w-full">
+          <Button size="xl" variant="outline" className="w-full">
             {t('secondaryButton')}
           </Button>
         </a>
