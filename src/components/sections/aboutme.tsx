@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Card,
   CardContent,
@@ -10,7 +8,7 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useTranslations } from 'next-intl'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight02Icon } from 'hugeicons-react'
 
 export default function AboutMe() {
   const t = useTranslations('Aboutme')
@@ -34,8 +32,8 @@ export default function AboutMe() {
             <div className="flex flex-row items-center gap-4 lg:gap-8">
               <Avatar className="w-14 lg:w-20 h-auto">
                 <AvatarImage
-                  src="https://github.com/samuelmteixeira.png"
-                  alt="@samuelmteixeira"
+                  src="/profile.webp"
+                  alt="Photo of Samuel Molendolff Teixeira"
                 />
                 <AvatarFallback>S</AvatarFallback>
               </Avatar>
@@ -52,7 +50,7 @@ export default function AboutMe() {
                   >
                     {t('linkedinProfile')}
 
-                    <ArrowRight size={14} />
+                    <ArrowRight02Icon size={14} />
                   </a>
                 </CardDescription>
               </div>

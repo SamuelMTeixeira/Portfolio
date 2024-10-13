@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: ['/'],
-        disallow: '/preview.png',
       },
     ],
     sitemap: ['https://samuelmteixeira.dev/sitemap.xml'],

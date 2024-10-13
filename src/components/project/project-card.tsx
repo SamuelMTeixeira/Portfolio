@@ -1,8 +1,5 @@
-'use client'
-
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowUpRight, CodeXml } from 'lucide-react'
 import {
   Card,
   CardContent,
@@ -13,11 +10,12 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
+import { LinkSquare02Icon, SourceCodeIcon } from 'hugeicons-react'
 
 export default function ProjectCard({
   imageUrl,
-  sourceUrl = '',
-  previewUrl = '',
+  sourceUrl,
+  previewUrl,
   title,
   category,
   tags,
@@ -39,8 +37,10 @@ export default function ProjectCard({
         <Image
           src={imageUrl}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt={`Representative image of the project ${title}`}
           className="w-full h-auto object-cover"
+          loading="lazy"
         />
         <span className="absolute inset-0 bg-gradient-to-t from-white/[.5] to-transparent"></span>
       </div>
@@ -69,14 +69,15 @@ export default function ProjectCard({
           href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full lg:w-auto"
+          className={`w-full lg:w-auto ${sourceUrl ? '' : 'pointer-events-none'}`}
         >
           <Button
+            aria-label="View source code"
             variant="outline"
             className="text-sm flex items-center w-full"
             disabled={!sourceUrl}
           >
-            <CodeXml className="w-4 h-4 mr-2" />
+            <SourceCodeIcon className="w-4 h-4 mr-2" />
             {t('source')}
           </Button>
         </a>
@@ -85,14 +86,16 @@ export default function ProjectCard({
           href={previewUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full lg:w-auto"
+          className={`w-full lg:w-auto ${previewUrl ? '' : 'pointer-events-none'}`}
         >
           <Button
+            aria-label="View project"
             className="text-sm flex items-center w-full"
             disabled={!previewUrl}
           >
             {t('view')}
-            <ArrowUpRight className="w-4 h-4 ml-2" />
+
+            <LinkSquare02Icon className="w-4 h-4 ml-2" />
           </Button>
         </a>
       </CardFooter>

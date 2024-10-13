@@ -16,8 +16,8 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import useEmail from '@/hooks/useEmail'
-import { LoaderCircle } from 'lucide-react'
 import Section from '@/components/ui/section'
+import { Loading03Icon } from 'hugeicons-react'
 
 export default function Projects() {
   const t = useTranslations('Getintouch')
@@ -100,13 +100,14 @@ export default function Projects() {
 
                 <CardFooter className="flex justify-center p-0">
                   <Button
+                    aria-label="Submit form"
                     type="submit"
                     size={'default'}
                     disabled={isPending}
                     className="md:h-11 md:px-8"
                   >
                     {isPending && (
-                      <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
+                      <Loading03Icon className="mr-2 h-5 w-5 animate-spin" />
                     )}
                     {t('form.submit')}
                   </Button>

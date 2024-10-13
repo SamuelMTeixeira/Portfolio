@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: {
-      url: '/logo.png',
+      url: '/logo.webp',
       alt: 'Orange letter S, used as the representative logo of the website',
-      type: 'image/png',
+      type: 'image/webp',
     },
     title: 'Samuel Molendolff Teixeira',
     type: 'website',
@@ -79,7 +79,6 @@ export default async function RootLayout({
             </Suspense>
           </ReactQueryProvider>
         </Providers>
-
         <Toaster />
       </body>
     </html>

@@ -1,11 +1,11 @@
 import { EmailProps, sendEmail } from '@/services/email'
 import { useMutation } from '@tanstack/react-query'
 import { toast } from 'sonner'
-import { CircleAlert, MailCheck } from 'lucide-react'
 import { z } from 'zod'
 import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { MailRemove02Icon, MailValidation01Icon } from 'hugeicons-react'
 
 export default function useEmail() {
   const t = useTranslations('Getintouch')
@@ -52,7 +52,7 @@ export default function useEmail() {
     mutationFn: (data: EmailProps) => sendEmail(data),
     onSuccess: () => {
       toast(t('emailStatus.success'), {
-        icon: <MailCheck className="h-4 text-green-600" />,
+        icon: <MailValidation01Icon className="h-4 text-green-600" />,
         duration: 3000,
         className: 'text-green-500',
       })
@@ -61,7 +61,7 @@ export default function useEmail() {
     },
     onError: () => {
       toast.error(t('emailStatus.error'), {
-        icon: <CircleAlert className="h-4 text-red-600" />,
+        icon: <MailRemove02Icon className="h-4 text-red-600" />,
         duration: 3000,
         className: 'text-green-500',
       })

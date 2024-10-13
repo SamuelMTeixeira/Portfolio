@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Image from 'next/image'
 import anime from 'animejs'
 
@@ -63,7 +63,7 @@ export default function Loading() {
     <div className="flex h-screen items-center justify-center">
       <Image
         id="logo"
-        src="/logo-128x128.png"
+        src="/logo-128x128.webp"
         alt="Website logo, an orange letter S"
         className="h-20 w-20"
         width={128}
