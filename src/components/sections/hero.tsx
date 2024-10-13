@@ -32,30 +32,30 @@ const draggableItems = [
     nameKey: 'cloud',
     src: cloud,
     size: 40,
-    className: 'top-[42vh] left-[3rem]',
+    className: 'top-[50vh] left-[3rem]',
   },
   {
     nameKey: 'tests',
     src: compass,
-    size: 50,
+    size: 42,
     className: 'top-[78vh] left-[12rem]',
   },
   {
     nameKey: 'frontend',
     src: kube,
-    size: 50,
+    size: 80,
     className: 'top-[4rem] right-[8rem]',
   },
   {
     nameKey: 'accessibility',
     src: select,
-    size: 50,
-    className: 'top-[22rem] right-[4rem]',
+    size: 32,
+    className: 'top-[20rem] right-0',
   },
   {
     nameKey: 'prototyping',
     src: pencil,
-    size: 50,
+    size: 32,
     className: 'top-[78vh] right-[12rem]',
   },
 ]
@@ -76,7 +76,14 @@ export default function Hero() {
           dragConstraints={containerRef}
           className={className}
           name={t(nameKey)}
-          image={<Image src={src} alt={`${t(nameKey)} icon`} width={size} />}
+          image={
+            <Image
+              src={src}
+              alt={`${t(nameKey)} icon`}
+              width={size}
+              className="h-auto"
+            />
+          }
         />
       ))}
 
