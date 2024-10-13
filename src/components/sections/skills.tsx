@@ -1,32 +1,73 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Marquee from '../ui/marquee'
+import dynamic from 'next/dynamic'
 
-import {
-  JavascriptOriginal,
-  TypescriptOriginal,
-  Html5Plain,
-  Css3Plain,
-  ReactOriginal,
-  PhpPlain,
-  LaravelOriginal,
-  MysqlOriginal,
-  PostgresqlPlain,
-  MariadbOriginalWordmark,
-  JavaOriginal,
-  AndroidOriginal,
-  LinuxOriginal,
-  KubernetesOriginal,
-  TerraformOriginal,
-  SpringOriginal,
-  AmazonwebservicesOriginalWordmark,
-  TailwindcssOriginal,
-  GithubactionsPlain,
-  DockerPlain,
-  NextjsOriginal,
-  ExpressOriginalWordmark,
-} from 'devicons-react'
+const Marquee = dynamic(() => import('../ui/marquee'), {
+  suspense: true,
+  ssr: false,
+})
+
+const JavascriptOriginal = dynamic(
+  () => import('devicons-react/lib/icons/JavascriptOriginal'),
+)
+const TypescriptOriginal = dynamic(
+  () => import('devicons-react/lib/icons/TypescriptOriginal'),
+)
+const Html5Plain = dynamic(() => import('devicons-react/lib/icons/Html5Plain'))
+const Css3Plain = dynamic(() => import('devicons-react/lib/icons/Css3Plain'))
+const ReactOriginal = dynamic(
+  () => import('devicons-react/lib/icons/ReactOriginal'),
+)
+const PhpPlain = dynamic(() => import('devicons-react/lib/icons/PhpPlain'))
+const LaravelOriginal = dynamic(
+  () => import('devicons-react/lib/icons/LaravelOriginal'),
+)
+const MysqlOriginal = dynamic(
+  () => import('devicons-react/lib/icons/MysqlOriginal'),
+)
+const PostgresqlPlain = dynamic(
+  () => import('devicons-react/lib/icons/PostgresqlPlain'),
+)
+const MariadbOriginalWordmark = dynamic(
+  () => import('devicons-react/lib/icons/MariadbOriginalWordmark'),
+)
+const JavaOriginal = dynamic(
+  () => import('devicons-react/lib/icons/JavaOriginal'),
+)
+const AndroidOriginal = dynamic(
+  () => import('devicons-react/lib/icons/AndroidOriginal'),
+)
+const LinuxOriginal = dynamic(
+  () => import('devicons-react/lib/icons/LinuxOriginal'),
+)
+const KubernetesOriginal = dynamic(
+  () => import('devicons-react/lib/icons/KubernetesOriginal'),
+)
+const TerraformOriginal = dynamic(
+  () => import('devicons-react/lib/icons/TerraformOriginal'),
+)
+const SpringOriginal = dynamic(
+  () => import('devicons-react/lib/icons/SpringOriginal'),
+)
+const AmazonwebservicesOriginalWordmark = dynamic(
+  () => import('devicons-react/lib/icons/AmazonwebservicesOriginalWordmark'),
+)
+const TailwindcssOriginal = dynamic(
+  () => import('devicons-react/lib/icons/TailwindcssOriginal'),
+)
+const GithubactionsPlain = dynamic(
+  () => import('devicons-react/lib/icons/GithubactionsPlain'),
+)
+const DockerPlain = dynamic(
+  () => import('devicons-react/lib/icons/DockerPlain'),
+)
+const NextjsOriginal = dynamic(
+  () => import('devicons-react/lib/icons/NextjsOriginal'),
+)
+const ExpressOriginalWordmark = dynamic(
+  () => import('devicons-react/lib/icons/ExpressOriginalWordmark'),
+)
 
 export default function Skills() {
   const t = useTranslations('Skills')

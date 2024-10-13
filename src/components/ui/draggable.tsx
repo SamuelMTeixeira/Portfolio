@@ -10,17 +10,14 @@ interface DraggableProps extends HTMLMotionProps<'div'> {
 
 export function Draggable({
   dragConstraints,
-  className,
+  className = '',
   name,
   image,
   ...props
 }: DraggableProps) {
   return (
     <motion.div
-      className={
-        'absolute hidden lg:block cursor-grab active:cursor-grabbing ' +
-        className
-      }
+      className={`absolute hidden lg:block cursor-grab active:cursor-grabbing ${className}`}
       drag
       dragConstraints={dragConstraints}
       dragTransition={{ bounceStiffness: 600, bounceDamping: 50 }}

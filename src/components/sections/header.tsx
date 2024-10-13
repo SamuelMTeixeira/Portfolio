@@ -1,8 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Menu } from 'lucide-react'
-
+import { Menu01Icon } from 'hugeicons-react'
 import {
   Menubar,
   MenubarContent,
@@ -27,17 +26,17 @@ export default function Header() {
 
   return (
     <header className="container mx-auto flex items-center justify-between h-[10vh]">
-      <Image src="/logo.png" width={32} height={32} alt="Website logo" />
+      <Image src="/logo.webp" width={32} height={32} alt="Website logo" />
 
-      <h1 className="font-bricolage font-bold hidden md:block md:text-3xl text-center">
+      <h1 className="hidden md:block font-bricolage font-bold text-center md:text-3xl">
         Samuel M. Teixeira
       </h1>
 
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger asChild>
-            <Button size={'icon'} variant={'outline'}>
-              <Menu size={24} />
+            <Button aria-label="open menu" size="icon" variant="outline">
+              <Menu01Icon size={24} />
             </Button>
           </MenubarTrigger>
           <MenubarContent className="rounded-sm">
@@ -45,10 +44,10 @@ export default function Header() {
               <MenubarSubTrigger>{t('languages.title')}</MenubarSubTrigger>
               <MenubarSubContent>
                 <MenubarRadioGroup value={pathname}>
-                  {locales.map((locale, index) => (
+                  {locales.map((locale) => (
                     <MenubarRadioItem
                       onSelect={() => router.replace(locale)}
-                      key={index}
+                      key={locale}
                       value={locale}
                     >
                       {t(`languages.${locale}`)}

@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useEffect, useState } from 'react'
+import { ReactNode, useRef, useEffect, useState } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 
 interface MarqueeProps {

@@ -80,7 +80,7 @@
     },
     "image": {
         "@type": "ImageObject",
-        "url": "https://samuelmteixeira.dev/logo.png"
+        "url": "https://samuelmteixeira.dev/logo.webp"
     },
     "keywords": [
         "Portfolio",
