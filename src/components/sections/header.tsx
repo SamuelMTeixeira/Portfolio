@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Menu01Icon } from 'hugeicons-react'
+import { TranslateIcon } from 'hugeicons-react'
 import {
   Menubar,
   MenubarContent,
@@ -35,8 +35,8 @@ export default function Header() {
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger asChild>
-            <Button aria-label="open menu" size="icon" variant="outline">
-              <Menu01Icon size={24} />
+            <Button aria-label="open menu" size="lg" variant="outline">
+              <TranslateIcon size={24} />
             </Button>
           </MenubarTrigger>
           <MenubarContent className="rounded-sm">
