@@ -36,7 +36,7 @@ export default function Header() {
         <MenubarMenu>
           <MenubarTrigger asChild>
             <Button aria-label="open menu" size="lg" variant="outline">
-              <TranslateIcon size={24} />
+              <TranslateIcon size={22} />
             </Button>
           </MenubarTrigger>
           <MenubarContent className="rounded-sm">
