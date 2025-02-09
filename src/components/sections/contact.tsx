@@ -72,7 +72,7 @@ export default function Projects() {
                       <FormControl>
                         <Input
                           placeholder={t('form.email.placeholder')}
-                          type={'email'}
+                          type="email"
                           {...field}
                         />
                       </FormControl>
@@ -102,7 +102,7 @@ export default function Projects() {
                   <Button
                     aria-label="Submit form"
                     type="submit"
-                    size={'default'}
+                    size="default"
                     disabled={isPending}
                     className="md:h-11 md:px-8"
                   >
