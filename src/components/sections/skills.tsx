@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 
 const Marquee = dynamic(() => import('../ui/marquee'), {
-  suspense: true,
   ssr: false,
 })
 

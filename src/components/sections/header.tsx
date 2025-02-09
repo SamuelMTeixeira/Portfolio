@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Menu01Icon } from 'hugeicons-react'
+import { TranslateIcon } from 'hugeicons-react'
 import {
   Menubar,
   MenubarContent,
@@ -15,9 +15,9 @@ import {
 } from '@/components/ui/menubar'
 import { useTranslations } from 'next-intl'
 import { locales } from '@/lib/next-intl'
-import { useRouter } from '@/navigation'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import { useRouter } from '@/i18n/routing'
 
 export default function Header() {
   const t = useTranslations('Header')
@@ -35,8 +35,8 @@ export default function Header() {
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger asChild>
-            <Button aria-label="open menu" size="icon" variant="outline">
-              <Menu01Icon size={24} />
+            <Button aria-label="open menu" size="lg" variant="outline">
+              <TranslateIcon size={22} />
             </Button>
           </MenubarTrigger>
           <MenubarContent className="rounded-sm">

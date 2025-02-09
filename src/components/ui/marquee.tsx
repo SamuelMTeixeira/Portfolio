@@ -35,7 +35,9 @@ const Marquee: React.FC<MarqueeProps> = ({
     if (contentWidth > 0) {
       const duration = contentWidth / speed
       controls.start({
-        x: direction === 'left' ? -contentWidth : 0,
+        x: direction === 'left'
+          ? -contentWidth
+          : 0,
         transition: {
           duration,
           repeat: Infinity,
@@ -58,7 +60,9 @@ const Marquee: React.FC<MarqueeProps> = ({
         {[...Array(repeatCount)].map((_, index) => (
           <div
             key={index}
-            ref={index === 0 ? contentRef : undefined}
+            ref={index === 0
+              ? contentRef
+              : undefined}
             className="inline-flex gap-8"
           >
             {children}

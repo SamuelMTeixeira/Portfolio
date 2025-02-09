@@ -1,99 +1,139 @@
 {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@graph": [
         {
-            "@type": "Person",
+            "@type": ["Person", "ProfilePage"],
+            "@id": "https://samuelmteixeira.dev/#person",
+            "name": "Samuel Molendolff Teixeira",
+            "givenName": "Samuel",
+            "alternateName": [
+                "Samuel M. Teixeira",
+                "Samuel Teixeira",
+                "Samuel Developer",
+                "Dev Samuel"
+            ],
+            "familyName": "Molendolff Teixeira",
+            "additionalName": "Samuel",
+            "gender": "Male",
+            "nationality": "Brazilian",
+            "jobTitle": [
+                "Software Developer",
+                "Software Architect",
+                "Full Stack Developer"
+            ],
             "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Teófilo Otoni, Minas Gerais, Brasil",
-                "addressCountry": "br"
+                "addressLocality": "Teófilo Otoni",
+                "addressRegion": "Minas Gerais",
+                "addressCountry": "BR"
             },
             "alumniOf": [
                 {
-                    "@type": "EducationalOrganization",
+                    "@type": "CollegeOrUniversity",
                     "name": "Instituto Federal do Norte de Minas Gerais - IFNMG",
+                    "url": "https://www.ifnmg.edu.br/",
                     "member": {
                         "@type": "OrganizationRole",
                         "startDate": "2020-01",
-                        "endDate": "2023-04"
+                        "endDate": "2023-04",
+                        "roleName": "Student"
                     }
                 },
                 {
-                    "@type": "EducationalOrganization",
+                    "@type": "CollegeOrUniversity",
                     "name": "Faculdade de Informática e Administração Paulista - FIAP",
+                    "url": "https://www.fiap.com.br/",
                     "member": {
                         "@type": "OrganizationRole",
                         "startDate": "2024-01",
-                        "endDate": "2025-02"
+                        "endDate": "2025-02",
+                        "roleName": "Student"
                     }
                 }
             ],
-            "awards": [],
             "image": {
                 "@type": "ImageObject",
-                "contentUrl": "https://media.licdn.com/dms/image/D4D03AQGZstd8fuU3oQ/profile-displayphoto-shrink_800_800/0/1668741601215?e=2147483647&v=beta&t=QTNvBrdvAdvN0IVKpMPeiJLEsEMpl46lQf1oNd4fVI8"
+                "contentUrl": "https://media.licdn.com/dms/image/D4D03AQGZstd8fuU3oQ/profile-displayphoto-shrink_800_800/0/1668741601215?e=2147483647&v=beta&t=QTNvBrdvAdvN0IVKpMPeiJLEsEMpl46lQf1oNd4fVI8",
+                "caption": "Samuel Molendolff Teixeira - Software Developer",
+                "name": "Samuel Molendolff Teixeira Profile Picture"
             },
-            "jobTitle": [
-                "Information Technology Support Analyst",
-                "Software Developer",
-                "Software Analyst",
-                "Software Architect",
-                "Desenvolvedor de Software",
-                "Analista de Software",
-                "Arquiteto de Software"
+            "hasOccupation": [
+                {
+                    "@type": "Occupation",
+                    "name": "Software Developer Samuel Molendolff Teixeira",
+                    "occupationCategory": "15-1252.00",
+                    "description": "Samuel Molendolff Teixeira is a skilled software developer specializing in creating robust and scalable applications",
+                    "skills": [
+                        "Front-end Development",
+                        "Back-end Development",
+                        "Software Architecture",
+                        "Clean Code",
+                        "Problem Solving"
+                    ]
+                }
             ],
-            "name": "Samuel Molendolff Teixeira",
-            "sameAs": "https://br.linkedin.com/in/samuelmteixeira",
+            "sameAs": [
+                "https://br.linkedin.com/in/samuelmteixeira",
+                "https://github.com/SamuelMTeixeira",
+                "https://samuelmteixeira.dev"
+            ],
             "url": "https://samuelmteixeira.dev",
-            "memberOf": [],
-            "description": "A software developer who thrives on crafting elegant solutions to complex problems. With a passion for clean code and innovative technologies, I specialize in creating robust and scalable software applications."
+            "mainEntityOfPage": "https://samuelmteixeira.dev",
+            "description": "Samuel Molendolff Teixeira is a software developer who thrives on crafting elegant solutions to complex problems. Based in Teófilo Otoni, Minas Gerais, Samuel specializes in creating robust and scalable software applications with a passion for clean code and innovative technologies.",
+            "knowsLanguage": [
+                {
+                    "@type": "Language",
+                    "name": "Portuguese",
+                    "alternateName": "pt-BR"
+                },
+                {
+                    "@type": "Language",
+                    "name": "English",
+                    "alternateName": "en"
+                }
+            ]
         },
         {
-            "@type": "WebPage",
+            "@type": "WebSite",
+            "@id": "https://samuelmteixeira.dev/#website",
+            "name": "Samuel Molendolff Teixeira - Professional Portfolio",
+            "headline": "Samuel Molendolff Teixeira - Expert Software Developer Portfolio",
             "url": "https://samuelmteixeira.dev",
-            "reviewedBy": {
+            "description": "Professional portfolio of Samuel Molendolff Teixeira, a skilled software developer from Teófilo Otoni, Minas Gerais. Explore Samuel's projects, skills, and experience in software development.",
+            "inLanguage": ["pt-BR", "en"],
+            "author": {
                 "@type": "Person",
+                "@id": "https://samuelmteixeira.dev/#person",
                 "name": "Samuel Molendolff Teixeira"
+            },
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://samuelmteixeira.dev/logo.webp",
+                "width": "512",
+                "height": "512",
+                "caption": "Samuel Molendolff Teixeira's Portfolio Logo"
+            },
+            "keywords": [
+                "Samuel",
+                "Samuel Molendolff",
+                "Samuel Teixeira",
+                "Samuel Developer",
+                "Samuel Software Developer",
+                "Software Development",
+                "Web Development",
+                "Full Stack Developer",
+                "Software Architecture",
+                "Clean Code",
+                "Technical Leadership",
+                "Problem Solving",
+                "Portfolio",
+                "Desenvolvimento de Software",
+                "Arquitetura de Software"
+            ],
+            "mainEntity": {
+                "@type": "Person",
+                "@id": "https://samuelmteixeira.dev/#person"
             }
         }
-    ],
-    "@type": "WebSite",
-    "name": "Samuel Molendolff Teixeira - Portfolio",
-    "headline": "Portfolio of Samuel Molendolff Teixeira - Software Developer",
-    "url": "https://samuelmteixeira.dev",
-    "description": "A Software Developer's Portofio",
-    "author": {
-        "@type": "Person",
-        "givenName": "Samuel",
-        "familyName": "Molendolff Teixeira",
-        "gender": "male",
-        "sameAs": [
-            "https://www.linkedin.com/in/SamuelMTeixeira",
-            "https://github.com/SamuelMTeixeira"
-        ],
-        "jobTitle": {
-            "@type": "DefinedTerm",
-            "name": "Software Developer",
-            "description": "Software Developers use programming languages and tools to design, develop, and maintain software applications. They write efficient, reliable, and secure code that meets client and user requirements.",
-            "url": "https://simple.wikipedia.org/wiki/Software_developer"
-        }
-    },
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://samuelmteixeira.dev/logo.webp"
-    },
-    "keywords": [
-        "Portfolio",
-        "Developer",
-        "Software Developer",
-        "Front-End Developer",
-        "Back-End Developer",
-        "Software Engineer",
-        "Software Architect",
-        "Desenvolvedor",
-        "Front-End",
-        "Back-End",
-        "Engenheiro de software",
-        "Arquiteto de software"
     ]
 }

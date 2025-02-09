@@ -42,7 +42,7 @@ export default function ProjectCard({
           className="w-full h-auto object-cover"
           loading="lazy"
         />
-        <span className="absolute inset-0 bg-gradient-to-t from-white/[.5] to-transparent"></span>
+        <span className="absolute inset-0 bg-gradient-to-t from-white/[.5] to-transparent" />
       </div>
 
       <CardHeader className="relative z-10 -mt-16 bg-white mx-4 rounded-t-lg p-6">
@@ -69,7 +69,9 @@ export default function ProjectCard({
           href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`w-full lg:w-auto ${sourceUrl ? '' : 'pointer-events-none'}`}
+          className={`w-full lg:w-auto ${sourceUrl
+? ''
+: 'pointer-events-none'}`}
         >
           <Button
             aria-label="View source code"
@@ -86,7 +88,9 @@ export default function ProjectCard({
           href={previewUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`w-full lg:w-auto ${previewUrl ? '' : 'pointer-events-none'}`}
+          className={`w-full lg:w-auto ${previewUrl
+? ''
+: 'pointer-events-none'}`}
         >
           <Button
             aria-label="View project"

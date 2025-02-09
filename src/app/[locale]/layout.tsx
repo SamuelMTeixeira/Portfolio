@@ -12,55 +12,89 @@ import Loading from '@/app/[locale]/loading'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Samuel Molendolff Teixeira',
-  description: "A Software Developer's Portofio",
+  title: 'Samuel Molendolff Teixeira | Software Engineer & Architect',
+  description: 'Software Engineer and Architect specialized in creating robust and scalable solutions. Transforming complex challenges into efficient systems.',
   authors: {
     name: 'Samuel Molendolff Teixeira',
     url: 'https://www.linkedin.com/in/samuelmteixeira/',
   },
   keywords: [
     'Portfolio',
-    'Developer',
     'Software Developer',
-    'Front-End Developer',
-    'Back-End Developer',
     'Software Engineer',
     'Software Architect',
-    'Desenvolvedor',
-    'Front-End',
-    'Back-End',
-    'Engenheiro de software',
-    'Arquiteto de software',
+    'Full Stack Developer',
+    'Web Development',
+    'React Developer',
+    'Node.js Developer',
+    'TypeScript',
+    'JavaScript',
+    'Java',
+    'System Design',
+    'Cloud Architecture',
+    'Frontend Development',
+    'Backend Development',
+    'API Development',
+    'Performance Optimization',
+    'Scalable Systems',
+    'Technical Architecture',
+    'Software Solutions',
+    'Code Quality',
   ],
   alternates: {
     canonical: 'https://samuelmteixeira.dev',
   },
   openGraph: {
-    images: {
+    images: [{
       url: '/logo.webp',
       alt: 'Orange letter S, used as the representative logo of the website',
       type: 'image/webp',
-    },
-    title: 'Samuel Molendolff Teixeira',
+      width: 1200,
+      height: 630,
+    }],
+    title: 'Samuel Molendolff Teixeira | Software Engineer & Architect',
     type: 'website',
-    description:
-      'Check out my software development portfolio, where I share my projects and experiences in the area.',
+    description: 'Software Engineer and Architect specialized in creating robust and scalable solutions. Transforming complex challenges into efficient systems.',
     url: 'https://samuelmteixeira.dev',
+    locale: 'en_US',
+    siteName: 'Samuel Molendolff Teixeira',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Samuel Molendolff Teixeira | Software Engineer & Architect',
+    description: 'Software Engineer and Architect specialized in creating robust and scalable solutions. Transforming complex challenges into efficient systems.',
+    images: [{
+      url: '/logo.webp',
+      alt: 'Orange letter S, used as the representative logo of the website',
+    }],
+    site: '@samuelmteixeira',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: 'technology',
 }
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
   const messages = await getMessages()
 
   return (
     <html
-      lang={locale}
+      lang={((await params).locale)}
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
     >
       <head>
@@ -69,7 +103,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={'font-manrope'}>
+      <body className="font-manrope">
         <Providers>
           <ReactQueryProvider>
             <Suspense fallback={<Loading />}>

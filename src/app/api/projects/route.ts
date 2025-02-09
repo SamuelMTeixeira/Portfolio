@@ -39,11 +39,12 @@ export async function POST() {
   const notionToken = process.env.NOTION_TOKEN
   const databaseID = process.env.NOTION_PROJECTS_DATABASE_ID
 
-  if (!notionToken || !databaseID)
+  if (!notionToken || !databaseID) {
     return NextResponse.json(
       { message: 'Missing Notion database ID' },
       { status: 401 },
     )
+  }
 
   const database = await new Client({ auth: notionToken }).databases.query({
     database_id: databaseID,
