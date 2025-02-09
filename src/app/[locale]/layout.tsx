@@ -51,16 +51,16 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
   const messages = await getMessages()
 
   return (
     <html
-      lang={locale}
+      lang={((await params).locale)}
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
     >
       <head>
@@ -69,7 +69,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={'font-manrope'}>
+      <body className="font-manrope">
         <Providers>
           <ReactQueryProvider>
             <Suspense fallback={<Loading />}>
