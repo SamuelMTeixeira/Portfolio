@@ -15,9 +15,9 @@ import {
 } from '@/components/ui/menubar'
 import { useTranslations } from 'next-intl'
 import { locales } from '@/lib/next-intl'
-import { useRouter } from '@/navigation'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import { useRouter } from '@/i18n/routing'
 
 export default function Header() {
   const t = useTranslations('Header')
