@@ -16,6 +16,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useIsMobile } from "@/hooks/isMobile"
+import { cn } from "@/lib/utils"
 
 export function SettingsDropdown() {
     const t = useTranslations('Header')
@@ -29,7 +30,7 @@ export function SettingsDropdown() {
                 <Button aria-label="open menu"
                     size={isMobile ? "lg" : "icon"}
                     variant="outline"
-                    className={isMobile ? "h-12 text-foreground/70" : "text-foreground/70"}>
+                    className={cn(isMobile ? "h-12 text-foreground/70" : "text-foreground/70")}>
                     <Globe02Icon className="w-10 md:w-5" />
                 </Button>
 

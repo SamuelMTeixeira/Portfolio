@@ -4,6 +4,7 @@ import { Moon02Icon, Sun03Icon } from "hugeicons-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { useIsMobile } from "@/hooks/isMobile"
+import { cn } from "@/lib/utils"
 
 export function ThemeToggle() {
 
@@ -19,10 +20,10 @@ export function ThemeToggle() {
             onClick={toggleTheme}
             variant={"outline"}
             size={isMobile ? "lg" : "icon"}
-            className={isMobile ? "h-12 text-foreground/70" : "text-foreground/70"}
+            className={cn('text-primary group', isMobile ? "h-1" : "")}
             aria-label={theme === "light" ? "Ativar modo escuro" : "Ativar modo claro"}
         >
-            {theme === "light" ? <Moon02Icon className="w-10 md:w-5" /> : <Sun03Icon className="w-10 md:w-5" />}
+            {theme === "light" ? <Moon02Icon className="w-10 md:w-5 group-hover:fill-primary group-hover:text-primary" /> : <Sun03Icon className="w-10 md:w-5 group-hover:fill-primary group-hover:text-primary" />}
         </Button>
     )
 }
