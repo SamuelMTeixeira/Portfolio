@@ -28,7 +28,7 @@ export default function ProjectCard({
   return (
     <Card
       className={
-        'w-full flex flex-col max-w-md overflow-hidden bg-white border-input ' +
+        'w-full flex flex-col max-w-md overflow-hidden bg-background border-input ' +
         className
       }
       {...props}
@@ -42,10 +42,10 @@ export default function ProjectCard({
           className="w-full h-auto object-cover"
           loading="lazy"
         />
-        <span className="absolute inset-0 bg-gradient-to-t from-white/[.5] to-transparent" />
+        <span className="absolute inset-0 bg-gradient-to-t from-background/[.5] to-transparent" />
       </div>
 
-      <CardHeader className="relative z-10 -mt-16 bg-white mx-4 rounded-t-lg p-6">
+      <CardHeader className="relative z-10 -mt-16 bg-background mx-4 rounded-t-lg p-6">
         <div className="space-x-2">
           <Badge className="bg-primary/[.8]">{category}</Badge>
         </div>
@@ -69,10 +69,7 @@ export default function ProjectCard({
           href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`w-full lg:w-auto ${sourceUrl
-? ''
-: 'pointer-events-none'}`}
-        >
+          className={`w-full lg:w-auto ${sourceUrl ? '' : 'pointer-events-none'}`}>
           <Button
             aria-label="View source code"
             variant="outline"
@@ -89,8 +86,8 @@ export default function ProjectCard({
           target="_blank"
           rel="noopener noreferrer"
           className={`w-full lg:w-auto ${previewUrl
-? ''
-: 'pointer-events-none'}`}
+            ? ''
+            : 'pointer-events-none'}`}
         >
           <Button
             aria-label="View project"
