@@ -6,7 +6,7 @@ import { memo, Suspense, useMemo, useRef } from 'react'
 import useProject from '@/hooks/useProject'
 import Loading from '@/app/[locale]/loading'
 
-function ProjectPreview() {
+function ProjectOverview() {
   const { projects } = useProject()
 
   const projectImages = useMemo(
@@ -39,4 +39,4 @@ function ProjectPreview() {
   )
 }
 
-export default memo(ProjectPreview)
+export default memo(ProjectOverview)
