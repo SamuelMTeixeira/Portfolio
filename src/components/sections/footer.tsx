@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="container mt-8 text-xs font-medium text-slate-500">
       <div className="flex flex-col items-center justify-between py-8 border-t border-input md:flex-row md:space-y-0 space-y-4">
         <p>
-          © 2022 - 2024,
+          © 2022 - {new Date().getFullYear().toString()},
           <a
             className="font-bold text-foreground"
             href="https://github.com/samuelmteixeira"

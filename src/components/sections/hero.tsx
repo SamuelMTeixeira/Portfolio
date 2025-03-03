@@ -68,7 +68,7 @@ export default function Hero() {
     <motion.div
       ref={containerRef}
       id="hero"
-      className="relative min-h-[90vh] flex flex-col justify-center items-center gap-4 container mx-auto"
+      className="relative min-h-[95vh] flex flex-col justify-center items-center gap-4 container mx-auto"
     >
       {draggableItems.map(({ nameKey, src, size, className }) => (
         <Draggable
