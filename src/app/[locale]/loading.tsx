@@ -64,8 +64,8 @@ export default function Loading() {
         src="/logo-128x128.webp"
         alt="Website logo, an orange letter S"
         className="h-20 w-20"
-        width={128}
-        height={128}
+        width={80}
+        height={80}
       />
     </div>
   )
