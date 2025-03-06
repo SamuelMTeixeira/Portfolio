@@ -37,7 +37,6 @@ export default function Projects() {
       title={t('title')}
       subtitle={t('subtitle')}
       description={t('description')}
-      className="mt-20"
     >
       <div className="w-full max-w-4xl">
         <Card className="max-w-5xl font-bricolage p-8 bg-background border-input">

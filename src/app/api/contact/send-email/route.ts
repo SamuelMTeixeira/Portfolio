@@ -14,10 +14,20 @@ export async function POST(req: Request) {
 
   const resend = new Resend(process.env.RESEND_API_KEY)
 
+  const OWNER_CONTACT_NAME = process.env.OWNER_CONTACT_NAME
+  const OWNER_CONTACT_EMAIL = process.env.OWNER_CONTACT_EMAIL
+
+  if (!OWNER_CONTACT_NAME || !OWNER_CONTACT_EMAIL) {
+    return NextResponse.json(
+      { error: 'Resource is not configured yet' },
+      { status: 500 },
+    )
+  }
+
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Samuel Molendolff by Portfolio <contact@samuelmteixeira.dev>',
-      to: 'contact@samuelmteixeira.dev',
+      from: `${OWNER_CONTACT_NAME} <${OWNER_CONTACT_EMAIL}>`,
+      to: OWNER_CONTACT_EMAIL,
       subject,
       react: EmailTemplate({ email, subject, recipientName: name }),
     })

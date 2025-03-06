@@ -8,7 +8,7 @@
     },
     "Hero": {
         "title": "I turn ideas into disruptive technological solutions!",
-        "description": "I'm a software engineer and software architecture specialist (in training) with more than 2 years' experience in web and mobile applications, and I also work as a freelancer.",
+        "description": "I'm a software engineer and software architecture specialist with more than 3 years of experience in web and mobile applications, and I also work as a freelancer.",
         "primaryButton": "Get in touch",
         "secondaryButton": "Explore my work",
         "frontend": "Front-End",
@@ -19,13 +19,16 @@
         "prototyping": "Prototyping"
     },
     "Skills": {
+        "label": "Skills",
         "title": "My technical skills"
     },
     "Aboutme": {
+        "label": "About me",
         "linkedinProfile": "View linkedin profile",
         "content": "My journey is driven by the relentless pursuit of challenges and excellence, in which I am committed to seeking excellence and making a significant difference in the world of technology. I work as a technology analyst and apply my passion and skills to create impact. My journey is just beginning, and I am always open to new opportunities to grow and make a difference!"
     },
     "Projects": {
+        "label": "Projects",
         "title": "Highlighted projects",
         "description": "Take a look at my work",
         "subtitle": "Projects gallery",
@@ -35,6 +38,7 @@
         }
     },
     "Getintouch": {
+        "label": "Contact",
         "title": "Get in touch",
         "description": "Shall we turn your ideas into reality?",
         "subtitle": "Contact & social",

@@ -6,7 +6,7 @@ import { memo, Suspense, useMemo, useRef } from 'react'
 import useProject from '@/hooks/useProject'
 import Loading from '@/app/[locale]/loading'
 
-function ProjectPreview() {
+function ProjectOverview() {
   const { projects } = useProject()
 
   const projectImages = useMemo(
@@ -15,12 +15,19 @@ function ProjectPreview() {
   )
 
   const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: containerRef })
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  })
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-30%"])
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.8])
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 1, 1, 0.95])
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="overflow-x-hidden mt-10" ref={containerRef}>
+      <motion.div className="overflow-x-hidden mt-10" ref={containerRef}
+       style={{ opacity, scale }}>
         <motion.div className="flex items-center flex-row gap-5" style={{ x }}>
           {projectImages.map((imageUrl, index) => (
             <Image
@@ -34,9 +41,9 @@ function ProjectPreview() {
             />
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </Suspense>
   )
 }
 
-export default memo(ProjectPreview)
+export default memo(ProjectOverview)

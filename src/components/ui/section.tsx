@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import console from '@/assets/img/console.webp'
+import { cn } from '@/lib/utils'
 
 interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   id: string
@@ -20,10 +21,9 @@ export default function Section({
   return (
     <section
       id={id}
-      className={
-        'container mx-auto flex flex-col justify-center items-center  ' +
-        className
-      }
+      className={cn(
+        'container mx-auto flex flex-col justify-center items-center pt-20', className
+      )}
       {...props}
     >
       <div className="space-y-4 mb-12">

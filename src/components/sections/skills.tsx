@@ -72,8 +72,8 @@ export default function Skills() {
   const t = useTranslations('Skills')
 
   return (
-    <section id="skills">
-      <h2 className="text-center font-semibold font-bricolage text-3xl mt-14 mb-10">
+    <section id="skills" className='pt-20'>
+      <h2 className="text-center font-semibold font-bricolage text-3xl mb-10">
         {t('title')}
       </h2>
 

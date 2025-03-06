@@ -4,61 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
-import select from '@/assets/img/hero/select-pointer.svg'
-import kube from '@/assets/img/hero/kube.svg'
-import compass from '@/assets/img/hero/compass.svg'
-import pencil from '@/assets/img/hero/pencil.svg'
-import cloud from '@/assets/img/hero/cloud.svg'
-import tags from '@/assets/img/hero/tags.svg'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
-
-const Draggable = dynamic(
-  () => import('@/components/ui/draggable').then((mod) => mod.Draggable),
-  {
-    ssr: false,
-  },
-)
-
-const draggableItems = [
-  {
-    nameKey: 'backend',
-    src: tags,
-    size: 50,
-    className: 'top-[12vh] left-[12rem]',
-  },
-  {
-    nameKey: 'cloud',
-    src: cloud,
-    size: 40,
-    className: 'top-[50vh] left-[3rem]',
-  },
-  {
-    nameKey: 'tests',
-    src: compass,
-    size: 42,
-    className: 'top-[78vh] left-[12rem]',
-  },
-  {
-    nameKey: 'frontend',
-    src: kube,
-    size: 80,
-    className: 'top-[4rem] right-[8rem]',
-  },
-  {
-    nameKey: 'accessibility',
-    src: select,
-    size: 32,
-    className: 'top-[20rem] right-0',
-  },
-  {
-    nameKey: 'prototyping',
-    src: pencil,
-    size: 32,
-    className: 'top-[78vh] right-[12rem]',
-  },
-]
 
 export default function Hero() {
   const t = useTranslations('Hero')
@@ -68,26 +14,10 @@ export default function Hero() {
     <motion.div
       ref={containerRef}
       id="hero"
-      className="relative min-h-[90vh] flex flex-col justify-center items-center gap-4 container mx-auto"
+      className="relative min-h-[80vh] pt-10 flex flex-col justify-center items-center gap-4 container mx-auto"
     >
-      {draggableItems.map(({ nameKey, src, size, className }) => (
-        <Draggable
-          key={nameKey}
-          dragConstraints={containerRef}
-          className={className}
-          name={t(nameKey)}
-          image={
-            <Image
-              src={src}
-              alt={`${t(nameKey)} icon`}
-              width={size}
-              className="h-auto"
-            />
-          }
-        />
-      ))}
 
-      <h1 className="text-center font-extrabold font-bricolage text-5xl max-w-5xl md:text-6xl md:max-w-6xl">
+      <h1 className="text-center mt-6 font-extrabold font-bricolage text-5xl max-w-5xl md:text-6xl md:max-w-6xl">
         {t('title')}
       </h1>
       <p className="text-center font-normal text-lg max-w-md md:text-xl md:max-w-xl lg:text-xl lg:max-w-6xl">
@@ -96,13 +26,13 @@ export default function Hero() {
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
         <Link href="#contact" aria-label="Get in touch">
-          <Button size="xl" className="w-full">
+          <Button size="xl" className="w-full" aria-label='Get in touch'>
             {t('primaryButton')}
           </Button>
         </Link>
 
         <Link href="#projects" aria-label="See portfolio projects">
-          <Button size="xl" variant="outline" className="w-full">
+          <Button size="xl" variant="outline" className="w-full" aria-label='See portfolio projects'>
             {t('secondaryButton')}
           </Button>
         </Link>
