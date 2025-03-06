@@ -16,9 +16,9 @@ export default function Page() {
 
       <ProjectOverview />
 
-      <Skills />
-
       <AboutMe />
+
+      <Skills />
 
       <Projects />
 

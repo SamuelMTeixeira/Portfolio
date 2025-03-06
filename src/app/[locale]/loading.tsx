@@ -54,9 +54,7 @@ export default function Loading() {
       })
 
   useEffect(() => {
-    const timeout = setTimeout(() => {}, 1000)
     animate()
-    return () => clearTimeout(timeout)
   }, [])
 
   return (

@@ -50,7 +50,7 @@ export default function FloatingNavbar() {
         </div>
 
         <div className="flex items-center gap-10">
-          <NavItem icon={<CoPresentIcon size={18} />} label={t("Getintouch.label")} href="#about-me" />
+          <NavItem icon={<CoPresentIcon size={18} />} label={t("Aboutme.label")} href="#about-me" />
           <NavItem icon={<LibraryIcon size={18} />} label={t("Skills.label")} href="#skills" />
           <NavItem icon={<CodeFolderIcon size={18} />} label={t("Projects.label")} href="#projects" />
           <NavItem icon={<MailEdit01Icon size={18} />} label={t("Getintouch.label")} href="#contact" />
@@ -88,10 +88,10 @@ export default function FloatingNavbar() {
             </SheetHeader>
 
             <div className="flex flex-col space-y-6 mt-12">
-              <NavItem icon={<CoPresentIcon size={18} />} label="Sobre mim" href="#about-me" />
-              <NavItem icon={<LibraryIcon size={18} />} label="Habilidades" href="#skills" />
-              <NavItem icon={<CodeFolderIcon size={18} />} label="Projetos" href="#projects" />
-              <NavItem icon={<MailEdit01Icon size={18} />} label="Contato" href="#contact" />
+              <NavItem icon={<CoPresentIcon size={18} />} label={t("Aboutme.label")} href="#about-me" />
+              <NavItem icon={<LibraryIcon size={18} />} label={t("Skills.label")} href="#skills" />
+              <NavItem icon={<CodeFolderIcon size={18} />} label={t("Projects.label")} href="#projects" />
+              <NavItem icon={<MailEdit01Icon size={18} />} label={t("Getintouch.label")} href="#contact" />
             </div>
 
             <div className="flex items-center justify-center gap-4 mt-12">

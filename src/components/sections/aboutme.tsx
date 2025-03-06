@@ -16,7 +16,7 @@ export default function AboutMe() {
   return (
     <section
       id="about-me"
-      className="container mx-auto flex flex-col justify-center items-center my-20"
+      className="container mx-auto flex flex-col justify-center items-center pt-20"
     >
       <div className="w-full max-w-4xl">
         <Card className="max-w-5xl font-bricolage p-8">
