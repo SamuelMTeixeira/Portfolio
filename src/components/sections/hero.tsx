@@ -26,13 +26,13 @@ export default function Hero() {
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
         <Link href="#contact" aria-label="Get in touch">
-          <Button size="xl" className="w-full">
+          <Button size="xl" className="w-full" aria-label='Get in touch'>
             {t('primaryButton')}
           </Button>
         </Link>
 
         <Link href="#projects" aria-label="See portfolio projects">
-          <Button size="xl" variant="outline" className="w-full">
+          <Button size="xl" variant="outline" className="w-full" aria-label='See portfolio projects'>
             {t('secondaryButton')}
           </Button>
         </Link>

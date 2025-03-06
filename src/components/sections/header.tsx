@@ -78,7 +78,7 @@ export default function FloatingNavbar() {
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className='flex md:hidden'>
+            <Button variant="outline" size="icon" className='flex md:hidden' aria-label='Open menu'>
               <Menu02Icon size={20} />
             </Button>
           </SheetTrigger>
@@ -110,6 +110,7 @@ export default function FloatingNavbar() {
 function NavItem({ icon, label, href }: { icon: React.ReactNode; label: string; href: string }) {
   return (
     <a
+      aria-label={`Navigate to ${label}`}
       href={href}
       className="flex items-center gap-1.5 text-foreground/70 hover:text-primary transition-colors text-lg md:text-sm">
       {icon}
