@@ -14,7 +14,7 @@ export default function Hero() {
     <motion.div
       ref={containerRef}
       id="hero"
-      className="relative min-h-[80vh] pt-10 flex flex-col justify-center items-center gap-4 container mx-auto"
+      className="relative min-h-[95vh] pt-10 flex flex-col justify-center items-center gap-4 container mx-auto"
     >
 
       <h1 className="text-center mt-6 font-extrabold font-bricolage text-5xl max-w-5xl md:text-6xl md:max-w-6xl">
@@ -25,17 +25,26 @@ export default function Hero() {
       </p>
 
       <div className="flex gap-4 flex-col md:flex-row mt-4">
-        <Link href="#contact" aria-label="Get in touch">
-          <Button size="xl" className="w-full" aria-label='Get in touch'>
-            {t('primaryButton')}
+          <Button
+            size="xl"
+            aria-label='Get in touch'
+            asChild>
+             <Link className='w-auto' href="#contact" aria-label="Get in touch">
+                {t('primaryButton')}
+            </Link>
           </Button>
-        </Link>
+        
+          <Button
+           size="xl"
+            variant="outline"
+            aria-label='See portfolio projects'
+             asChild>
+             <Link className='w-auto' href="#projects" aria-label="See portfolio projects">
+              {t('secondaryButton')}
+            </Link>
+          </Button>
 
-        <Link href="#projects" aria-label="See portfolio projects">
-          <Button size="xl" variant="outline" className="w-full" aria-label='See portfolio projects'>
-            {t('secondaryButton')}
-          </Button>
-        </Link>
+ 
       </div>
     </motion.div>
   )

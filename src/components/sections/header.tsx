@@ -37,7 +37,7 @@ export default function FloatingNavbar() {
     <header>
       <nav
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/90 backdrop-blur-md shadow-lg w-[95%] md:w-[90%] lg:w-[80%]"
+          ? "bg-card border backdrop-blur-md shadow-lg w-[95%] md:w-[90%] lg:w-[80%]"
           : "bg-background/70 backdrop-blur-xs w-[98%] md:w-[95%] lg:w-[90%]"
           } rounded-full py-2 px-4 hidden md:flex items-center justify-between`}
       >
@@ -56,7 +56,7 @@ export default function FloatingNavbar() {
           <NavItem icon={<MailEdit01Icon size={18} />} label={t("Getintouch.label")} href="#contact" />
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <SettingsDropdown />
 
           <ThemeToggle />
@@ -79,7 +79,7 @@ export default function FloatingNavbar() {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className='flex md:hidden' aria-label='Open menu'>
-              <Menu02Icon size={20} />
+              <Menu02Icon className='size-4' />
             </Button>
           </SheetTrigger>
           <SheetContent>
@@ -87,7 +87,7 @@ export default function FloatingNavbar() {
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
 
-            <div className="flex flex-col space-y-6 mt-12">
+            <div className="flex flex-col space-y-6 px-4">
               <NavItem icon={<CoPresentIcon size={18} />} label={t("Aboutme.label")} href="#about-me" />
               <NavItem icon={<LibraryIcon size={18} />} label={t("Skills.label")} href="#skills" />
               <NavItem icon={<CodeFolderIcon size={18} />} label={t("Projects.label")} href="#projects" />

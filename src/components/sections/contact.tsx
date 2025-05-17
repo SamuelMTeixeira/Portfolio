@@ -39,7 +39,7 @@ export default function Projects() {
       description={t('description')}
     >
       <div className="w-full max-w-4xl">
-        <Card className="max-w-5xl font-bricolage p-8 bg-background border-input">
+        <Card className="max-w-5xl font-bricolage p-8 bg-background">
           <CardContent className="p-0">
             <Form {...form}>
               <form

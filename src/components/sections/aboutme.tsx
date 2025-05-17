@@ -19,7 +19,7 @@ export default function AboutMe() {
       className="container mx-auto flex flex-col justify-center items-center pt-20"
     >
       <div className="w-full max-w-4xl">
-        <Card className="max-w-5xl font-bricolage p-8">
+        <Card className="max-w-5xl font-bricolage p-8 bg-card">
           <CardContent className="p-0 md:px-6 md:pt-0">
             <p className="font-bricolage text-xl md:text-2xl lg:text-3xl leading-normal tracking-tigh text-center font-normal">
               <span>&quot;</span>

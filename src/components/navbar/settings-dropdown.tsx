@@ -31,7 +31,7 @@ export function SettingsDropdown() {
                     size={isMobile ? "lg" : "icon"}
                     variant="outline"
                     className={cn(isMobile ? "h-12 text-foreground/70" : "text-foreground/70")}>
-                    <Globe02Icon className="w-10 md:w-5" />
+                    <Globe02Icon className="size-6 md:size-4" />
                 </Button>
 
             </DropdownMenuTrigger>
