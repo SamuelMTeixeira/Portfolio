@@ -37,7 +37,7 @@ export default function FloatingNavbar() {
     <header>
       <nav
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-card border backdrop-blur-md shadow-lg w-[95%] md:w-[90%] lg:w-[80%]"
+          ? "bg-card border backdrop-blur-md shadow-lg w-[95%] md:w-[90%] lg:w-[85%]"
           : "bg-background/70 backdrop-blur-xs w-[98%] md:w-[95%] lg:w-[90%]"
           } rounded-full py-2 px-4 hidden md:flex items-center justify-between`}
       >

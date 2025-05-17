@@ -1,14 +1,13 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
-  CardTitle,
 } from '@/components/ui/card'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useTranslations } from 'next-intl'
 import { ArrowRight02Icon } from 'hugeicons-react'
+import { Button } from '@/components/ui/button'
 
 export default function AboutMe() {
   const t = useTranslations('Aboutme')
@@ -30,7 +29,7 @@ export default function AboutMe() {
 
           <CardFooter className="flex justify-center p-0 mt-8">
             <div className="flex flex-row items-center gap-4 lg:gap-8">
-              <Avatar className="w-14 lg:w-20 h-auto">
+              <Avatar className="size-14 lg:size-16">
                 <AvatarImage
                   src="/profile.webp"
                   alt="Photo of Samuel Molendolff Teixeira"
@@ -38,21 +37,27 @@ export default function AboutMe() {
                 <AvatarFallback>S</AvatarFallback>
               </Avatar>
               <div className="flex flex-col gap-1 lg:gap-2">
-                <CardTitle className="font-bricolage text-md md:text-xl leading-none">
+                <h4 className="font-bricolage text-md md:text-xl leading-none font-semibold">
                   Samuel Molendolff Teixeira
-                </CardTitle>
-                <CardDescription>
-                  <a
-                    href="https://linkedin.com/in/samuelmteixeira"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-manrope text-sm md:text-md font-medium text-primary flex items-center gap-1 hover:underline"
-                  >
-                    {t('linkedinProfile')}
+                </h4>
+                <span>
 
-                    <ArrowRight02Icon size={14} />
-                  </a>
-                </CardDescription>
+                  <Button
+                    variant={'link'}
+                    className="font-manrope text-sm md:text-md font-medium text-primary !px-0"
+                    asChild>
+                    <a
+                      href="https://linkedin.com/in/samuelmteixeira"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t('linkedinProfile')}
+
+                      <ArrowRight02Icon size={14} />
+                    </a>
+                  </Button>
+
+                </span>
               </div>
             </div>
           </CardFooter>

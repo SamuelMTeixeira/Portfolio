@@ -7,10 +7,10 @@
         }
     },
     "Hero": {
-        "title": "Transformo ideias em soluções tecnológicas disruptivas!",
-        "description": "Sou um engenheiro de software e especialista em arquitetura de software com mais de 3 anos de experiência em aplicações web e mobile, também atuo como freelancer.",
+        "title": "Transformo requisitos complexos em produtos digitais de alto impacto",
+        "description": "Crio e modernizo processos corporativos, desenvolvendo interfaces web e mobile que aceleram fluxos de trabalho e elevam a experiência do usuário. Especialista em arquiteturas escaláveis que garantem agilidade e alta performance.",
         "primaryButton": "Entrar em contato",
-        "secondaryButton": "Explorar projetos",
+        "secondaryButton": "Veja meu portfólio",
         "frontend": "Front-End",
         "backend": "Back-End",
         "cloud": "Cloud",
@@ -25,7 +25,7 @@
     "Aboutme": {
         "label": "Sobre mim",
         "linkedinProfile": "Ver perfil do linkedin",
-        "content": "Minha jornada é impulsionada pela busca incessante por desafios e excelência na qual estou comprometido em buscar a excelência e fazer uma diferença significativa no mundo da tecnologia. Atuo como analista de tecnologia e aplico minha paixão e habilidades para criar impacto. Minha jornada está apenas começando e estou sempre aberto a novas oportunidades para crescer e fazer a diferença!"
+        "content": "Minha trajetória em tecnologia começou com código, mas evoluiu rápido para algo maior: usar software como alavanca para escalar soluções reais. Tenho background como analista técnico, mas atuo sempre com visão de produto, eficiência e impacto — olhando não só o “como fazer”, mas principalmente o por que fazer e o que vai mover o ponteiro. Este portfólio mostra um pouco dessa abordagem: menos firula, mais entrega com propósito."
     },
     "Projects": {
         "label": "Projetos",
