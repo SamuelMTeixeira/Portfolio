@@ -19,7 +19,7 @@ export function ThemeToggle() {
     return (
         <Button
             onClick={toggleTheme}
-            variant={"outline"}
+            variant={"outline-solid"}
             size={isMobile ? "lg" : "icon"}
             className={cn('text-primary group', isMobile ? "h-12" : "")}
             aria-label={theme === "light" ? "Ativar modo escuro" : "Ativar modo claro"}

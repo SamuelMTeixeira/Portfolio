@@ -67,7 +67,7 @@ export const metadata: Metadata = {
       url: '/logo.webp',
       alt: 'Orange letter S, used as the representative logo of the website',
     }],
-    site: '@samuelmteixeira',
+    site: '@samucracy',
   },
   robots: {
     index: true,

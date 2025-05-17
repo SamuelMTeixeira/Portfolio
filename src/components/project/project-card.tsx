@@ -42,7 +42,7 @@ export default function ProjectCard({
           className="w-full h-auto object-cover"
           loading="lazy"
         />
-        <span className="absolute inset-0 bg-gradient-to-t from-background/[.5] to-transparent" />
+        <span className="absolute inset-0 bg-linear-to-t from-background/[.5] to-transparent" />
       </div>
 
       <CardHeader className="relative z-10 -mt-16 bg-background mx-4 rounded-t-lg p-6">
