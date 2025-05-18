@@ -1,8 +1,8 @@
-# Samuel's Website Portfolio
+# Website Portfolio
 ###### 🚀 Let's code? contribute to the project
 
-This is my personal web portfolio built with React, showcasing my skills and projects as a developer.
-## ⚡️ Demo
+This is my personal web portfolio built with Nextjs, showcasing my skills and projects as a developer.
+## ⚡️ Website
 ###### [🔗 samuelmteixeira.dev](https://samuelmteixeira.dev)
 
 <img src= "public/preview.png" alt="your-image-description" style="border: 0.5px solid grey;">
@@ -54,7 +54,7 @@ To configure the project, you need to set the following environment variables in
 
    ```bash
    NOTION_TOKEN=your_notion_token
-   NOTION_DATABASE_ID=your_database_id
+   NOTION_PROJECTS_DATABASE_ID=your_notion_database_id
    ```
 
    For more information on configuring Notion as a database, refer to this [guide](https://dev.to/iamhectorsosa/using-notion-as-your-database-2k15).
@@ -66,8 +66,3 @@ Contributions are always welcome!
 See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
-## 🤝 Collabs
-
-| ![Samuel](https://avatars.githubusercontent.com/u/91707483?s=150) |
-| ----------------------------------------------------------------- |
-| [Samuel M. Teixeira](https://github.com/SamuelMTeixeira)          |
