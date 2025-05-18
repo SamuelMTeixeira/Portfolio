@@ -7,10 +7,10 @@
         }
     },
     "Hero": {
-        "title": "I turn ideas into disruptive technological solutions!",
-        "description": "I'm a software engineer and software architecture specialist with more than 3 years of experience in web and mobile applications, and I also work as a freelancer.",
+        "title": "I turn complex requirements into high‑impact digital products",
+        "description": "I create and modernize corporate processes by developing web and mobile interfaces that speed up workflows and enhance user experience. Specialist in scalable architectures that ensure agility and high performance.",
         "primaryButton": "Get in touch",
-        "secondaryButton": "Explore my work",
+        "secondaryButton": "Explore my portfolio",
         "frontend": "Front-End",
         "backend": "Back-End",
         "cloud": "Cloud",
@@ -25,7 +25,7 @@
     "Aboutme": {
         "label": "About me",
         "linkedinProfile": "View linkedin profile",
-        "content": "My journey is driven by the relentless pursuit of challenges and excellence, in which I am committed to seeking excellence and making a significant difference in the world of technology. I work as a technology analyst and apply my passion and skills to create impact. My journey is just beginning, and I am always open to new opportunities to grow and make a difference!"
+        "content": "My journey in technology started with code but quickly evolved into something bigger: using software as a lever to scale real-world solutions. I have a background as a technical analyst, but I always operate with a product mindset, focused on efficiency and impact — not just on how to build, but why to build and what will actually move the needle. This portfolio reflects that approach: less fluff, more purposeful delivery."
     },
     "Projects": {
         "label": "Projects",
