@@ -10,7 +10,8 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
-import { LinkSquare02Icon, SourceCodeIcon } from 'hugeicons-react'
+import { LinkSquare02Icon } from 'hugeicons-react'
+import { cn } from '@/lib/utils'
 
 export default function ProjectCard({
   imageUrl,
@@ -28,7 +29,7 @@ export default function ProjectCard({
   return (
     <Card
       className={
-        'w-full flex flex-col max-w-md overflow-hidden bg-background border-input ' +
+        'w-full flex flex-col max-w-md overflow-hidden bg-card border pt-0 ' +
         className
       }
       {...props}
@@ -42,12 +43,12 @@ export default function ProjectCard({
           className="w-full h-auto object-cover"
           loading="lazy"
         />
-        <span className="absolute inset-0 bg-gradient-to-t from-background/[.5] to-transparent" />
+        <span className="absolute inset-0 bg-linear-to-t from-background/[.5] to-transparent" />
       </div>
 
       <CardHeader className="relative z-10 -mt-16 bg-background mx-4 rounded-t-lg p-6">
         <div className="space-x-2">
-          <Badge className="bg-primary/[.8]">{category}</Badge>
+          <Badge variant={'secondary'} >{category}</Badge>
         </div>
         <CardTitle className="text-2xl font-bold text-foreground/[.9]">
           {title}
@@ -58,47 +59,45 @@ export default function ProjectCard({
         <p className="text-sm text-foreground/[.8] mb-4"> {description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
-            <Badge key={index} variant="secondary">
+            <Badge key={index} variant="outline">
               {tag}
             </Badge>
           ))}
         </div>
       </CardContent>
       <CardFooter className="p-6 pt-0 flex justify-between items-center gap-2 flex-col md:flex-row">
-        <a
-          href={sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`w-full lg:w-auto ${sourceUrl ? '' : 'pointer-events-none'}`}>
-          <Button
-            aria-label="View source code"
-            variant="outline"
-            className="text-sm flex items-center w-full"
-            disabled={!sourceUrl}
-          >
-            <SourceCodeIcon className="w-4 h-4 mr-2" />
-            {t('source')}
-          </Button>
-        </a>
 
-        <a
-          href={previewUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`w-full lg:w-auto ${previewUrl
-            ? ''
-            : 'pointer-events-none'}`}
+        <Button
+          aria-label="View source code"
+          variant="outline"
+          disabled={!sourceUrl}
+          asChild
         >
-          <Button
-            aria-label="View project"
-            className="text-sm flex items-center w-full"
-            disabled={!previewUrl}
-          >
+          <a
+            href={sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn('w-full lg:w-auto', sourceUrl ? '' : 'opacity-50 pointer-events-none')}>
+            {t('source')}
+          </a>
+        </Button>
+
+
+        <Button
+          aria-label="View project"
+          disabled={!previewUrl}
+          asChild
+        >
+          <a
+            href={previewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn('w-full lg:w-auto', previewUrl ? '' : 'opacity-50 pointer-events-none')}>
             {t('view')}
 
-            <LinkSquare02Icon className="w-4 h-4 ml-2" />
-          </Button>
-        </a>
+            <LinkSquare02Icon className="size-4 ml-2" />
+          </a>
+        </Button>
       </CardFooter>
     </Card>
   )
