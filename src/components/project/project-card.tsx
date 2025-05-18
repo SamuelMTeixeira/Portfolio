@@ -48,7 +48,7 @@ export default function ProjectCard({
 
       <CardHeader className="relative z-10 -mt-16 bg-background mx-4 rounded-t-lg p-6">
         <div className="space-x-2">
-          <Badge className="bg-primary/[.8]">{category}</Badge>
+          <Badge variant={'secondary'} >{category}</Badge>
         </div>
         <CardTitle className="text-2xl font-bold text-foreground/[.9]">
           {title}
@@ -59,7 +59,7 @@ export default function ProjectCard({
         <p className="text-sm text-foreground/[.8] mb-4"> {description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
-            <Badge key={index} variant="secondary">
+            <Badge key={index} variant="outline">
               {tag}
             </Badge>
           ))}
