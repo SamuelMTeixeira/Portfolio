@@ -2,9 +2,11 @@ import './globals.css'
 import Providers from './providers'
 import jsonLd from '@/data/metadata.json'
 import { bricolageGrotesque, manrope } from './fonts'
+import { notFound } from 'next/navigation';
 
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { routing } from '@/i18n/routing';
+
 import ReactQueryProvider from '@/providers/reactQueryProvider'
 import { Toaster } from '@/components/ui/sonner'
 import { Suspense } from 'react'
@@ -83,6 +85,10 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
   params,
@@ -90,11 +96,15 @@ export default async function RootLayout({
   children: React.ReactNode
   params: Promise<{ locale: string }>
 }) {
-  const messages = await getMessages()
+
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
   return (
     <html
-      lang={((await params).locale)}
+      lang={locale}
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
     >
       <head>
@@ -107,7 +117,7 @@ export default async function RootLayout({
         <Providers>
           <ReactQueryProvider>
             <Suspense fallback={<Loading />}>
-              <NextIntlClientProvider messages={messages}>
+              <NextIntlClientProvider>
                 {children}
               </NextIntlClientProvider>
             </Suspense>
