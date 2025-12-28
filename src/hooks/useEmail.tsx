@@ -68,9 +68,16 @@ export default function useEmail() {
     },
   })
 
+  async function onSubmit({
+    email,
+    message,
+    name,
+  }: z.infer<typeof emailSchema>) {
+    mutate({ email, message, name })
+  }
+
   return {
-    sendRequest: mutate,
-    emailSchema,
+    onSubmit,
     form,
     ...others,
   }

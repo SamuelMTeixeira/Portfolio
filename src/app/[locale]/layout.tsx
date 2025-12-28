@@ -2,11 +2,7 @@ import './globals.css'
 import Providers from './providers'
 import jsonLd from '@/data/metadata.json'
 import { bricolageGrotesque, manrope } from './fonts'
-import { notFound } from 'next/navigation';
-
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { routing } from '@/i18n/routing';
-
+import { NextIntlClientProvider } from 'next-intl';
 import ReactQueryProvider from '@/providers/reactQueryProvider'
 import { Toaster } from '@/components/ui/sonner'
 import { Suspense } from 'react'
@@ -85,10 +81,6 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
 export default async function RootLayout({
   children,
   params,
@@ -97,14 +89,10 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>
 }) {
 
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
   return (
     <html
-      lang={locale}
+      lang={((await params).locale)}
+      suppressHydrationWarning
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
     >
       <head>

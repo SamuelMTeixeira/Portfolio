@@ -3,7 +3,6 @@
 import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { z } from 'zod'
 
 import {
   Form,
@@ -21,15 +20,7 @@ import { Loading03Icon } from 'hugeicons-react'
 
 export default function Projects() {
   const t = useTranslations('Getintouch')
-  const { sendRequest, isPending, emailSchema, form } = useEmail()
-
-  async function onSubmit({
-    email,
-    message,
-    name,
-  }: z.infer<typeof emailSchema>) {
-    sendRequest({ email, message, name })
-  }
+  const { onSubmit, isPending, form } = useEmail()
 
   return (
     <Section
