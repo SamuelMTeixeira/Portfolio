@@ -5,7 +5,8 @@ import { z } from 'zod'
 import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { MailRemove02Icon, MailValidation01Icon } from 'hugeicons-react'
+import { Icon } from '@/components/ui/icon'
+import { MailRemove02Icon, MailValidation01Icon } from '@hugeicons/core-free-icons'
 
 export default function useEmail() {
   const t = useTranslations('Getintouch')
@@ -52,7 +53,7 @@ export default function useEmail() {
     mutationFn: (data: EmailProps) => sendEmail(data),
     onSuccess: () => {
       toast(t('emailStatus.success'), {
-        icon: <MailValidation01Icon className="h-4 text-green-600" />,
+        icon: <Icon icon={MailValidation01Icon} className="h-4 text-green-600" />,
         duration: 3000,
         className: 'text-green-500',
       })
@@ -61,7 +62,7 @@ export default function useEmail() {
     },
     onError: () => {
       toast.error(t('emailStatus.error'), {
-        icon: <MailRemove02Icon className="h-4 text-red-600" />,
+        icon: <Icon icon={MailRemove02Icon} className="h-4 text-red-600" />,
         duration: 3000,
         className: 'text-green-500',
       })

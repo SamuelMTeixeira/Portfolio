@@ -1,4 +1,4 @@
-import getProjects from '@/services/projects'
+import {getProjects} from '@/services/projects'
 import { useSuspenseQuery } from '@tanstack/react-query'
 
 export default function useProject() {

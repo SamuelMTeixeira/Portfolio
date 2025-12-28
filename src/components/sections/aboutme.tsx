@@ -6,7 +6,8 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useTranslations } from 'next-intl'
-import { ArrowRight02Icon } from 'hugeicons-react'
+import { Icon } from '@/components/ui/icon'
+import { ArrowRight02Icon } from '@hugeicons/core-free-icons'
 import { Button } from '@/components/ui/button'
 
 export default function AboutMe() {
@@ -53,7 +54,7 @@ export default function AboutMe() {
                     >
                       {t('linkedinProfile')}
 
-                      <ArrowRight02Icon size={14} />
+                      <Icon icon={ArrowRight02Icon} size={14} />
                     </a>
                   </Button>
 

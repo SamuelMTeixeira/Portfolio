@@ -10,7 +10,8 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
-import { LinkSquare02Icon } from 'hugeicons-react'
+import { Icon } from '@/components/ui/icon'
+import { LinkSquare02Icon } from '@hugeicons/core-free-icons'
 import { cn } from '@/lib/utils'
 
 export default function ProjectCard({
@@ -95,7 +96,7 @@ export default function ProjectCard({
             className={cn('w-full lg:w-auto', previewUrl ? '' : 'opacity-50 pointer-events-none')}>
             {t('view')}
 
-            <LinkSquare02Icon className="size-4 ml-2" />
+            <Icon icon={LinkSquare02Icon} className="size-4 ml-2" />
           </a>
         </Button>
       </CardFooter>

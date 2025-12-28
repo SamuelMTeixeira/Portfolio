@@ -1,6 +1,6 @@
 "use client"
 
-import { Globe02Icon } from "hugeicons-react"
+import { Globe02Icon } from '@hugeicons/core-free-icons'
 import { useTranslations } from 'next-intl'
 import { locales } from '@/lib/next-intl'
 import { usePathname } from 'next/navigation'
@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useIsMobile } from "@/hooks/isMobile"
 import { cn } from "@/lib/utils"
+import { Icon } from '@/components/ui/icon'
 
 export function SettingsDropdown() {
     const t = useTranslations('Header')
@@ -31,7 +32,7 @@ export function SettingsDropdown() {
                     size={isMobile ? "lg" : "icon"}
                     variant="outline"
                     className={cn(isMobile ? "h-12 text-foreground/70" : "text-foreground/70")}>
-                    <Globe02Icon className="size-6 md:size-4" />
+                    <Icon icon={Globe02Icon} className="size-6 md:size-4" />
                 </Button>
 
             </DropdownMenuTrigger>

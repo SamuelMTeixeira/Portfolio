@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { CodeFolderIcon, CoPresentIcon, LibraryIcon, MailEdit01Icon, Menu02Icon } from 'hugeicons-react'
+import { CodeFolderIcon, CoPresentIcon, LibraryIcon, MailEdit01Icon, Menu02Icon } from '@hugeicons/core-free-icons'
 import { useTranslations } from 'next-intl'
 import { useState, useEffect } from "react"
 import Link from "next/link"
@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Button } from '@/components/ui/button'
+import { Icon, type HugeIcon } from '@/components/ui/icon'
 
 export default function FloatingNavbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -50,10 +51,10 @@ export default function FloatingNavbar() {
         </div>
 
         <div className="flex items-center gap-10">
-          <NavItem icon={<CoPresentIcon size={18} />} label={t("Aboutme.label")} href="#about-me" />
-          <NavItem icon={<LibraryIcon size={18} />} label={t("Skills.label")} href="#skills" />
-          <NavItem icon={<CodeFolderIcon size={18} />} label={t("Projects.label")} href="#projects" />
-          <NavItem icon={<MailEdit01Icon size={18} />} label={t("Getintouch.label")} href="#contact" />
+          <NavItem icon={CoPresentIcon} label={t("Aboutme.label")} href="#about-me" />
+          <NavItem icon={LibraryIcon} label={t("Skills.label")} href="#skills" />
+          <NavItem icon={CodeFolderIcon} label={t("Projects.label")} href="#projects" />
+          <NavItem icon={MailEdit01Icon} label={t("Getintouch.label")} href="#contact" />
         </div>
 
         <div className="flex items-center gap-2">
@@ -79,7 +80,7 @@ export default function FloatingNavbar() {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className='flex md:hidden' aria-label='Open menu'>
-              <Menu02Icon className='size-4' />
+              <Icon icon={Menu02Icon} className='size-4' />
             </Button>
           </SheetTrigger>
           <SheetContent>
@@ -88,10 +89,10 @@ export default function FloatingNavbar() {
             </SheetHeader>
 
             <div className="flex flex-col space-y-6 px-4">
-              <NavItem icon={<CoPresentIcon size={18} />} label={t("Aboutme.label")} href="#about-me" />
-              <NavItem icon={<LibraryIcon size={18} />} label={t("Skills.label")} href="#skills" />
-              <NavItem icon={<CodeFolderIcon size={18} />} label={t("Projects.label")} href="#projects" />
-              <NavItem icon={<MailEdit01Icon size={18} />} label={t("Getintouch.label")} href="#contact" />
+              <NavItem icon={CoPresentIcon} label={t("Aboutme.label")} href="#about-me" />
+              <NavItem icon={LibraryIcon} label={t("Skills.label")} href="#skills" />
+              <NavItem icon={CodeFolderIcon} label={t("Projects.label")} href="#projects" />
+              <NavItem icon={MailEdit01Icon} label={t("Getintouch.label")} href="#contact" />
             </div>
 
             <div className="flex items-center justify-center gap-4 mt-12">
@@ -107,13 +108,13 @@ export default function FloatingNavbar() {
   )
 }
 
-function NavItem({ icon, label, href }: { icon: React.ReactNode; label: string; href: string }) {
+function NavItem({ icon, label, href }: { icon: HugeIcon; label: string; href: string }) {
   return (
     <a
       aria-label={`Navigate to ${label}`}
       href={href}
       className="flex items-center gap-1.5 text-foreground/70 hover:text-primary transition-colors text-lg md:text-sm">
-      {icon}
+      {<Icon icon={icon} size={18} />}
       <span>{label}</span>
     </a>
   )

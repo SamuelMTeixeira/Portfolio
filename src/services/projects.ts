@@ -8,7 +8,7 @@ export interface ProjectProps {
   tags: string[]
 }
 
-export default async function getProjects(): Promise<ProjectProps[]> {
+export async function getProjects(): Promise<ProjectProps[]> {
   const options = {
     method: 'POST',
     headers: {

@@ -16,7 +16,8 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import useEmail from '@/hooks/useEmail'
 import Section from '@/components/ui/section'
-import { Loading03Icon } from 'hugeicons-react'
+import { Icon } from '@/components/ui/icon'
+import { Loading03Icon } from '@hugeicons/core-free-icons'
 
 export default function Projects() {
   const t = useTranslations('Getintouch')
@@ -97,7 +98,7 @@ export default function Projects() {
                     className="md:h-11 md:px-8"
                   >
                     {isPending && (
-                      <Loading03Icon className="mr-2 h-5 w-5 animate-spin" />
+                      <Icon icon={Loading03Icon} className="mr-2 h-5 w-5 animate-spin" />
                     )}
                     {t('form.submit')}
                   </Button>
