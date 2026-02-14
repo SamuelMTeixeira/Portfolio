@@ -3,10 +3,7 @@ import Providers from './providers'
 import jsonLd from '@/data/metadata.json'
 import { bricolageGrotesque, manrope } from './fonts'
 import { NextIntlClientProvider } from 'next-intl';
-import ReactQueryProvider from '@/providers/reactQueryProvider'
 import { Toaster } from '@/components/ui/sonner'
-import { Suspense } from 'react'
-import Loading from '@/app/[locale]/loading'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Samuel Molendolff Teixeira | Software Engineer & Architect',
     type: 'website',
     description: 'Software Engineer and Architect specialized in creating robust and scalable solutions. Transforming complex challenges into efficient systems.',
-    url: 'https://samuelmteixeira.dev',
+    url: 'https://molendolff.dev',
     locale: 'en_US',
     siteName: 'Samuel Molendolff Teixeira',
   },
@@ -65,7 +62,7 @@ export const metadata: Metadata = {
       url: '/logo.webp',
       alt: 'Orange letter S, used as the representative logo of the website',
     }],
-    site: '@samucracy',
+    site: '@molendolff_',
   },
   robots: {
     index: true,
@@ -92,8 +89,8 @@ export default async function RootLayout({
   return (
     <html
       lang={((await params).locale)}
-      suppressHydrationWarning
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -103,13 +100,9 @@ export default async function RootLayout({
       </head>
       <body className="font-manrope">
         <Providers>
-          <ReactQueryProvider>
-            <Suspense fallback={<Loading />}>
-              <NextIntlClientProvider>
-                {children}
-              </NextIntlClientProvider>
-            </Suspense>
-          </ReactQueryProvider>
+          <NextIntlClientProvider>
+            {children}
+          </NextIntlClientProvider>
         </Providers>
         <Toaster />
       </body>

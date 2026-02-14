@@ -17,5 +17,5 @@ export async function sendEmail({ email, name, message }: EmailProps) {
     }),
   }
 
-  return await fetch('/api/contact/send-email', options)
+  return await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact/send-email`, options)
 }
