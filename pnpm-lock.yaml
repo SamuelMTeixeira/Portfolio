@@ -54,8 +54,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       devicons-react:
-        specifier: 1.4.0
-        version: 1.4.0(react@19.2.3)
+        specifier: 1.5.0
+        version: 1.5.0(react@19.2.3)
       framer-motion:
         specifier: ^12.34.0
         version: 12.34.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -77,6 +77,9 @@ importers:
       react-hook-form:
         specifier: ^7.54.2
         version: 7.69.0(react@19.2.3)
+      react-infinite-ticker:
+        specifier: ^2.3.0
+        version: 2.3.0(react@19.2.3)
       resend:
         specifier: ^4.1.2
         version: 4.8.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -1167,6 +1170,21 @@ packages:
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
 
+  '@react-hook/latest@1.0.3':
+    resolution: {integrity: sha512-dy6duzl+JnAZcDbNTfmaP3xHiKtbXYOaz3G51MGVljh548Y8MWzTr+PHLOfvpypEVW9zwvl+VyKjbWKEVbV1Rg==}
+    peerDependencies:
+      react: '>=16.8'
+
+  '@react-hook/passive-layout-effect@1.2.1':
+    resolution: {integrity: sha512-IwEphTD75liO8g+6taS+4oqz+nnroocNfWVHWz7j+N+ZO2vYrc6PV1q7GQhuahL0IOR7JccFTsFKQ/mb6iZWAg==}
+    peerDependencies:
+      react: '>=16.8'
+
+  '@react-hook/resize-observer@2.0.2':
+    resolution: {integrity: sha512-tzKKzxNpfE5TWmxuv+5Ae3IF58n0FQgQaWJmcbYkjXTRZATXxClnTprQ2uuYygYTpu1pqbBskpwMpj6jpT1djA==}
+    peerDependencies:
+      react: '>=18'
+
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
@@ -1763,8 +1781,8 @@ packages:
   detect-node-es@1.1.0:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
 
-  devicons-react@1.4.0:
-    resolution: {integrity: sha512-RePDf19W/x66OA6GciO9rcNakbbXCvo3z8QN5WfoZ38ahPTPTZehhIyxxoBd4UDit0U6j8Szq7G11ZKRAEogSg==}
+  devicons-react@1.5.0:
+    resolution: {integrity: sha512-8DYsWpgdbwI7ENDyC6Z9eqV72H01zUIAeRRo+UxBAq4clpPWcFhtqDrWSm0i5GUqbn/iNyiIfT1K69y0XLsscg==}
     peerDependencies:
       react: '*'
 
@@ -2664,6 +2682,11 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
+
+  react-infinite-ticker@2.3.0:
+    resolution: {integrity: sha512-kYXSVHSjGYdZEesfcNqHY+5F5eNn077EbJI9ELlLBPRpp/dggxNFJgK8MmRF6SncS0bRHThjOMJql2W5olqUGQ==}
+    peerDependencies:
+      react: '>=18'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -3984,6 +4007,20 @@ snapshots:
     dependencies:
       react: 19.2.3
 
+  '@react-hook/latest@1.0.3(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+
+  '@react-hook/passive-layout-effect@1.2.1(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+
+  '@react-hook/resize-observer@2.0.2(react@19.2.3)':
+    dependencies:
+      '@react-hook/latest': 1.0.3(react@19.2.3)
+      '@react-hook/passive-layout-effect': 1.2.1(react@19.2.3)
+      react: 19.2.3
+
   '@rtsao/scc@1.1.0': {}
 
   '@schummar/icu-type-parser@1.21.5': {}
@@ -4548,7 +4585,7 @@ snapshots:
 
   detect-node-es@1.1.0: {}
 
-  devicons-react@1.4.0(react@19.2.3):
+  devicons-react@1.5.0(react@19.2.3):
     dependencies:
       react: 19.2.3
 
@@ -5569,6 +5606,11 @@ snapshots:
 
   react-hook-form@7.69.0(react@19.2.3):
     dependencies:
+      react: 19.2.3
+
+  react-infinite-ticker@2.3.0(react@19.2.3):
+    dependencies:
+      '@react-hook/resize-observer': 2.0.2(react@19.2.3)
       react: 19.2.3
 
   react-is@16.13.1: {}

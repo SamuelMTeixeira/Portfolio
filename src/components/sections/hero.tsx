@@ -44,7 +44,6 @@ export default function Hero() {
           </Link>
         </Button>
 
-
       </div>
     </motion.div>
   )
