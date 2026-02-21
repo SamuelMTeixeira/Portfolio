@@ -15,7 +15,6 @@ import { ProjectProps } from '@/services/projects'
 import { Icon } from '@/components/ui/icon'
 import { LinkSquare02Icon } from '@hugeicons/core-free-icons'
 import { cn } from '@/lib/utils'
-import { useEffect, useState } from 'react'
 
 export default function ProjectCard({
   imageUrl,
