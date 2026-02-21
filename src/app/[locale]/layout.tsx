@@ -1,5 +1,6 @@
 import './globals.css'
-import Providers from './providers'
+import { ReactQueryProvider } from '@/providers/react-query-provider';
+import { ThemeProvider } from '@/providers/theme-provider'
 import jsonLd from '@/data/metadata.json'
 import { bricolageGrotesque, manrope } from './fonts'
 import { NextIntlClientProvider } from 'next-intl';
@@ -98,12 +99,19 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-manrope">
-        <Providers>
-          <NextIntlClientProvider>
-            {children}
-          </NextIntlClientProvider>
-        </Providers>
+      <body className="font-manrope" suppressHydrationWarning>
+        <ReactQueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider>
+              {children}
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </ReactQueryProvider>
         <Toaster />
       </body>
     </html>

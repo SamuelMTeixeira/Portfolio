@@ -9,9 +9,6 @@ import Loading from '@/app/[locale]/loading'
 function ProjectOverview() {
   const { projects } = useProject()
 
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-
   const projectImages = useMemo(
     () => projects.map(({ imageUrl }) => imageUrl),
     [projects],
@@ -20,15 +17,13 @@ function ProjectOverview() {
   const containerRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
-    target: mounted ? containerRef : undefined,
+    target: containerRef || undefined,
     offset: ["start end", "end start"],
   })
 
   const x = useTransform(scrollYProgress, [0, 1], ["5%", "-30%"])
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.8])
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 1, 1, 0.95])
-
-  if (!mounted) return null
 
   return (
     <motion.div
