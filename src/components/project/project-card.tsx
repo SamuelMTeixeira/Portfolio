@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import {
@@ -10,7 +12,8 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { useTranslations } from 'next-intl'
 import { ProjectProps } from '@/services/projects'
-import { LinkSquare02Icon } from 'hugeicons-react'
+import { Icon } from '@/components/ui/icon'
+import { LinkSquare02Icon } from '@hugeicons/core-free-icons'
 import { cn } from '@/lib/utils'
 
 export default function ProjectCard({
@@ -43,20 +46,20 @@ export default function ProjectCard({
           className="w-full h-auto object-cover"
           loading="lazy"
         />
-        <span className="absolute inset-0 bg-linear-to-t from-background/[.5] to-transparent" />
+        <span className="absolute inset-0 bg-linear-to-t from-background/50 to-transparent" />
       </div>
 
       <CardHeader className="relative z-10 -mt-16 bg-background mx-4 rounded-t-lg p-6">
         <div className="space-x-2">
           <Badge variant={'secondary'} >{category}</Badge>
         </div>
-        <CardTitle className="text-2xl font-bold text-foreground/[.9]">
+        <CardTitle className="text-2xl font-bold text-foreground/90">
           {title}
         </CardTitle>
       </CardHeader>
 
       <CardContent className="p-6 pt-0 flex-1">
-        <p className="text-sm text-foreground/[.8] mb-4"> {description}</p>
+        <p className="text-sm text-foreground/80 mb-4"> {description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
             <Badge key={index} variant="outline">
@@ -95,7 +98,7 @@ export default function ProjectCard({
             className={cn('w-full lg:w-auto', previewUrl ? '' : 'opacity-50 pointer-events-none')}>
             {t('view')}
 
-            <LinkSquare02Icon className="size-4 ml-2" />
+            <Icon icon={LinkSquare02Icon} className="size-4 ml-2" />
           </a>
         </Button>
       </CardFooter>

@@ -72,8 +72,8 @@
             "submit": "Enviar mensagem"
         },
         "emailStatus": {
-            "success": "Email enviado com sucesso!",
-            "error": "Erro ao enviar email, tente novamente mais tarde."
+            "success": "Mensagem enviada com sucesso!",
+            "error": "Erro ao enviar mensagem, tente novamente mais tarde."
         }
     }
 }

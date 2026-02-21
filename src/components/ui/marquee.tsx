@@ -50,10 +50,7 @@ const Marquee: React.FC<MarqueeProps> = ({
   return (
     <div
       ref={containerRef}
-      style={{
-        maskImage:
-          'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
-      }}
+
       className={'m-auto overflow-hidden ' + className}
     >
       <motion.div className="flex whitespace-nowrap gap-5" animate={controls}>
@@ -63,7 +60,7 @@ const Marquee: React.FC<MarqueeProps> = ({
             ref={index === 0
               ? contentRef
               : undefined}
-            className="inline-flex gap-8"
+            className="flex items-center gap-8 shrink-0"
           >
             {children}
           </div>

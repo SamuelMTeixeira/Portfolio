@@ -1,14 +1,10 @@
 import './globals.css'
-import Providers from './providers'
+import { ReactQueryProvider } from '@/providers/react-query-provider';
+import { ThemeProvider } from '@/providers/theme-provider'
 import jsonLd from '@/data/metadata.json'
 import { bricolageGrotesque, manrope } from './fonts'
-
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
-import ReactQueryProvider from '@/providers/reactQueryProvider'
+import { NextIntlClientProvider } from 'next-intl';
 import { Toaster } from '@/components/ui/sonner'
-import { Suspense } from 'react'
-import Loading from '@/app/[locale]/loading'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -55,7 +51,7 @@ export const metadata: Metadata = {
     title: 'Samuel Molendolff Teixeira | Software Engineer & Architect',
     type: 'website',
     description: 'Software Engineer and Architect specialized in creating robust and scalable solutions. Transforming complex challenges into efficient systems.',
-    url: 'https://samuelmteixeira.dev',
+    url: 'https://molendolff.dev',
     locale: 'en_US',
     siteName: 'Samuel Molendolff Teixeira',
   },
@@ -67,7 +63,7 @@ export const metadata: Metadata = {
       url: '/logo.webp',
       alt: 'Orange letter S, used as the representative logo of the website',
     }],
-    site: '@samucracy',
+    site: '@molendolff_',
   },
   robots: {
     index: true,
@@ -90,12 +86,12 @@ export default async function RootLayout({
   children: React.ReactNode
   params: Promise<{ locale: string }>
 }) {
-  const messages = await getMessages()
 
   return (
     <html
       lang={((await params).locale)}
       className={`${manrope.variable} ${bricolageGrotesque.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -103,16 +99,19 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-manrope">
-        <Providers>
-          <ReactQueryProvider>
-            <Suspense fallback={<Loading />}>
-              <NextIntlClientProvider messages={messages}>
-                {children}
-              </NextIntlClientProvider>
-            </Suspense>
-          </ReactQueryProvider>
-        </Providers>
+      <body className="font-manrope" suppressHydrationWarning>
+        <ReactQueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider>
+              {children}
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </ReactQueryProvider>
         <Toaster />
       </body>
     </html>

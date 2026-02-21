@@ -3,70 +3,58 @@
 import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 
-const Marquee = dynamic(() => import('../ui/marquee'), {
-  ssr: false,
-})
+const HorizontalTicker = dynamic(
+  () => import('react-infinite-ticker').then(mod => mod.HorizontalTicker),
+  { ssr: false }
+)
 
-const JavascriptOriginal = dynamic(
-  () => import('devicons-react/lib/icons/JavascriptOriginal'),
-)
-const TypescriptOriginal = dynamic(
-  () => import('devicons-react/lib/icons/TypescriptOriginal'),
-)
-const Html5Plain = dynamic(() => import('devicons-react/lib/icons/Html5Plain'))
-const Css3Plain = dynamic(() => import('devicons-react/lib/icons/Css3Plain'))
-const ReactOriginal = dynamic(
-  () => import('devicons-react/lib/icons/ReactOriginal'),
-)
-const PhpPlain = dynamic(() => import('devicons-react/lib/icons/PhpPlain'))
-const LaravelOriginal = dynamic(
-  () => import('devicons-react/lib/icons/LaravelOriginal'),
-)
-const MysqlOriginal = dynamic(
-  () => import('devicons-react/lib/icons/MysqlOriginal'),
-)
-const PostgresqlPlain = dynamic(
-  () => import('devicons-react/lib/icons/PostgresqlPlain'),
-)
-const MariadbOriginalWordmark = dynamic(
-  () => import('devicons-react/lib/icons/MariadbOriginalWordmark'),
-)
-const JavaOriginal = dynamic(
-  () => import('devicons-react/lib/icons/JavaOriginal'),
-)
-const AndroidOriginal = dynamic(
-  () => import('devicons-react/lib/icons/AndroidOriginal'),
-)
-const LinuxOriginal = dynamic(
-  () => import('devicons-react/lib/icons/LinuxOriginal'),
-)
-const KubernetesOriginal = dynamic(
-  () => import('devicons-react/lib/icons/KubernetesOriginal'),
-)
-const TerraformOriginal = dynamic(
-  () => import('devicons-react/lib/icons/TerraformOriginal'),
-)
-const SpringOriginal = dynamic(
-  () => import('devicons-react/lib/icons/SpringOriginal'),
-)
-const AmazonwebservicesOriginalWordmark = dynamic(
-  () => import('devicons-react/lib/icons/AmazonwebservicesOriginalWordmark'),
-)
-const TailwindcssOriginal = dynamic(
-  () => import('devicons-react/lib/icons/TailwindcssOriginal'),
-)
-const GithubactionsPlain = dynamic(
-  () => import('devicons-react/lib/icons/GithubactionsPlain'),
-)
-const DockerPlain = dynamic(
-  () => import('devicons-react/lib/icons/DockerPlain'),
-)
-const NextjsOriginal = dynamic(
-  () => import('devicons-react/lib/icons/NextjsOriginal'),
-)
-const ExpressOriginalWordmark = dynamic(
-  () => import('devicons-react/lib/icons/ExpressOriginalWordmark'),
-)
+import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal'
+import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal'
+import Html5Plain from 'devicons-react/icons/Html5Plain'
+import Css3Plain from 'devicons-react/icons/Css3Plain'
+import ReactOriginal from 'devicons-react/icons/ReactOriginal'
+import PhpPlain from 'devicons-react/icons/PhpPlain'
+import LaravelOriginal from 'devicons-react/icons/LaravelOriginal'
+import MysqlOriginal from 'devicons-react/icons/MysqlOriginal'
+import PostgresqlPlain from 'devicons-react/icons/PostgresqlPlain'
+import MariadbOriginalWordmark from 'devicons-react/icons/MariadbOriginalWordmark'
+import JavaOriginal from 'devicons-react/icons/JavaOriginal'
+import AndroidOriginal from 'devicons-react/icons/AndroidOriginal'
+import LinuxOriginal from 'devicons-react/icons/LinuxOriginal'
+import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal'
+import TerraformOriginal from 'devicons-react/icons/TerraformOriginal'
+import SpringOriginal from 'devicons-react/icons/SpringOriginal'
+import AmazonwebservicesOriginalWordmark from 'devicons-react/icons/AmazonwebservicesOriginalWordmark'
+import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal'
+import GithubactionsPlain from 'devicons-react/icons/GithubactionsPlain'
+import DockerPlain from 'devicons-react/icons/DockerPlain'
+import NextjsOriginal from 'devicons-react/icons/NextjsOriginal'
+import ExpressOriginalWordmark from 'devicons-react/icons/ExpressOriginalWordmark'
+
+const icons = [
+  JavascriptOriginal,
+  TypescriptOriginal,
+  Html5Plain,
+  Css3Plain,
+  ReactOriginal,
+  PhpPlain,
+  LaravelOriginal,
+  JavaOriginal,
+  SpringOriginal,
+  AndroidOriginal,
+  TailwindcssOriginal,
+  NextjsOriginal,
+  ExpressOriginalWordmark,
+  LinuxOriginal,
+  DockerPlain,
+  KubernetesOriginal,
+  TerraformOriginal,
+  AmazonwebservicesOriginalWordmark,
+  GithubactionsPlain,
+  MysqlOriginal,
+  PostgresqlPlain,
+  MariadbOriginalWordmark,
+]
 
 export default function Skills() {
   const t = useTranslations('Skills')
@@ -77,32 +65,23 @@ export default function Skills() {
         {t('title')}
       </h2>
 
-      <Marquee speed={60} direction="left" className="max-w-5xl">
-        <JavascriptOriginal size="50" />
-        <TypescriptOriginal size="50" />
-        <Html5Plain size="50" />
-        <Css3Plain size="50" />
-        <ReactOriginal size="50" />
-        <PhpPlain size="50" />
-        <LaravelOriginal size="50" />
-        <JavaOriginal size="50" />
-        <SpringOriginal size="50" />
-        <AndroidOriginal size="50" />
-        <TailwindcssOriginal size="50" />
-        <NextjsOriginal size="50" />
-        <ExpressOriginalWordmark size="50" />
-
-        <LinuxOriginal size="50" />
-        <DockerPlain size="50" />
-        <KubernetesOriginal size="50" />
-        <TerraformOriginal size="50" />
-        <AmazonwebservicesOriginalWordmark size="50" />
-        <GithubactionsPlain size="50" />
-
-        <MysqlOriginal size="50" />
-        <PostgresqlPlain size="50" />
-        <MariadbOriginalWordmark size="50" />
-      </Marquee>
+      <div className='mx-auto flex justify-center max-w-5xl'>
+        <HorizontalTicker duration={25000}>
+          {icons.map((Icon, index) => (
+            <TickerIcon key={index}>
+              <Icon size="10" className="w-16" />
+            </TickerIcon>
+          ))}
+        </HorizontalTicker>
+      </div>
     </section>
   )
+
+  function TickerIcon({ children }: { children: React.ReactNode }) {
+    return (
+      <div className="mx-6 flex items-center">
+        {children}
+      </div>
+    )
+  }
 }

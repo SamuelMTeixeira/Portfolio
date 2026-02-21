@@ -41,7 +41,7 @@ export async function POST() {
 
   if (!notionToken || !databaseID) {
     return NextResponse.json(
-      { message: 'Missing Notion database ID' },
+      { error: 'Missing required fields' },
       { status: 401 },
     )
   }

@@ -72,8 +72,8 @@
             "submit": "Send message"
         },
         "emailStatus": {
-            "success": "Email sent successfully!",
-            "error": "An error occurred while sending the email. Please try again later."
+            "success": "Message sent successfully!",
+            "error": "An error occurred while sending the message. Please try again later."
         }
     }
 }
