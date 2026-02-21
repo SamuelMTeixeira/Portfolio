@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion, useTransform, useScroll } from 'framer-motion'
-import { memo, Suspense, useMemo, useRef, useState, useEffect } from 'react'
+import { memo, Suspense, useMemo, useRef } from 'react'
 import useProject from '@/hooks/useProject'
 import Loading from '@/app/[locale]/loading'
 

@@ -30,12 +30,6 @@ export default function ProjectCard({
 }: ProjectProps & React.HTMLAttributes<HTMLDivElement>) {
   const t = useTranslations('Projects.card')
 
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
-
-
   return (
     <Card
       className={
